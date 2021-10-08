@@ -19,25 +19,14 @@
 </head>
 
 <body>
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="http://localhost/penpal">Penpal</a>
+    <div class="navbar">
+        <a class="brand" href="http://127.0.0.7/Project%20-%20PublicSide">Photographics</a>
 
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-
-                    <ul>
-                        <li><a href="register.php">Register</a></li>
-                        <li><a href="login.php">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
 
     <div id="container">

@@ -1,3 +1,9 @@
+<?php
+require('../../model/read.php');
+require('../../model/function.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -22,8 +28,27 @@
     <div class="navbar">
         <a class="brand" href="http://127.0.0.7/Project%20-%20PublicSide">Photographics</a>
 
+        <?php
+            $alltags  = takeNameTag();
+        ?>
+
+
         <ul class="nav">
             <li class="active"><a href="#">Home</a></li>
+
+            <li class="menu-deroulant">
+                <a href="#">Gallerie</a>
+                <ul class="sous-menu">
+
+                <?php
+                    foreach ($alltags as $key => $value){
+                        echo("<li><a href=#>$value</a></li>");
+                    }
+                ?>
+
+                </ul>
+            </li>
+            
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>

@@ -7,6 +7,10 @@
                 $tagsName[] = $value['Tags_Name'];
             }
 
-            return $tagsName;
+            if(isset($tagsName)){
+                return $tagsName;
+            }else{
+               return false;
+            }
         }
     //

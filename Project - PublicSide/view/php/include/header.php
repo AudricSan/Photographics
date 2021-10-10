@@ -41,8 +41,10 @@ require('../../model/function.php');
                 <ul class="sous-menu">
 
                 <?php
-                    foreach ($alltags as $key => $value){
-                        echo("<li><a href=#>$value</a></li>");
+                    if($alltags != false){
+                        foreach ($alltags as $key => $value){
+                            echo("<li><a href=#>$value</a></li>");
+                        }
                     }
                 ?>
 

@@ -21,10 +21,10 @@
 
         if ($alltags != false) {
             foreach ($alltags as $key => $value) {
-                if (!file_exists("view/php/$value.php")) {
+                if (!file_exists("$value.php")) {
 
-                    $newpage = fopen("view/php/$value.php", "w") or die("Unable to open file!");
-                    $basiccode  = file_get_contents("basic.txt");
+                    $newpage = fopen("$value.php", "w") or die("Unable to open file!");
+                    $basiccode  = file_get_contents("../model/basic.txt");
 
                     fwrite($newpage, $basiccode);
                     fclose($newpage);

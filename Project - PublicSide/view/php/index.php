@@ -9,5 +9,4 @@ require('include/header.php'); ?>
 
 <?php
 //Import Footer
-require('../html/include/footer.html');
-?>
+require('../html/include/footer.html'); ?>

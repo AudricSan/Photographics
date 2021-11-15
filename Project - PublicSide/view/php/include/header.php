@@ -1,7 +1,14 @@
 <?php
-require('../../model/read.php');
-require('../../model/function.php');
+// Starts
+    session_start();
+    // Define Root Link
+    $rootDir = $_SESSION['RootDir'];
+    $serverRoot = $_SESSION['ServerRoot'];
 
+    // Include
+    require("$rootDir/model/read.php");
+    require("$rootDir/model/function.php");
+//
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +33,7 @@ require('../../model/function.php');
 
 <body>
     <div class="navbar">
-        <a class="brand" href="http://127.0.0.7/Project%20-%20PublicSide">Photographics</a>
+        <a class="brand" href="<?php echo $rootDir; ?>">Photographics</a>
 
         <?php
             $alltags  = takeNameTag();
@@ -42,8 +49,9 @@ require('../../model/function.php');
 
                 <?php
                     if($alltags != false){
+                        checkFilesExist();
                         foreach ($alltags as $key => $value){
-                            echo("<li><a href=#>$value</a></li>");
+                            echo("<li><a href=$value.php>$value</a></li>");
                         }
                     }
                 ?>

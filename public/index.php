@@ -342,6 +342,56 @@ function head() {
   }, 'post');
 //
 
+// ANCHOR Tag
+  // ANCHOR 
+  Route::add('/tag', function() {
+    head();
+    include_once ('../model/class/Tag.php');
+    include_once ('../model/dao/TagDAO.php');
+    $tag = new TagDAO;
+    $tag = $tag->fetchAll();
+
+    var_dump($tag);
+  });
+  
+  // ANCHOR Specific Admin
+  Route::add('/tag/([0-9]*)', function($id) {
+    head();
+    include_once ('../model/class/Tag.php');
+    include_once ('../model/dao/TagDAO.php');
+    $tag = new TagDAO;
+    $tag = $tag->fetch($id);
+
+    var_dump($tag);
+  });
+  
+  //ANCHOR Delete Admin
+  Route::add('/tag/([0-9]*)/delete', function($id) {
+    include_once ('../model/class/Tag.php');
+    include_once ('../model/dao/TagDAO.php');
+    $tag = new TagDAO;
+    $tag = $tag->delete($id);
+  });
+  
+  //ANCHOR Edit Admin
+  Route::add('/tag/([0-9]*)/edit', function($id) {
+    head();
+    include_once ('../model/class/Tag.php');
+    include_once ('../model/dao/TagDAO.php');
+  
+    $tag = new TagDAO;
+    $tag = $tag->update($id, $_POST);
+  }, 'post');
+  
+  //ANCHOR Store Admin
+  Route::add('/tag/store', function() {
+    include_once ('../model/class/Tag.php');
+    include_once ('../model/dao/TagDAO.php');
+    $tag = new TagDAO;
+    $tag = $tag->store($_POST);
+  }, 'post');
+//
+
 // ANCHOR Run the Router with the given Basepath
 Route::run(BASEPATH);
 

@@ -1,73 +1,129 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 oct. 2021 à 08:22
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- ---
+-- Globals
+-- ---
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
 
---
--- Base de données : `photographics`
---
-CREATE DATABASE IF NOT EXISTS `photographics` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `photographics`;
--- --------------------------------------------------------
+-- ---
+-- Table 'admin'
+-- 
+-- ---
 
---
--- Structure de la table `admin`
---
 DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `Admin_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Admin_Login` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Admin_Password` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Admin_DATH` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Admin_AuthToken` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`Admin_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
--- --------------------------------------------------------
+		
+CREATE TABLE `admin` (
+  `admin_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `admin_name` VARCHAR(50) NULL DEFAULT NULL,
+  `admin_mail` VARCHAR(50) NULL DEFAULT NULL,
+  `admin_password` VARCHAR(60) NULL DEFAULT NULL,
+  `admin_role` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`admin_id`)
+);
 
---
--- Structure de la table `photography`
---
-DROP TABLE IF EXISTS `photography`;
-CREATE TABLE IF NOT EXISTS `photography` (
-  `Photo_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Photo_Link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Photo_Size` int(11) DEFAULT NULL,
-  `Photo_Tags` int(11) DEFAULT NULL,
-  `Photo_UploaderID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Photo_ID`),
-  KEY `Photo_UploaderID` (`Photo_UploaderID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
--- --------------------------------------------------------
+-- ---
+-- Table 'role'
+-- 
+-- ---
 
---
--- Structure de la table `selectedtag`
---
-DROP TABLE IF EXISTS `selectedtag`;
-CREATE TABLE IF NOT EXISTS `selectedtag` (
-  `SelectedTag_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `SelectedTag_PhotoID` int(11) DEFAULT NULL,
-  `SelectedTag_Tags_ID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`SelectedTag_ID`),
-  KEY `SelectedTag_PhotoID` (`SelectedTag_PhotoID`),
-  KEY `SelectedTag_Tags_ID` (`SelectedTag_Tags_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `role`;
+		
+CREATE TABLE `role` (
+  `role_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `role_name` VARCHAR(15) NULL DEFAULT NULL,
+  PRIMARY KEY (`role_id`)
+);
 
---
--- Structure de la table `tags`
---
-DROP TABLE IF EXISTS `tags`;
-CREATE TABLE IF NOT EXISTS `tags` (
-  `Tags_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Tags_Name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`Tags_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-COMMIT;
+-- ---
+-- Table 'picture'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `picture`;
+		
+CREATE TABLE `picture` (
+  `picture_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `picture_name` VARCHAR(50) NULL DEFAULT NULL,
+  `picture_description` VARCHAR(500) NULL DEFAULT NULL,
+  `picture_link` VARCHAR(25) NULL DEFAULT NULL,
+  `picture_tag` INTEGER NULL DEFAULT NULL,
+  `picture_sharable` TINYINT(1) NULL DEFAULT NULL,
+  PRIMARY KEY (`picture_id`)
+);
+
+-- ---
+-- Table 'tag'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `tag`;
+		
+CREATE TABLE `tag` (
+  `tag_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `tag_name` VARCHAR(25) NULL DEFAULT NULL,
+  PRIMARY KEY (`tag_id`)
+);
+
+-- ---
+-- Table 'pt'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `pt`;
+		
+CREATE TABLE `pt` (
+  `pt_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `pt_picture` INTEGER NULL DEFAULT NULL,
+  `pt_tag` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`pt_id`)
+);
+
+-- ---
+-- Table 'basicinfo'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS `basicinfo`;
+		
+CREATE TABLE `basicinfo` (
+  `bi_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `bi_name` VARCHAR(25) NULL DEFAULT NULL,
+  `bi_content` VARCHAR(60) NULL DEFAULT NULL,
+  PRIMARY KEY (`bi_id`)
+);
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+ALTER TABLE `admin` ADD FOREIGN KEY (admin_role) REFERENCES `role` (`role_id`);
+ALTER TABLE `pt` ADD FOREIGN KEY (pt_picture) REFERENCES `picture` (`picture_id`);
+ALTER TABLE `pt` ADD FOREIGN KEY (pt_tag) REFERENCES `tag` (`tag_id`);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `admin` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `role` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `picture` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `tag` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `pt` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `basicinfo` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `admin` (`admin_id`,`admin_name`,`admin_mail`,`admin_password`,`admin_role`) VALUES
+-- ('','','','','');
+-- INSERT INTO `role` (`role_id`,`role_name`) VALUES
+-- ('','');
+-- INSERT INTO `picture` (`picture_id`,`picture_name`,`picture_description`,`picture_link`,`picture_tag`,`picture_sharable`) VALUES
+-- ('','','','','','');
+-- INSERT INTO `tag` (`tag_id`,`tag_name`) VALUES
+-- ('','');
+-- INSERT INTO `pt` (`pt_id`,`pt_picture`,`pt_tag`) VALUES
+-- ('','','');
+-- INSERT INTO `basicinfo` (`bi_id`,`bi_name`,`bi_content`) VALUES
+-- ('','','');

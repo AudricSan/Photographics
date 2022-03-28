@@ -1,8 +1,9 @@
 <?php
-use photographics\Admin;
+
+use photographics\Picture;
 use photographics\Env;
 
-class AdminDAO extends Env
+class PictureDAO extends Env
 {
     //DON'T TOUCH IT, LITTLE PRICK
     private $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
@@ -14,7 +15,7 @@ class AdminDAO extends Env
         $this->password = parent::env('DB_PASSWORD', '');         //The password to connect to the DB
         $this->host =     parent::env('DB_HOST', 'localhost');    //The name of the server where my DB is located
         $this->dbname =   parent::env('DB_NAME');                 //The name of the DB you want to attack.
-        $this->table =    "admin";                                // The table to attack
+        $this->table =    "picture";                              // The table to attack
 
         $this->connection = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password, $this->options);;
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -41,7 +42,7 @@ class AdminDAO extends Env
     public function fetch($id)
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE Admin_ID = ?");
+            $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE picture_id = ?");
             $statement->execute([$id]);
             $result = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -59,13 +60,13 @@ class AdminDAO extends Env
 
         // NOTE DUMP OF OBJECT CREATE
         // var_dump($result);
-        return new Admin(
-            $result['admin_id'],
-            $result['admin_name'],
-            $result['admin_mail'],
-            $result['admin_login'],
-            $result['admin_password'],
-            $result['admin_role']
+        return new Picture(
+            $result['picture_id'],
+            $result['picture_name'],
+            $result['picture_description'],
+            $result['picture_link'],
+            $result['picture_tag'],
+            $result['picture_sharable']
         );
     }
 
@@ -75,7 +76,7 @@ class AdminDAO extends Env
             return false;
         }
         try {
-            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE Admin_ID = ?");
+            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE picture_id = ?");
             $statement->execute([
                 $id
             ]);
@@ -86,35 +87,33 @@ class AdminDAO extends Env
 
     public function store($data)
     {
-
         if (empty($data)) {
             return false;
         }
 
-        $admin = $this->create([
-            "Admin_ID" => 0,
-            'Admin_Mail'  => $data['mail'],
-            'Admin_Login' => $data['log'],
-            'Admin_Password'  => $data['pass'],
-            'Admin_Name'  => $data['name'],
-            'Admin_Firstname' => $data['fname'],
-            'Admin_Role'  => $data['role']
+        $picture = $this->create([
+            'picture_id' => 0,
+            'picture_name' => $data['name'],
+            'picture_description' => $data['desc'],
+            'picture_link' => $data['link'],
+            'picture_tag' => $data['tag'],
+            'picture_sharable' => $data['share']
         ]);
 
-        if ($admin) {
+        if ($picture) {
             try {
-                $statement = $this->connection->prepare("INSERT INTO {$this->table} (Admin_Mail, Admin_Login, Admin_Password, Admin_Name, Admin_Firstname, Admin_Role) VALUES (?, ?, ?, ?, ?, ?)");
+                $statement = $this->connection->prepare("INSERT INTO {$this->table} (
+                picture_name, picture_description, picture_link, picture_tag, picture_sharable) VALUES (?, ?, ?, ?, ?, ?)");
                 $statement->execute([
-                    $admin->_email,
-                    $admin->_login,
-                    $admin->_password,
-                    $admin->_name,
-                    $admin->_firstname,
-                    $admin->_role
+                    $picture->_name,
+                    $picture->_description,
+                    $picture->_link,
+                    $picture->_tag,
+                    $picture->_sharable
                 ]);
 
-                $admin->id = $this->connection->lastInsertId();
-                return $admin;
+                $picture->id = $this->connection->lastInsertId();
+                return $picture;
             } catch (PDOException $e) {
                 echo $e;
                 return false;
@@ -128,29 +127,27 @@ class AdminDAO extends Env
             return false;
         }
 
-        $admin = $this->create([
+        $picture = $this->create([
             "_id" => $id,
-            '_login' => $data['log'],
             '_name' => $data['name'],
-            '_fname' => $data['fname'],
-            '_mail' => $data['mail'],
-            '_pass' => $data['pass'],
-            '_role' => $data['role']
+            '_description' => $data['desc'],
+            '_link' => $data['link'],
+            '_tag' => $data['tag'],
+            '_sharable' => $data['share'],
         ]);
 
-        if ($admin) {
+        if ($picture) {
             try {
-                $statement = $this->connection->prepare("UPDATE {$this->table} SET Admin_Login = ?, Admin_Name = ?, Admin_Firstname = ?, Admin_Mail = ?, Admin_Password = ?, Admin_Role = ? WHERE Admin_ID = ?");
+                $statement = $this->connection->prepare("UPDATE {$this->table} SET picture_name = ?, picture_description = ?, picture_link = ?, picture_tag = ?, picture_sharable = ? WHERE picture_id = ?");
                 $statement->execute([
-                    $admin->_login,
-                    $admin->_name,
-                    $admin->_fname,
-                    $admin->_mail,
-                    $admin->_pass,
-                    $admin->_role
+                    $picture->_name,
+                    $picture->_description,
+                    $picture->_link,
+                    $picture->_tag,
+                    $picture->_sharable
                 ]);
 
-                return $admin;
+                return $picture;
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;

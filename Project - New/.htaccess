@@ -1,41 +1,5 @@
-//Rewrite to www
-    Options +FollowSymLinks
-    RewriteEngine on
-    RewriteCond %{HTTP_HOST} ^example.com[nc]
-    RewriteRule ^(.*)$ http://www.example.com/$1 [r=301,nc]
-
-//Prevent directory listings
-    Options All -Indexes
-
-//Change default directory page
-    //DirectoryIndex view/index.php
-
-// Forcez tout le monde à utiliser HTTPS crypté
-    //RewriteCond %{HTTPS} ^off$ [NC]
-    //RewriteCond %{SERVER_NAME} ^(www\.)?(.*) [NC]
-    //RewriteRule ^/?(.*) https://%2/$1 [L,R=301,NE,QSA]
-
-// Rediriger tout le trafic vers un nouveau domaine / URL
-    //RewriteEngine on
-    //RewriteRule ^/?(.*)$ %{REQUEST_SCHEME}://newdomain.osu.edu/optional/$1 [L,NE,QSA,R=301]
-
-//Redirigez toute demande pour une page inexistante vers un autre emplacement fourre-tout :
-    //RewriteEngine On
-    //RewriteCond %{REQUEST_FILENAME} !-f
-    //RewriteCond %{REQUEST_FILENAME} !-d
-    //RewriteRule . /pagenotfound.php [L,R=301,QSA,NE]
-
-//Désactivez toute la mise en cache côté navigateur :
-    //Header unset ETag
-    //Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-    //Header set Pragma "no-cache"
-    //Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
-
-// ERROR DOCUMENT
-    ErrorDocument 400 /400.html
-    ErrorDocument 401 /401.html
-    ErrorDocument 403 /403.html
-    ErrorDocument 404 /404.html
-    ErrorDocument 500 /500.html
-    ErrorDocument 502 /502.html
-    ErrorDocument 504 /504.html
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^$ public/ [L]
+	RewriteRule (.*) public/$1 [L]
+</IfModule>

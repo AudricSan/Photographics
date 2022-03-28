@@ -1,4 +1,5 @@
 <?php
+namespace photographics;
 
 class Admin
 {

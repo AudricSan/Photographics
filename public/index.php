@@ -1,6 +1,9 @@
 <?php
 
 // ANCHOR Use this namespace
+
+use JetBrains\PhpStorm\Internal\ReturnTypeContract;
+use JetBrains\PhpStorm\NoReturn;
 use photographics\Route;
 use photographics\env;
 
@@ -125,12 +128,61 @@ Route::add('/routes', function() {
 });
 
 // ANCHOR This route is for debugging only
+// ANCHOR DEBUG
 // It simply prints out some php infos
 // Do not use this route on production systems!
 Route::add('/phpinfo', function() {
   head();
   phpinfo();
 });
+
+// ANCHOR admin
+  // ANCHOR 
+  Route::add('/admin', function() {
+    head();
+    include_once ('../model/class/Admin.php');
+    include_once ('../model/dao/AdminDAO.php');
+    
+    $admin = new AdminDAO;
+    $admin = $admin->fetchAll();
+  });
+  
+  // ANCHOR Specific Admin
+  Route::add('/admin/(.*)', function($id) {
+    head();
+    include_once ('../model/class/Admin.php');
+    include_once ('../model/dao/AdminDAO.php');
+    
+    $admin = new AdminDAO;
+    $admin = $admin->fetch($id);
+  });
+
+  //ANCHOR Delete Admin
+  Route::add('/admin/(.*)/delete', function($id) {
+    include_once ('../model/class/Admin.php');
+    include_once ('../model/dao/AdminDAO.php');
+    $admin = new AdminDAO;
+    $admin = $admin->delete($id);
+  });
+  
+  //ANCHOR Edit Admin
+  Route::add('/admin/(.*)/edit', function($id) {
+    head();
+    include_once ('../model/class/Admin.php');
+    include_once ('../model/dao/AdminDAO.php');
+
+    $admin = new AdminDAO;
+    $admin = $admin->update($id, $_POST);
+  }, 'post');
+  
+  //ANCHOR Store Admin
+  Route::add('/admin/store', function() {
+    include_once ('../model/class/Admin.php');
+    include_once ('../model/dao/AdminDAO.php');
+    $admin = new AdminDAO;
+    $admin = $admin->store($_POST);
+  }, 'post');
+//
 
 // ANCHOR Run the Router with the given Basepath
 Route::run(BASEPATH);

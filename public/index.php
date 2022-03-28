@@ -2,10 +2,7 @@
 
 // ANCHOR Use this namespace
 
-use JetBrains\PhpStorm\Internal\ReturnTypeContract;
-use JetBrains\PhpStorm\NoReturn;
 use photographics\Route;
-use photographics\env;
 
 // ANCHOR Include class
 include '../model/class/Route.php';
@@ -18,7 +15,7 @@ define('BASEPATH','/');
 // See examples below
 $slugs = ['article-1' => 'Article 1', 'article-2' => 'Article 2', 'article-3' => 'Article 3'];
 
-// ANCHOR This function just renders a simple headgation
+// ANCHOR This function just renders a simple header
 function head() {
   global $slugs;
   include_once ('include/header.php');
@@ -146,6 +143,8 @@ function head() {
     
     $admin = new AdminDAO;
     $admin = $admin->fetchAll();
+
+    var_dump($admin);
   });
   
   // ANCHOR Specific Admin
@@ -156,6 +155,8 @@ function head() {
     
     $admin = new AdminDAO;
     $admin = $admin->fetch($id);
+    
+    var_dump($admin);
   });
 
   //ANCHOR Delete Admin
@@ -164,6 +165,8 @@ function head() {
     include_once ('../model/dao/AdminDAO.php');
     $admin = new AdminDAO;
     $admin = $admin->delete($id);
+
+    var_dump($admin);
   });
   
   //ANCHOR Edit Admin
@@ -174,6 +177,8 @@ function head() {
 
     $admin = new AdminDAO;
     $admin = $admin->update($id, $_POST);
+
+    var_dump($admin);
   }, 'post');
   
   //ANCHOR Store Admin
@@ -182,6 +187,8 @@ function head() {
     include_once ('../model/dao/AdminDAO.php');
     $admin = new AdminDAO;
     $admin = $admin->store($_POST);
+
+    var_dump($admin);
   }, 'post');
 //
 

@@ -1,7 +1,5 @@
 <?php
-
 namespace photographics;
-
 class env
 {
     private $env = [

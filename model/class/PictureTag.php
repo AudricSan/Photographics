@@ -1,5 +1,5 @@
 <?php
-
+namespace photographics;
 class PictureTag
 {
     private int $_id;

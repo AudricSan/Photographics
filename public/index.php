@@ -285,6 +285,56 @@ function head() {
   }, 'post');
 //
 
+// ANCHOR Role
+  // ANCHOR 
+  Route::add('/role', function() {
+    head();
+    include_once ('../model/class/Role.php');
+    include_once ('../model/dao/roleDAO.php');
+    $role = new RoleDAO;
+    $role = $role->fetchAll();
+
+    var_dump($role);
+  });
+  
+  // ANCHOR Specific Admin
+  Route::add('/role/([0-9]*)', function($id) {
+    head();
+    include_once ('../model/class/Role.php');
+    include_once ('../model/dao/roleDAO.php');
+    $role = new RoleDAO;
+    $role = $role->fetch($id);
+
+    var_dump($role);
+  });
+  
+  //ANCHOR Delete Admin
+  Route::add('/role/([0-9]*)/delete', function($id) {
+    include_once ('../model/class/Role.php');
+    include_once ('../model/dao/roleDAO.php');
+    $role = new RoleDAO;
+    $role = $role->delete($id);
+  });
+  
+  //ANCHOR Edit Admin
+  Route::add('/role/([0-9]*)/edit', function($id) {
+    head();
+    include_once ('../model/class/Role.php');
+    include_once ('../model/dao/roleDAO.php');
+  
+    $role = new RoleDAO;
+    $role = $role->update($id, $_POST);
+  }, 'post');
+  
+  //ANCHOR Store Admin
+  Route::add('/role/store', function() {
+    include_once ('../model/class/Role.php');
+    include_once ('../model/dao/roleDAO.php');
+    $role = new RoleDAO;
+    $role = $role->store($_POST);
+  }, 'post');
+//
+
 // ANCHOR Run the Router with the given Basepath
 Route::run(BASEPATH);
 

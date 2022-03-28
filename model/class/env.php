@@ -16,13 +16,6 @@ class env
         'DB_NAME' => 'entremonde',
         'DB_PORT' => 3306,
 
-        //SOCIAL
-        'SOCIAL' => [
-            'SOCIAL' => True,
-            'Facebook' => 'https://www.facebook.com/ASBLEntremonde/',
-            'Instagram' => 'https://www.facebook.com/ASBLEntremonde/photos/?ref=page_internal'
-        ]
-
     ];
 
     public function env($key, $default = null)

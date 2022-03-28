@@ -1,0 +1,1 @@
+ALTER TABLE `admin` ADD `admin_login` VARCHAR(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `admin_role`;

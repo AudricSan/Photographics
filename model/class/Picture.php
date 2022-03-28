@@ -1,6 +1,6 @@
 <?php
 
-class Admin
+class Picture
 {
     private int $_id;
     private string $_name;

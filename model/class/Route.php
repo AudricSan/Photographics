@@ -1,7 +1,5 @@
 <?php
-
 namespace photographics;
-
 class Route {
 
   private static $routes = Array();

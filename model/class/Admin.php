@@ -1,6 +1,5 @@
 <?php
 namespace photographics;
-
 class Admin
 {
     private int $_id;

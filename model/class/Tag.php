@@ -1,5 +1,5 @@
 <?php
-
+namespace photographics;
 class Tag
 {
     private int $_id;

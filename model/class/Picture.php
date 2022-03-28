@@ -1,5 +1,5 @@
 <?php
-
+namespace photographics;
 class Picture
 {
     private int $_id;

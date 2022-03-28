@@ -1,5 +1,5 @@
 <?php
-
+namespace photographics;
 class Role
 {
     private int $_id;

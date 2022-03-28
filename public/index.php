@@ -25,116 +25,117 @@ function head() {
 }
 
 // ANCHOR Add base route (startpage)
-Route::add('/', function() {
-  head();
-  echo 'Welcome :-)';
-});
-
-// ANCHOR This example shows how to include files and how to push data to them
-Route::add('/blog/([a-z-0-9-]*)', function($slug) {
-  head();
-  include_once('include-example.php');
-});
-
-// ANCHOR Get route example
-Route::add('/contact-form', function() {
-  head();
-  echo '<form method="post"><input type="text" name="test"><input type="submit" value="send"></form>';
-}, 'get');
-
-// ANCHOR Post route example
-Route::add('/contact-form', function() {
-  head();
-  echo 'Hey! The form has been sent:<br>';
-  print_r($_POST);
-}, 'post');
-
-// ANCHOR Get and Post route example
-Route::add('/get-post-sample', function() {
-  head();
-	echo 'You can GET this page and also POST this form back to it';
-	echo '<form method="post"><input type="text" name="input"><input type="submit" value="send"></form>';
-	if (isset($_POST['input'])) {
-		echo 'I also received a POST with this data:<br>';
-		print_r($_POST);
-	}
-}, ['get','post']);
-
-// ANCHOR Route with regexp parameter
-// Be aware that (.*) will match / (slash) too. For example: /user/foo/bar/edit
-// Also users could inject SQL statements or other untrusted data if you use (.*)
-// You should better use a saver expression like /user/([0-9]*)/edit or /user/([A-Za-z]*)/edit
-Route::add('/user/(.*)/edit', function($id) {
-  head();
-  echo 'Edit user with id '.$id.'<br>';
-});
-
-// ANCHOR Accept only numbers as parameter. Other characters will result in a 404 error
-Route::add('/foo/([0-9]*)/bar', function($var1) {
-  head();
-  echo $var1.' is a great number!';
-});
-
-// ANCHOR Auto generate dynamic routes from a database or from another source
-// For this example we will just use a predefined array
-foreach($slugs as $slug => $entry) {
-  Route::add('/my-blog-articles/'.$slug, function() use($entry) {
+  Route::add('/', function() {
     head();
-      echo 'You are here: '.$entry;
+    echo 'Welcome :-)';
   });
-}
 
-// ANCHOR Use variables from global scope
-// You can use for example use() to inject variables to local scope
-// You can use global to register the variable in local scope
-$foo = 'foo';
-$bar = 'bar';
-Route::add('/global/([a-z-0-9-]*)', function($param) use($foo) {
-  global $bar;
-  head();
-  echo 'The param is '.$param.'<br/>';
-  echo 'Foo is '.$foo.'<br/>';
-  echo 'Bar is '.$bar.'<br/>';
-});
+  // ANCHOR This example shows how to include files and how to push data to them
+  Route::add('/blog/([a-z-0-9-]*)', function($slug) {
+    head();
+    include_once('include-example.php');
+  });
 
-// ANCHOR 405 test
-Route::add('/this-route-is-defined', function() {
-  head();
-  echo 'You need to patch this route to see this content';
-}, 'patch');
+  // ANCHOR Get route example
+  Route::add('/contact-form', function() {
+    head();
+    echo '<form method="post"><input type="text" name="test"><input type="submit" value="send"></form>';
+  }, 'get');
 
-// ANCHOR Add a 404 not found route
-Route::pathNotFound(function($path) {
-  head();
-  include('error/404.php');
-  echo 'The requested path "'.$path.'" was not found!';
-});
+  // ANCHOR Post route example
+  Route::add('/contact-form', function() {
+    head();
+    echo 'Hey! The form has been sent:<br>';
+    print_r($_POST);
+  }, 'post');
 
-// ANCHOR Add a 405 method not allowed route
-Route::methodNotAllowed(function($path, $method) {
-  head();
-  include ('error/405.php');
-  echo 'The requested path "'.$path.'" exists. But the request method "'.$method.'" is not allowed on this path!';
-});
+  // ANCHOR Get and Post route example
+  Route::add('/get-post-sample', function() {
+    head();
+    echo 'You can GET this page and also POST this form back to it';
+    echo '<form method="post"><input type="text" name="input"><input type="submit" value="send"></form>';
+    if (isset($_POST['input'])) {
+      echo 'I also received a POST with this data:<br>';
+      print_r($_POST);
+    }
+  }, ['get','post']);
 
-// ANCHOR Return all known routes
-Route::add('/routes', function() {
-  $routes = Route::getAll();
-  echo '<ul>';
-  foreach($routes as $route) {
-    echo '<li>'.$route['expression'].' ('.$route['method'].')</li>';
+  // ANCHOR Route with regexp parameter
+  // Be aware that (.*) will match / (slash) too. For example: /user/foo/bar/edit
+  // Also users could inject SQL statements or other untrusted data if you use (.*)
+  // You should better use a saver expression like /user/([0-9]*)/edit or /user/([A-Za-z]*)/edit
+  Route::add('/user/(.*)/edit', function($id) {
+    head();
+    echo 'Edit user with id '.$id.'<br>';
+  });
+
+  // ANCHOR Accept only numbers as parameter. Other characters will result in a 404 error
+  Route::add('/foo/([0-9]*)/bar', function($var1) {
+    head();
+    echo $var1.' is a great number!';
+  });
+
+  // ANCHOR Auto generate dynamic routes from a database or from another source
+  // For this example we will just use a predefined array
+  foreach($slugs as $slug => $entry) {
+    Route::add('/my-blog-articles/'.$slug, function() use($entry) {
+      head();
+        echo 'You are here: '.$entry;
+    });
   }
-  echo '</ul>';
-});
 
-// ANCHOR This route is for debugging only
-// ANCHOR DEBUG
-// It simply prints out some php infos
-// Do not use this route on production systems!
-Route::add('/phpinfo', function() {
-  head();
-  phpinfo();
-});
+  // ANCHOR Use variables from global scope
+  // You can use for example use() to inject variables to local scope
+  // You can use global to register the variable in local scope
+  $foo = 'foo';
+  $bar = 'bar';
+  Route::add('/global/([a-z-0-9-]*)', function($param) use($foo) {
+    global $bar;
+    head();
+    echo 'The param is '.$param.'<br/>';
+    echo 'Foo is '.$foo.'<br/>';
+    echo 'Bar is '.$bar.'<br/>';
+  });
+
+  // ANCHOR 405 test
+  Route::add('/this-route-is-defined', function() {
+    head();
+    echo 'You need to patch this route to see this content';
+  }, 'patch');
+
+  // ANCHOR Add a 404 not found route
+  Route::pathNotFound(function($path) {
+    head();
+    include('error/404.php');
+    echo 'The requested path "'.$path.'" was not found!';
+  });
+
+  // ANCHOR Add a 405 method not allowed route
+  Route::methodNotAllowed(function($path, $method) {
+    head();
+    include ('error/405.php');
+    echo 'The requested path "'.$path.'" exists. But the request method "'.$method.'" is not allowed on this path!';
+  });
+
+  // ANCHOR Return all known routes
+  Route::add('/routes', function() {
+    $routes = Route::getAll();
+    echo '<ul>';
+    foreach($routes as $route) {
+      echo '<li>'.$route['expression'].' ('.$route['method'].')</li>';
+    }
+    echo '</ul>';
+  });
+
+  // ANCHOR This route is for debugging only
+  // ANCHOR DEBUG
+  // It simply prints out some php infos
+  // Do not use this route on production systems!
+  Route::add('/phpinfo', function() {
+    head();
+    phpinfo();
+  });
+//
 
 // ANCHOR admin
   // ANCHOR 
@@ -231,6 +232,56 @@ Route::add('/phpinfo', function() {
     include_once ('../model/dao/BasicInfoDAO.php');
     $basicinfo = new BasicInfoDAO;
     $basicinfo = $basicinfo->store($_POST);
+  }, 'post');
+//
+
+// ANCHOR Picture
+  // ANCHOR 
+  Route::add('/picture', function() {
+    head();
+    include_once ('../model/class/Picture.php');
+    include_once ('../model/dao/PictureDAO.php');
+    $picture = new PictureDAO;
+    $picture = $picture->fetchAll();
+
+    var_dump($picture);
+  });
+  
+  // ANCHOR Specific Admin
+  Route::add('/picture/([0-9]*)', function($id) {
+    head();
+    include_once ('../model/class/Picture.php');
+    include_once ('../model/dao/PictureDAO.php');
+    $picture = new PictureDAO;
+    $picture = $picture->fetch($id);
+
+    var_dump($picture);
+  });
+  
+  //ANCHOR Delete Admin
+  Route::add('/picture/([0-9]*)/delete', function($id) {
+    include_once ('../model/class/Picture.php');
+    include_once ('../model/dao/PictureDAO.php');
+    $picture = new PictureDAO;
+    $picture = $picture->delete($id);
+  });
+  
+  //ANCHOR Edit Admin
+  Route::add('/picture/([0-9]*)/edit', function($id) {
+    head();
+    include_once ('../model/class/Picture.php');
+    include_once ('../model/dao/PictureDAO.php');
+  
+    $picture = new PictureDAO;
+    $picture = $picture->update($id, $_POST);
+  }, 'post');
+  
+  //ANCHOR Store Admin
+  Route::add('/picture/store', function() {
+    include_once ('../model/class/Picture.php');
+    include_once ('../model/dao/PictureDAO.php');
+    $picture = new PictureDAO;
+    $picture = $picture->store($_POST);
   }, 'post');
 //
 

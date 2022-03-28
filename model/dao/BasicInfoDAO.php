@@ -15,7 +15,7 @@ class BasicInfoDAO extends Env
         $this->password = parent::env('DB_PASSWORD', '');         //The password to connect to the DB
         $this->host =     parent::env('DB_HOST', 'localhost');    //The name of the server where my DB is located
         $this->dbname =   parent::env('DB_NAME');                 //The name of the DB you want to attack.
-        $this->table =    "basicinfo";                                    // The table to attack
+        $this->table =    "basicinfo";                            // The table to attack
 
         $this->connection = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password, $this->options);;
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -84,6 +84,9 @@ class BasicInfoDAO extends Env
 
     public function store($data)
     {
+        if (empty($data)) {
+        return false;
+    }
         $basicinfo = $this->create([
             "basicinfo_id" => 0,
             'basicinfo_name'  => $data['name'],
@@ -109,6 +112,10 @@ class BasicInfoDAO extends Env
 
     public function update($id, $data)
     {
+        if (empty($data)) {
+            return false;
+        }
+        
         $basicinfo = $this->create([
             "_id" => $id,
             '_name' => $data['name'],

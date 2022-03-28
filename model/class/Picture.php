@@ -17,8 +17,8 @@ class Picture
         $this->_link = $link;
         
         $this->_id = intval($id);
-        $this->_role = intval($tag);
-        $this->_role = intval($share);
+        $this->_tag = intval($tag);
+        $this->_sharable = intval($share);
     }
 
     //SUPER SETTER

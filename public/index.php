@@ -184,6 +184,56 @@ Route::add('/phpinfo', function() {
   }, 'post');
 //
 
+// ANCHOR Basic Info
+  // ANCHOR 
+  Route::add('/basicinfo', function() {
+    head();
+    include_once ('../model/class/BasicInfo.php');
+    include_once ('../model/dao/BasicInfoDAO.php');
+    $basicinfo = new BasicInfoDAO;
+    $basicinfo = $basicinfo->fetchAll();
+
+    var_dump($basicinfo);
+  });
+  
+  // ANCHOR Specific Admin
+  Route::add('/basicinfo/([0-9]*)', function($id) {
+    head();
+    include_once ('../model/class/BasicInfo.php');
+    include_once ('../model/dao/BasicInfoDAO.php');
+    $basicinfo = new BasicInfoDAO;
+    $basicinfo = $basicinfo->fetch($id);
+
+    var_dump($basicinfo);
+  });
+  
+  //ANCHOR Delete Admin
+  Route::add('/basicinfo/([0-9]*)/delete', function($id) {
+    include_once ('../model/class/BasicInfo.php');
+    include_once ('../model/dao/BasicInfoDAO.php');
+    $basicinfo = new BasicInfoDAO;
+    $basicinfo = $basicinfo->delete($id);
+  });
+  
+  //ANCHOR Edit Admin
+  Route::add('/basicinfo/([0-9]*)/edit', function($id) {
+    head();
+    include_once ('../model/class/BasicInfo.php');
+    include_once ('../model/dao/BasicInfoDAO.php');
+  
+    $basicinfo = new BasicInfoDAO;
+    $basicinfo = $basicinfo->update($id, $_POST);
+  }, 'post');
+  
+  //ANCHOR Store Admin
+  Route::add('/basicinfo/store', function() {
+    include_once ('../model/class/BasicInfo.php');
+    include_once ('../model/dao/BasicInfoDAO.php');
+    $basicinfo = new BasicInfoDAO;
+    $basicinfo = $basicinfo->store($_POST);
+  }, 'post');
+//
+
 // ANCHOR Run the Router with the given Basepath
 Route::run(BASEPATH);
 

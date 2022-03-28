@@ -10,7 +10,7 @@ class BasicInfo
     public function __construct($id, $name, $content)
     {
         $this->_name = $name;
-        $this->content = $content;
+        $this->_content = $content;
         
         $this->_id = intval($id);
     }

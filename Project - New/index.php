@@ -64,7 +64,7 @@ Route::add('/', function() {
 // Another base route example
 Route::add('/index.php', function() {
   navi();
-  echo 'You are not really on index.php ;-)';
+  return 'You are not really on index.php ;-)';
 });
 
 // Simple test route that simulates static html file

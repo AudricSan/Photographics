@@ -6,14 +6,14 @@ class env
 {
     private $env = [
         //APP
-        'APP_NAME' => 'Entremonde',
+        'APP_NAME' => 'photographics',
         'APP_KEY' => '',
 
         //DATABASE
         'DB_HOST' => 'localhost',
         'DB_USERNAME' => 'root',
         'DB_PASSWORD' => 'root',
-        'DB_NAME' => 'entremonde',
+        'DB_NAME' => 'photographics',
         'DB_PORT' => 3306,
 
     ];

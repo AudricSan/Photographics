@@ -147,7 +147,8 @@ class AdminDAO extends Env
                     $admin->_fname,
                     $admin->_mail,
                     $admin->_pass,
-                    $admin->_role
+                    $admin->_role,
+                    $admin->_id
                 ]);
 
                 return $admin;

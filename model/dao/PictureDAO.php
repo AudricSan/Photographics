@@ -27,13 +27,13 @@ class PictureDAO extends Env
             $statement = $this->connection->prepare("SELECT * FROM {$this->table}");
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $admins = array();
+            $picture = array();
 
             foreach ($results as $result) {
-                array_push($admins, $this->create($result));
+                array_push($picture, $this->create($result));
             }
 
-            return $admins;
+            return $picture;
         } catch (PDOException $e) {
             var_dump($e);
         }
@@ -144,7 +144,8 @@ class PictureDAO extends Env
                     $picture->_description,
                     $picture->_link,
                     $picture->_tag,
-                    $picture->_sharable
+                    $picture->_sharable,
+                    $picture->_id
                 ]);
 
                 return $picture;

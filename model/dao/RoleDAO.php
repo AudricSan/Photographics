@@ -1,9 +1,8 @@
 <?php
-
-use photographics\BasicInfo;
+use photographics\Role;
 use photographics\Env;
 
-class BasicInfoDAO extends Env
+class RoleDAO extends Env
 {
     //DON'T TOUCH IT, LITTLE PRICK
     private $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
@@ -15,7 +14,7 @@ class BasicInfoDAO extends Env
         $this->password = parent::env('DB_PASSWORD', '');         //The password to connect to the DB
         $this->host =     parent::env('DB_HOST', 'localhost');    //The name of the server where my DB is located
         $this->dbname =   parent::env('DB_NAME');                 //The name of the DB you want to attack.
-        $this->table =    "basicinfo";                            // The table to attack
+        $this->table =    "role";                                // The table to attack
 
         $this->connection = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password, $this->options);;
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -27,23 +26,23 @@ class BasicInfoDAO extends Env
             $statement = $this->connection->prepare("SELECT * FROM {$this->table}");
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $basicinfo = array();
+            $role = array();
 
             foreach ($results as $result) {
-                array_push($basicinfo, $this->create($result));
+                array_push($role, $this->create($result));
             }
 
-            return $basicinfo;
+            return $role;
         } catch (PDOException $e) {
             var_dump($e);
         }
     }
 
-    public function fetch($bi_name)
+    public function fetch($id)
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE bi_id = ?");
-            $statement->execute([$bi_name]);
+            $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE role_id = ?");
+            $statement->execute([$id]);
             $result = $statement->fetch(PDO::FETCH_ASSOC);
 
             return $this->create($result);
@@ -60,10 +59,9 @@ class BasicInfoDAO extends Env
 
         // NOTE DUMP OF OBJECT CREATE
         // var_dump($result);
-        return new BasicInfo(
-            $result['bi_id'],
-            $result['bi_name'],
-            $result['bi_content'],
+        return new Role(
+            $result['role_id'],
+            $result['role_name']
         );
     }
 
@@ -73,7 +71,7 @@ class BasicInfoDAO extends Env
             return false;
         }
         try {
-            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE bi_id = ?");
+            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE role_id = ?");
             $statement->execute([
                 $id
             ]);
@@ -84,25 +82,25 @@ class BasicInfoDAO extends Env
 
     public function store($data)
     {
+
         if (empty($data)) {
-        return false;
-    }
-        $basicinfo = $this->create([
-            "basicinfo_id" => 0,
-            'basicinfo_name'  => $data['name'],
-            'basicinfo_content' => $data['content']
+            return false;
+        }
+
+        $role = $this->create([
+            "role_id" => 0,
+            'role_name'  => $data['name']
         ]);
 
-        if ($basicinfo) {
+        if ($role) {
             try {
-                $statement = $this->connection->prepare("INSERT INTO {$this->table} (bi_name, bi_content) VALUES (?, ?)");
+                $statement = $this->connection->prepare("INSERT INTO {$this->table} (role_name) VALUES (?)");
                 $statement->execute([
-                    $basicinfo->_name,
-                    $basicinfo->_content
+                    $role->_name
                 ]);
 
-                $basicinfo->id = $this->connection->lastInsertId();
-                return $basicinfo;
+                $role->id = $this->connection->lastInsertId();
+                return $role;
             } catch (PDOException $e) {
                 echo $e;
                 return false;
@@ -115,23 +113,21 @@ class BasicInfoDAO extends Env
         if (empty($data)) {
             return false;
         }
-        
-        $basicinfo = $this->create([
+
+        $role = $this->create([
             "_id" => $id,
-            '_name' => $data['name'],
-            '_content' => $data['content'],
+            '_name' => $data['name']
         ]);
 
-        if ($basicinfo) {
+        if ($role) {
             try {
-                $statement = $this->connection->prepare("UPDATE {$this->table} SET bi_name = ?, bi_content = ? WHERE bi_id = ?");
+                $statement = $this->connection->prepare("UPDATE {$this->table} SET role_name = ? WHERE role_id = ?");
                 $statement->execute([
-                    $basicinfo->_name,
-                    $basicinfo->_content,
-                    $basicinfo->_id
+                    $role->_name,
+                    $role->_id
                 ]);
 
-                return $basicinfo;
+                return $role;
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;

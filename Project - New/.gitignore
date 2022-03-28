@@ -1,8 +1,0 @@
-# OS files
-._*
-
-# Compser files
-/vendor/
-
-# local test environment
-/test/

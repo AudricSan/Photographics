@@ -1,0 +1,20 @@
+{
+    "name": "photographics/simple-php-router",
+    "description": "This is a simple and small PHP router that can handle the whole url routing for your project.",
+    "type": "library",
+    "license": "GNU-AGPL3",
+    "authors": [
+        {
+            "name": "Rosier Audric",
+            "email": "audricrosier@gmail.com",
+            "homepage": "https://webdev.audricrosier.be/"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+      "psr-0": {
+          "photographics": "src/"
+      }
+  }
+}

@@ -121,7 +121,7 @@ class TagDAO extends Env
 
         if ($tag) {
             try {
-                $statement = $this->connection->prepare("UPDATE {$this->table} SET tag_name = ? WHERE Admin_ID = ?");
+                $statement = $this->connection->prepare("UPDATE {$this->table} SET tag_name = ? WHERE tag_id = ?");
                 $statement->execute([
                     $tag->_name,
                     $tag->_id

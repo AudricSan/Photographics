@@ -1,25 +1,11 @@
 <?php
 use photographics\env;
 $env = new env;
-$social = $env->env('SOCIAL');
 
 echo "
 </div>
 </body>
 <footer>";
-
-if ($social['SOCIAL'] === true) {
-    echo "<ul id='reseaux'>";
-    foreach ($social as $key => $value) {
-        if ($key != 'SOCIAL') {
-            echo "
-                <li> <a href='$value'>$key</a></li>
-            ";
-        }
-    }
-
-    echo '</ul>';
-}
 
 echo "
     <p>Mentions légales, ect. | &copy; Audric Rosier</p>

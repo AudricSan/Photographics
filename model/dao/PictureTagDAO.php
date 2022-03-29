@@ -119,7 +119,7 @@ class PictureTagDAO extends Env
 
         $picturetag = $this->create([
             "_id" => $id,
-            '_picture' => $data['pacture'],
+            '_picture' => $data['picture'],
             '_tag' => $data['tag']
         ]);
 

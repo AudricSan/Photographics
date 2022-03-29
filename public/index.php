@@ -22,16 +22,24 @@ function head()
   include_once('include/header.php');
 }
 
+function foot()
+{
+  global $slugs;
+  include_once('include/footer.php');
+}
+
 // SECTION Base Route
   Route::add('/', function () {
     head();
     echo 'Welcome :-)';
+    foot();
   });
 
   // ANCHOR This example shows how to include files and how to push data to them
   Route::add('/blog/([a-z-0-9-]*)', function ($slug) {
     head();
     include_once('include-example.php');
+    foot();
   });
 
   // ANCHOR Get route example
@@ -100,6 +108,7 @@ function head()
     head();
     include('../view/error/404.php');
     echo 'The requested path "' . $path . '" was not found!';
+    foot();
   });
 
   // ANCHOR 405 method not allowed route
@@ -107,16 +116,7 @@ function head()
     head();
     include('../view/error/405.php');
     echo 'The requested path "' . $path . '" exists. But the request method "' . $method . '" is not allowed on this path!';
-  });
-
-  // ANCHOR Return all known routes
-  Route::add('/routes', function () {
-    $routes = Route::getAll();
-    echo '<ul>';
-    foreach ($routes as $route) {
-      echo '<li>' . $route['expression'] . ' (' . $route['method'] . ')</li>';
-    }
-    echo '</ul>';
+    foot();
   });
 
   // SECTION This route is for debugging only
@@ -131,6 +131,16 @@ function head()
       head();
       echo 'You need to patch this route to see this content';
     }, 'patch');
+
+    // ANCHOR Return all known routes
+    Route::add('/routes', function () {
+      $routes = Route::getAll();
+      echo '<ul>';
+      foreach ($routes as $route) {
+        echo '<li>' . $route['expression'] . ' (' . $route['method'] . ')</li>';
+      }
+      echo '</ul>';
+    });
   // !SECTION
 // !SECTION
 
@@ -146,10 +156,11 @@ function head()
       $admin = $admin->fetchAll();
 
       var_dump($admin);
+      foot();
     });
 
     // ANCHOR Specific Admin
-    Route::add('/admin/(.*)', function ($id) {
+    Route::add('/admin/([0-9]*)', function ($id) {
       head();
       include_once('../model/class/Admin.php');
       include_once('../model/dao/AdminDAO.php');
@@ -161,7 +172,7 @@ function head()
     });
 
     //ANCHOR Delete Admin
-    Route::add('/admin/(.*)/delete', function ($id) {
+    Route::add('/admin/([0-9]*)/delete', function ($id) {
       include_once('../model/class/Admin.php');
       include_once('../model/dao/AdminDAO.php');
       $admin = new AdminDAO;
@@ -171,7 +182,7 @@ function head()
     });
 
     //ANCHOR Edit Admin
-    Route::add('/admin/(.*)/edit', function ($id) {
+    Route::add('/admin/([0-9]*)/edit', function ($id) {
       head();
       include_once('../model/class/Admin.php');
       include_once('../model/dao/AdminDAO.php');
@@ -395,7 +406,7 @@ function head()
 
   // SECTION PictureTag
     // ANCHOR 
-    Route::add('/tag', function () {
+    Route::add('/picturetag', function () {
       head();
       include_once('../model/class/PictureTag.php');
       include_once('../model/dao/PictureTagDAO.php');
@@ -405,7 +416,7 @@ function head()
     });
 
     // ANCHOR Specific Admin
-    Route::add('/tag/([0-9]*)', function ($id) {
+    Route::add('/picturetag/([0-9]*)', function ($id) {
       head();
       include_once('../model/class/PictureTag.php');
       include_once('../model/dao/PictureTagDAO.php');
@@ -415,7 +426,7 @@ function head()
     });
 
     //ANCHOR Delete Admin
-    Route::add('/tag/([0-9]*)/delete', function ($id) {
+    Route::add('/picturetag/([0-9]*)/delete', function ($id) {
       include_once('../model/class/PictureTag.php');
       include_once('../model/dao/PictureTagDAO.php');
       $picturetag = new PictureTagDAO;
@@ -423,7 +434,7 @@ function head()
     });
 
     //ANCHOR Edit Admin
-    Route::add('/tag/([0-9]*)/edit', function ($id) {
+    Route::add('/picturetag/([0-9]*)/edit', function ($id) {
       head();
       include_once('../model/class/PictureTag.php');
       include_once('../model/dao/PictureTagDAO.php');
@@ -432,7 +443,7 @@ function head()
     }, 'post');
 
     //ANCHOR Store Admin
-    Route::add('/tag/store', function () {
+    Route::add('/picturetag/store', function () {
       include_once('../model/class/PictureTag.php');
       include_once('../model/dao/PictureTagDAO.php');
       $picturetag = new PictureTagDAO;

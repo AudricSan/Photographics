@@ -72,20 +72,14 @@ echo "
     <header>
     <nav>
         <figure id='logo'>
-            <a href='#'><img src='img/logo.png' alt='Logo' title='Entremonde ASBL Logo'></a>
+            <a href='/'><img src='img/logo.png' alt='Logo' title='Photographics Logo'></a>
         </figure>
 
         <ul>
-            <li class='nava'> <a href='#'>link1 </a> </li>
-            <li class='nava'> <a href='#'>link2 </a> </li>
-            <li class='nava'> <a href='#'>link3 </a> </li>
-            <li class='nava'> <a href='#'>link4 </a> </li>
+            <li class='nava'> <a href='/'>Gallery</a> </li>
+            <li class='nava'> <a href='/about'>About</a> </li>
+            <li class='nava'> <a href='/contact'>Contact</a> </li>
         </ul>
     </nav>
     </header>
-
-    <div class='title'>
-        <h2>$title</h2>
-        <h3>$subtitle</h3>
-    </div>
 ";

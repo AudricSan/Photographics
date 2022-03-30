@@ -25,11 +25,12 @@ if (!isset($_COOKIE['rootimg'])) {
 //TITLE//
 if (!isset($title)) {
     $title = 'Photographics';
+    $subtitle = 'Photographics';
 }
 
 //ANCHOR Meta html
 echo "
-    <!DOCTYPE HTML>
+<!DOCTYPE HTML>
     <html lang='en/us'>
 
     <head>
@@ -43,71 +44,47 @@ echo "
         <meta name='description' content='$description'>
         <meta name='auteur' content='$autor'>
 
-        <!-- <link rel='stylesheet' type='text/css' href='css/reset.css' /> -->
-        <link rel='stylesheet' type='text/css' href='$globals_css' media='screen' />
-        <link rel='stylesheet' type='text/css' href='$style_css' media='screen' />
-        <link rel='stylesheet' type='text/css' href='$anim_css' media='screen' />
+        <link rel='apple-touch-icon' sizes='180x180' href='img/ico/apple-touch-icon.png'>
+        <link rel='icon' type='image/png' sizes='32x32' href='img/ico/favicon-32x32.png'>
+        <link rel='icon' type='image/png' sizes='16x16' href='img/ico/favicon-16x16.png'>
+        <link rel='manifest' href='img/ico/site.webmanifest'>
+        <link rel='mask-icon' href='img/ico/safari-pinned-tab.svg' color='#5bbad5'>
+        <meta name='apple-mobile-web-app-title' content='Photographics'>
+        <meta name='application-name' content='Photographics'>
+        <meta name='msapplication-TileColor' content='#ffffff'>
+        <meta name='theme-color' content='#ffffff'>
+
+        <link rel='stylesheet' type='text/css' href='css/reset.css' />
+        <link rel='stylesheet' type='text/css' href='css/footer.css' />
+        <link rel='stylesheet' type='text/css' href='css/header.css' />
+        <link rel='stylesheet' type='text/css' href='css/index.css' />
 
         <!--icones importées-->
-        <script src='https://kit.fontawesome.com/3d76d9e733.js' crossorigin='anonymous'></script>
-        <!--<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>-->
+        <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
     </head>
 ";
 
 //ANCHOR Nav html
 $nav = str_contains($title, "admin");
 
-if ($nav === false) {
-    echo "
-        <!-- ANCHOR NOT LOGGED NAV --> 
-        <body>
-        <div class='open'></div>
-        <header id='header'>
-            <nav>
-                <figure id='logo'><a href='/'><img src='$imglink/logo.png' alt='Logo' title='Entremonde ASBL Logo''></a></figure>
-                <ul class='navigation'>
-                    <li><a href='/view/about'>About Us</a></li>
-                    <li><a href='/view/activities'>Activities</a></li>
-                    <li><a href='/view/contact'>Contact</a></li>
-                    <li><a href='/view/gallery'>Gallery</a></li>";
+echo "
+    <header>
+    <nav>
+        <figure id='logo'>
+            <a href='#'><img src='img/logo.png' alt='Logo' title='Entremonde ASBL Logo'></a>
+        </figure>
 
-                    foreach($slugs as $slug => $entry) {
-                        echo '<li><a href="'.BASEPATH.'my-blog-articles/'.$slug.'">'.$entry.' (auto generated)</a></li>';
-                    }
-                
-    echo        "</ul>
+        <ul>
+            <li class='nava'> <a href='#'>link1 </a> </li>
+            <li class='nava'> <a href='#'>link2 </a> </li>
+            <li class='nava'> <a href='#'>link3 </a> </li>
+            <li class='nava'> <a href='#'>link4 </a> </li>
+        </ul>
+    </nav>
+    </header>
 
-                <ul class='navigation'>
-                    <li><a href='/user/login'> Connection </a></li>
-                    <li><a href='/view/insciption'> Inscription </a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class='container'>
-    ";
-} else {
-    echo "
-        <!-- ANCHOR ADMIN LOGGED NAV --> 
-        <body>
-        <div class='open'></div>
-        <header id='header'>
-            <nav>
-            <figure id='logo'><a href='/admin'><img src='$imglink/logo.png' alt='Logo' title='Entremonde ASBL Logo''></a></figure>
-                <ul class='navigation'>
-                    <li><a href='#'> Admin NAV </a></li>
-                    <li><a href='#'> Admin NAV </a></li>
-                    <li><a href='#'> Admin NAV </a></li>
-                    <li><a href='#'> Admin NAV </a></li>
-                    <li><a href='#'> Admin NAV </a></li>
-                    <li><a href='#'> Admin NAV </a></li>
-                </ul>
-
-                <ul class='navigation'>
-                    <li><a href='/admin/disc'> Disconnect </a></li>
-                    <li><a href='/admin/new'> Add new Admin </a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class='container'>
-    ";
-}
+    <div class='title'>
+        <h2>$title</h2>
+        <h3>$subtitle</h3>
+    </div>
+";

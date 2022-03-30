@@ -1,0 +1,19 @@
+.gallery {
+    line-height: 0;
+    column-count: 5;
+    column-gap: 5px;
+
+    img {
+        width: 100% ;
+        height: auto ;
+        margin-bottom: 5px; /* to match column gap */
+
+        &::after{
+            content: url('img.png');
+        }
+
+    }
+}
+body {
+    background-color: antiquewhite;
+}

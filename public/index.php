@@ -28,7 +28,8 @@ function foot()
   include_once('include/footer.php');
 }
 
-function gallery($how){
+function gallery($how)
+{
   include_once('../view/gallery.php');
 }
 
@@ -38,6 +39,14 @@ Route::add('/', function () {
   gallery('all');
   foot();
 });
+
+Route::add('/about', function () {
+  head();
+  include_once('../view/about.php');
+  foot();
+});
+
+
 
 // ANCHOR This example shows how to include files and how to push data to them
 Route::add('/blog/([a-z-0-9-]*)', function ($slug) {
@@ -147,6 +156,8 @@ Route::add('/routes', function () {
 });
 // !SECTION
 // !SECTION
+
+//SECTION 
 
 // SECTION Dao Route
 // SECTION admin

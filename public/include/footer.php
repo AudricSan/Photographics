@@ -3,15 +3,51 @@ use photographics\env;
 $env = new env;
 
 echo "
-</div>
-</body>
-<footer>";
+    <footer>
+        <img class='divider' src='img/divider.png'>
 
-echo "
-    <p>Mentions légales, ect. | &copy; Audric Rosier</p>
-    <p>IFOSUP - Le 16 Juin 2021</p>
+        <div class='footer'>
+            <div class='footerleft'>
+                <figure> <img src='img/logo.png' alt='Logo'> </figure>
+                <h3> Photographer Name </h3>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. rovident fugit iure vel reprehenderit
+                    laboriosam amet nihil non olestiae bcaecati ut. Similique istinctio, quibusdam nisi qui quaerat
+                    oluptas! Pariatur, temporibus vel. </p>
+            </div>
 
-    <a href=#header class='fas fa-arrow-up arrowUp'></a>
+            <img class='divider' src='img/divider2.png'>
+
+            <div class='footerright'>
+                <div class='row'>
+                    <div>
+                        <p> Photography </p>
+                        <ul>
+                            <li>Gallery</li>
+                            <li>Gallery</li>
+                            <li>Gallery</li>
+                            <li>Gallery</li>
+                            <li>Gallery</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p> Photographer Name </p>
+                        <ul>
+                            <li>About</li>
+                            <li>Contact</li>
+                            <li>Social</li>
+                            <li>Social</li>
+                            <li>Social</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class='copy'>
+                    <p> &copy;Photographics Project - 2021 </p>
+                    <a href='#'>Privacy-Terms</a>
+                </div>
+            </div>
+        </div>
     </footer>
-    </html>
-    ";
+    <script src='js/nav.js'></script>
+";

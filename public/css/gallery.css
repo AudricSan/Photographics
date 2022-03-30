@@ -1,0 +1,84 @@
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: -140px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.gallery .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1em;
+}
+
+.gallery .media div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.gallery .media div i {
+  font-size: 23px;
+}
+
+.gallery .media div a:first-of-type {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+}
+
+.gallery .media div a:last-of-type {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+.gallery .media a {
+  display: block;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.gallery .media a img {
+  display: block;
+  border: 5px solid #ddd;
+  border-radius: 25px;
+  padding: 5px;
+  max-height: 150px;
+  max-width: 300px;
+  height: auto;
+}
+
+.gallery .media a img:hover {
+  -webkit-box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+          box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+}
+/*# sourceMappingURL=gallery.css.map */

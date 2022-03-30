@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+
+a:visited, a :hover {
+  color: #333;
+}
+
+ul, li {
+  list-style: none;
+}
+/*# sourceMappingURL=reset.css.map */

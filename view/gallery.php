@@ -1,3 +1,4 @@
+<section>
 <?php
 $a = 50;
 
@@ -39,3 +40,5 @@ for ($i=0; $i < $a; $i++) {
 }
 
 echo "</div>";
+?>
+</section>

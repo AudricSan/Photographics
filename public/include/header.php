@@ -3,15 +3,6 @@ session_start();
 use photographics\env;
 $env = new env;
 
-// var_dump($_SERVER);
-$root = 'http://' . $_SERVER['HTTP_HOST'] . '/';
-$_SESSION['root'] = $root;
-
-//CSS link//
-$anim_css = $root   . 'public/css/anim.css';
-$style_css = $root   . 'public/css/index.css';
-$globals_css = $root   . 'public/css/globals.css';
-
 //Meta Var//
 $autor = 'Audric Rosier';
 $description = 'Un site pour tous les photographe';

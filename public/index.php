@@ -46,6 +46,12 @@ Route::add('/about', function () {
   foot();
 });
 
+Route::add('/contact', function () {
+  head();
+  include_once('../view/contact.php');
+  foot();
+});
+
 
 
 // ANCHOR This example shows how to include files and how to push data to them

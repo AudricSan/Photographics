@@ -1,4 +1,7 @@
 .title {
+
+    position: relative;
+
     width: 280px;
     height: 100px;
 
@@ -13,6 +16,8 @@
     // position: absolute;
     margin-left: 2em;
     margin-top: 3em;
+
+    z-index: 9;
 
     h2, h3{
         margin: 0;

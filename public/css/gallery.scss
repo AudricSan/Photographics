@@ -1,0 +1,67 @@
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+
+    position: relative;
+    top: -140px;
+    bottom: 0;
+
+    z-index: 1;
+    
+    .media {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+
+        div {
+            display: flex;
+            flex-direction: row;
+
+            position: relative;
+
+            i {
+                font-size: 23px;
+            }
+
+            a{
+                &:first-of-type{
+                    position: absolute;
+                    left: 1em;
+                    bottom: 1em;
+                }
+                &:last-of-type{
+                    position: absolute;
+                    right: 1em;
+                    bottom: 1em;
+    
+                }
+            }
+        }
+
+        a {
+            display: block;
+            max-width: fit-content;
+
+            img {
+                display: block;
+
+                border: 5px solid #ddd;
+                border-radius: 25px;
+                padding: 5px;
+                
+                max-height: 150px;
+                max-width: 300px;
+
+                height: auto;
+
+                &:hover {
+                    box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+                }
+            }
+        }
+    }
+}

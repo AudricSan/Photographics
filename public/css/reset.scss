@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+
+    &:visited, :hover{
+        color: #333;
+    }
+}
+
+ul, li{
+    list-style: none;
+}

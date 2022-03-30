@@ -1,0 +1,107 @@
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2em;
+}
+
+footer .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .footer .footerright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+}
+
+footer .footer .footerright .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer .footer .footerright .row div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footer .footerright .row div:last-child {
+  margin-left: 2em;
+}
+
+footer .footer .footerright .row div ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .footerright .copy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 40%;
+}
+
+footer .footer .footerright .copy p {
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .footerright .copy a {
+  margin-left: 1em;
+}
+
+footer .footer .footerleft {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+footer .footer .footerleft figure {
+  margin: 0;
+  padding: 0;
+}
+
+footer img.divider {
+  margin-bottom: 2em;
+}
+
+footer img.divider:last-child {
+  margin-bottom: 0em;
+}
+/*# sourceMappingURL=footer.css.map */

@@ -10,6 +10,14 @@ $img = [
   '6.jpg'
 ];
 
+$title = 'Title Pages';
+$subtitle = 'Sub Title Pages';
+
+echo "  <div class='title'>
+          <h2>$title</h2>
+          <h3>$subtitle</h3>
+          </div>
+";
 
 echo "<div class='gallery'>";
 

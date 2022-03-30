@@ -1,0 +1,67 @@
+section {
+    .contact {
+        position: relative;
+
+        width: 350px;
+        // height: 100px;
+
+        background: #ffffff;
+
+        border: 2px solid #c6c4f5;
+        box-sizing: border-box;
+        border-radius: 20px;
+
+        padding: 1.5em;
+
+        margin-right: 3em;
+
+        z-index: 9;
+
+        h2 {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 23px;
+            letter-spacing: -0.02em;
+
+            padding-bottom: 0.3em;
+        }
+
+        a {
+            &:not(:first-of-type) {
+                margin-left: 1em;
+            }
+        }
+    }
+
+    &.contact {
+        display: flex;
+        flex-direction: row-reverse;
+
+        padding: 5em;
+        margin-top: 6.5em;
+
+        background-image: url(../img/img/3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            &:not(:first-of-type) {
+                margin-top: 1em;
+            }
+        }
+
+        input {
+            &:last-of-type {
+                margin-top: 1.5em;
+
+                min-height: 30px;
+                color: var(--primary);
+            }
+        }
+    }
+}

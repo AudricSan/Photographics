@@ -1,0 +1,33 @@
+.title {
+  width: 280px;
+  height: 100px;
+  background: #ffffff;
+  border: 2px solid #c6c4f5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  padding: 1.5em;
+  margin-left: 2em;
+  margin-top: 3em;
+}
+
+.title h2, .title h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.title h2 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.3em;
+}
+
+.title h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+}
+/*# sourceMappingURL=index.css.map */

@@ -7,19 +7,14 @@ $img = [
   '3.jpg',
   '4.jpg',
   '5.jpg',
-  '6.jpg',
-  '7.jpg',
-  '8.jpg',
-  '9.jpg',
-  '10.jpg',
-  '11.jpg',
+  '6.jpg'
 ];
 
 
 echo "<div class='gallery'>";
 
 for ($i=0; $i < $a; $i++) { 
-  $z = random_int(1,10);
+  $z = random_int(1,5);
   $p = $img[$z];
 
   echo "<div class='media'>

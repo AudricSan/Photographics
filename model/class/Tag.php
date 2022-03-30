@@ -4,11 +4,13 @@ class Tag
 {
     private int $_id;
     private string $_name;
+    private string $_description;
 
     //Constructeur
-    public function __construct($id, $name)
+    public function __construct($id, $name, $desc)
     {
         $this->_name = $name;
+        $this->_description = $desc;
         $this->_id = intval($id);
     }
 

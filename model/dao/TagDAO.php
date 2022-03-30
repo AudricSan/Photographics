@@ -61,7 +61,8 @@ class TagDAO extends Env
         // var_dump($result);
         return new Tag(
             $result['tag_id'],
-            $result['tag_name']
+            $result['tag_name'],
+            $result['tag_description'],
         );
     }
 
@@ -89,14 +90,16 @@ class TagDAO extends Env
 
         $tag = $this->create([
             "tag_id" => 0,
-            'tag_name'  => $data['name']
+            'tag_name'  => $data['name'],
+            'tag_description'  => $data['desc'],
         ]);
 
         if ($tag) {
             try {
-                $statement = $this->connection->prepare("INSERT INTO {$this->table} (tag_name) VALUES (?)");
+                $statement = $this->connection->prepare("INSERT INTO {$this->table} (tag_name, tag_description) VALUES (?, ?)");
                 $statement->execute([
-                    $tag->_name
+                    $tag->_name,
+                    $tag->_description
                 ]);
 
                 $tag->id = $this->connection->lastInsertId();
@@ -116,14 +119,16 @@ class TagDAO extends Env
 
         $tag = $this->create([
             "_id" => $id,
-            '_name' => $data['name']
+            '_name' => $data['name'],
+            '_description' => $data['desc'],
         ]);
 
         if ($tag) {
             try {
-                $statement = $this->connection->prepare("UPDATE {$this->table} SET tag_name = ? WHERE tag_id = ?");
+                $statement = $this->connection->prepare("UPDATE {$this->table} SET tag_name = ?, tag_description = ? WHERE tag_id = ?");
                 $statement->execute([
                     $tag->_name,
+                    $tag->_description,
                     $tag->_id
                 ]);
 

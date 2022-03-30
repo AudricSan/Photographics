@@ -59,6 +59,7 @@ echo "
         <link rel='stylesheet' type='text/css' href='css/header.css' />
         <link rel='stylesheet' type='text/css' href='css/index.css' />
         <link rel='stylesheet' type='text/css' href='css/gallery.css' />
+        <link rel='stylesheet' type='text/css' href='css/about.css' />
 
         <!--icones importées-->
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>

@@ -211,4 +211,8 @@ label {
   color: var(--white);
   background-color: var(--disetxt);
 }
+
+i {
+  margin-top: 1em;
+}
 /*# sourceMappingURL=reset.css.map */

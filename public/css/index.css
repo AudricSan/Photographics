@@ -2,7 +2,105 @@ section {
   margin-top: 9em;
 }
 
-.title {
+section .about {
+  position: relative;
+  width: 350px;
+  background: #ffffff;
+  border: 2px solid #c6c4f5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  padding: 1.5em;
+  margin-left: 3em;
+  z-index: 9;
+}
+
+section .about h2 {
+  margin: 0;
+  padding: 0;
+}
+
+section .about h2 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.3em;
+}
+
+section .about a:not(:first-of-type) {
+  margin-left: 1em;
+}
+
+section.about {
+  padding: 5em;
+  margin-top: 6.5em;
+  background-image: url(../img/img/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section .contact {
+  position: relative;
+  width: 350px;
+  background: #ffffff;
+  border: 2px solid #c6c4f5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  padding: 1.5em;
+  margin-right: 3em;
+  z-index: 9;
+}
+
+section .contact h2 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  padding-bottom: 0.3em;
+}
+
+section .contact a:not(:first-of-type) {
+  margin-left: 1em;
+}
+
+section.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  padding: 5em;
+  margin-top: 6.5em;
+  background-image: url(../img/img/3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section form label:not(:first-of-type) {
+  margin-top: 1em;
+}
+
+section form input:last-of-type {
+  margin-top: 1.5em;
+  min-height: 30px;
+  color: var(--primary);
+}
+
+section .title {
   position: relative;
   width: 280px;
   height: 100px;
@@ -16,12 +114,12 @@ section {
   z-index: 9;
 }
 
-.title h2, .title h3 {
+section .title h2, section .title h3 {
   margin: 0;
   padding: 0;
 }
 
-.title h2 {
+section .title h2 {
   font-weight: 600;
   font-size: 22px;
   line-height: 23px;
@@ -29,10 +127,95 @@ section {
   padding-bottom: 0.3em;
 }
 
-.title h3 {
+section .title h3 {
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.02em;
+}
+
+section .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  top: -140px;
+  bottom: 0;
+  z-index: 1;
+  margin-bottom: -140px;
+}
+
+section .gallery .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1em;
+}
+
+section .gallery .media div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+section .gallery .media div i {
+  font-size: 23px;
+}
+
+section .gallery .media div a:first-of-type {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+}
+
+section .gallery .media div a:last-of-type {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+section .gallery .media a {
+  display: block;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+section .gallery .media a img {
+  display: block;
+  border: 5px solid #ddd;
+  border-radius: 25px;
+  padding: 5px;
+  max-height: 150px;
+  max-width: 300px;
+  height: auto;
+}
+
+section .gallery .media a img:hover {
+  -webkit-box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+          box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
 }
 /*# sourceMappingURL=index.css.map */

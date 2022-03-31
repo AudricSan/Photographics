@@ -1,7 +1,12 @@
 body{
     --error : #e74c3c;
+    --error-hover  : #ff6d42;
+
     --warning : #f39c12;
+    --warning-hover : #ffc312;
+
     --success : #27ae60;
+    --success-hover : #38fa8a;
 
     --primary1 : #6e68fe;
     --primary2 : #9692fe;
@@ -12,8 +17,9 @@ body{
     --secondary3 : #2983de;
 
     --black : #1c1c1c;
-    --white : #fff; 
+    --white : #fff;
 
     --body : #525257;
     --disable : #c0c1c2;
+    --disetxt : #acacac;
 }

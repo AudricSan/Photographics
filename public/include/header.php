@@ -27,6 +27,8 @@ $index  = $root . 'public/css/index.css';
 $admin  = $root . 'public/css/admin.css';
 
 $imglink = $_SESSION['root'] . 'public/img';
+$_SESSION['imgroot'] = $imglink;
+
 if (!isset($_COOKIE['rootimg'])) {
     setcookie("rootimg", $imglink);
 }

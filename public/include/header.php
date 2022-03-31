@@ -8,6 +8,24 @@ $autor = 'Audric Rosier';
 $description = 'Un site pour tous les photographe';
 $keyword = 'SEO, keyword';
 
+
+// var_dump($_SERVER);
+$root = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+$_SESSION['root'] = $root;
+
+// var_dump($root);
+//CSS link//
+$anim_css = $root   . 'public/css/anim.css';
+$style_css = $root   . 'public/css/index.css';
+$globals_css = $root   . 'public/css/globals.css';
+
+$colors = $root . 'public/css/colors.css';
+$reset  = $root . 'public/css/reset.css';
+$header = $root . 'public/css/header.css';
+$footer = $root . 'public/css/footer.css';
+$index  = $root . 'public/css/index.css';
+$admin  = $root . 'public/css/admin.css';
+
 $imglink = $_SESSION['root'] . 'public/img';
 if (!isset($_COOKIE['rootimg'])) {
     setcookie("rootimg", $imglink);
@@ -45,14 +63,14 @@ echo "
         <meta name='msapplication-TileColor' content='#ffffff'>
         <meta name='theme-color' content='#ffffff'>
 
-        <link rel='stylesheet' type='text/css' href='css/colors.css' />
-        <link rel='stylesheet' type='text/css' href='css/reset.css' />
+        <link rel='stylesheet' type='text/css' href='$colors' />
+        <link rel='stylesheet' type='text/css' href='$reset' />
 
-        <link rel='stylesheet' type='text/css' href='css/header.css' />        
-        <link rel='stylesheet' type='text/css' href='css/footer.css' />        
-        <link rel='stylesheet' type='text/css' href='css/index.css' />
+        <link rel='stylesheet' type='text/css' href='$header' />        
+        <link rel='stylesheet' type='text/css' href='$footer' />        
+        <link rel='stylesheet' type='text/css' href='$index' />
 
-        <link rel='stylesheet' type='text/css' href='css/admin.css' />
+        <link rel='stylesheet' type='text/css' href='$admin' />
 
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
@@ -69,7 +87,7 @@ echo "
     <header>
     <nav>
         <figure id='logo'>
-            <a href='/'><img src='img/logo.png' alt='Logo' title='Photographics Logo'></a>
+            <a href='/'><img src='$imglink/logo.png' alt='Logo' title='Photographics Logo'></a>
         </figure>
 
         <ul>

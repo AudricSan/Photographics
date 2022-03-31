@@ -54,9 +54,9 @@ echo "
 
         <link rel='stylesheet' type='text/css' href='css/admin.css' />
 
-
         <!--icones importées-->
-        <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
+
     </head>
 ";
 

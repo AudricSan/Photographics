@@ -31,6 +31,11 @@ function gallery($how)
   include_once('../view/gallery.php');
 }
 
+function adnav()
+{
+  include_once('include/adnav.php');
+}
+
 // SECTION Base Route
 Route::add('/', function () {
   head();
@@ -50,17 +55,41 @@ Route::add('/contact', function () {
   foot();
 });
 
-Route::add('/config', function () {
+Route::add('/admin', function () {
   head();
+  adnav();
   include_once('../view/admin/index.php');
 });
 
-Route::add('/conf', function () {
+Route::add('/admin/picture', function () {
   head();
-  include_once('../view/admin/index.php');
+  adnav();
+  include_once('../view/admin/gallery.php');
 });
 
+// Route::add('/adminv/tags', function () {
+//   head();
+//   adnav();
+//   include_once('../view/admin/tags.php');
+// });
 
+// Route::add('/adminv/poeple', function () {
+//   head();
+//   adnav();
+//   include_once('../view/admin/poeple.php');
+// });
+
+// Route::add('/adminv/api', function () {
+//   head();
+//   adnav();
+//   include_once('../view/admin/api.php');
+// });
+
+// Route::add('/adminv/doc', function () {
+//   head();
+//   adnav();
+//   include_once('../view/admin/doc.php');
+// });
 
 // ANCHOR This example shows how to include files and how to push data to them
 Route::add('/blog/([a-z-0-9-]*)', function ($slug) {

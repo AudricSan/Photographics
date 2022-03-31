@@ -1,7 +1,5 @@
 <section class='contact'>
 <?php
-
-
   echo "
         <div class='contact'>
             <h2>Title</h2>
@@ -20,7 +18,7 @@
                 <label for='message'>Votre message:</label>
                 <textarea id='message' name='message' rows='2' cols='5'></textarea>
 
-                <input type='submit' value='Submit'>
+                <input class='btn validate' type='submit' value='Submit'>
             </form>
 
         </div>

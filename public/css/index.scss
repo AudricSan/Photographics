@@ -7,9 +7,9 @@ section{
         width: 350px;
         // height: 100px;
 
-        background: #ffffff;
+        background: var(--white);;
 
-        border: 2px solid #c6c4f5;
+        border: 2px solid var(--primary1);;
         box-sizing: border-box;
         border-radius: 20px;
 
@@ -55,9 +55,9 @@ section{
         width: 350px;
         // height: 100px;
 
-        background: #ffffff;
+        background: var(--white);;
 
-        border: 2px solid #c6c4f5;
+        border: 2px solid var(--primary1);;
         box-sizing: border-box;
         border-radius: 20px;
 
@@ -121,9 +121,9 @@ section{
         width: 280px;
         height: 100px;
     
-        background: #ffffff;
+        background: var(--white);;
     
-        border: 2px solid #c6c4f5;
+        border: 2px solid var(--primary1);;
         box-sizing: border-box;
         border-radius: 20px;
     
@@ -207,7 +207,7 @@ section{
                 img {
                     display: block;
     
-                    border: 5px solid #ddd;
+                    border: 5px solid var(--white);
                     border-radius: 25px;
                     padding: 5px;
                     

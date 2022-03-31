@@ -20,8 +20,8 @@ section {
     form {
         display: flex;
         flex-direction: column;
-        background: #ffffff;
-        border: 2px solid #c6c4f5;
+        background: var(--white);;
+        border: 2px solid var(--primary1);;
         box-sizing: border-box;
         border-radius: 20px;
         padding: 1.5em;

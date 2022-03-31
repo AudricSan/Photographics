@@ -20,7 +20,7 @@ echo "
             <div class='footerright'>
                 <div class='row'>
                     <div>
-                        <p> Photographics </p>
+                        <h3> Photographics </h3>
                         <ul>
                             <li><a href='/'>Gallery</a></li>
                             <li><a href='/'>Gallery</a></li>
@@ -31,7 +31,7 @@ echo "
                     </div>
 
                     <div>
-                        <p> Photographer Name </p>
+                        <h3> Photographer Name </h3>
                         <ul>
                             <li><a href='/about'>About</a></li>
                             <li><a href='/contact'>Contact</a></li>

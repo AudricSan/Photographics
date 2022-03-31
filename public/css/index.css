@@ -97,7 +97,6 @@ section form label:not(:first-of-type) {
 section form input:last-of-type {
   margin-top: 1.5em;
   min-height: 30px;
-  color: var(--primary);
 }
 
 section .title {

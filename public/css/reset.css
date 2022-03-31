@@ -162,6 +162,21 @@ label {
   margin-bottom: 0.5em;
 }
 
+input {
+  color: var(--body);
+}
+
+input[type=submit] {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: var(--white);
+}
+
 .btn {
   font-weight: 400;
   font-size: medium;

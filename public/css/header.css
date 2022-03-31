@@ -2,17 +2,13 @@ header {
   position: fixed;
   width: 97.2%;
   top: 1em;
+  left: 8px;
   z-index: 999;
   background-color: white;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
   padding: 1em;
   margin-bottom: 1em;
-}
-
-header figure {
-  margin: 0;
-  padding: 0;
 }
 
 header nav {
@@ -58,19 +54,18 @@ header nav ul li {
 }
 
 header nav ul li a {
-  text-decoration: none;
-  color: var(--color2);
+  /* color: var(--color2); */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 header nav ul li a:hover {
-  color: #9692FE;
+  /* color: var(--color2); */
 }
 
 header nav ul li img {

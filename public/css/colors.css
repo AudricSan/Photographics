@@ -1,0 +1,17 @@
+body{
+    --error : #e74c3c;
+    --warning : #f39c12;
+    --success : #27ae60;
+
+    --primary1 : #6e68fe;
+    --primary2 : #9692fe;
+    --primary3 : #c0beff;
+
+    --secondary1 : #0a2540;
+    --secondary2 : #175593;
+    --secondary3 : #2983de;
+
+    --headers : #1c1c1c;
+    --body : #525257;
+    --disable : #c0c1c2;
+}

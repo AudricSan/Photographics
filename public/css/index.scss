@@ -1,42 +1,226 @@
 section{
     margin-top: 9em;
-}
 
-.title {
-    position: relative;
+    .about {
+        position: relative;
 
-    width: 280px;
-    height: 100px;
+        width: 350px;
+        // height: 100px;
 
-    background: #ffffff;
+        background: #ffffff;
 
-    border: 2px solid #c6c4f5;
-    box-sizing: border-box;
-    border-radius: 20px;
+        border: 2px solid #c6c4f5;
+        box-sizing: border-box;
+        border-radius: 20px;
 
-    padding: 1.5em;
+        padding: 1.5em;
 
-    margin-left: 3em;
-    z-index: 9;
+        margin-left: 3em;
 
-    h2, h3{
-        margin: 0;
-        padding: 0;
+        z-index: 9;
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 23px;
+            letter-spacing: -0.02em;
+
+            padding-bottom: 0.3em;
+        }
+
+        a {
+            &:not(:first-of-type) {
+                margin-left: 1em;
+            }
+        }
     }
 
-    h2{
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 23px;
-        letter-spacing: -0.02em;
+    &.about{
+        padding: 5em;
+        margin-top: 6.5em;
 
-        padding-bottom: 0.3em;
+        background-image: url(../img/img/3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
-    h3 {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        letter-spacing: -0.02em;
+    .contact {
+        position: relative;
+
+        width: 350px;
+        // height: 100px;
+
+        background: #ffffff;
+
+        border: 2px solid #c6c4f5;
+        box-sizing: border-box;
+        border-radius: 20px;
+
+        padding: 1.5em;
+
+        margin-right: 3em;
+
+        z-index: 9;
+
+        h2 {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 23px;
+            letter-spacing: -0.02em;
+
+            padding-bottom: 0.3em;
+        }
+
+        a {
+            &:not(:first-of-type) {
+                margin-left: 1em;
+            }
+        }
+    }
+
+    &.contact {
+        display: flex;
+        flex-direction: row-reverse;
+
+        padding: 5em;
+        margin-top: 6.5em;
+
+        background-image: url(../img/img/3.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            &:not(:first-of-type) {
+                margin-top: 1em;
+            }
+        }
+
+        input {
+            &:last-of-type {
+                margin-top: 1.5em;
+
+                min-height: 30px;
+                color: var(--primary);
+            }
+        }
+    }
+
+    .title {
+        position: relative;
+    
+        width: 280px;
+        height: 100px;
+    
+        background: #ffffff;
+    
+        border: 2px solid #c6c4f5;
+        box-sizing: border-box;
+        border-radius: 20px;
+    
+        padding: 1.5em;
+    
+        margin-left: 3em;
+        z-index: 9;
+    
+        h2, h3{
+            margin: 0;
+            padding: 0;
+        }
+    
+        h2{
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 23px;
+            letter-spacing: -0.02em;
+    
+            padding-bottom: 0.3em;
+        }
+    
+        h3 {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.02em;
+        }
+    }
+    
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        align-items: center;
+    
+        position: relative;
+        top: -140px;
+        
+        bottom: 0;
+        z-index: 1;
+    
+        margin-bottom: -140px;
+        
+        .media {
+            display: flex;
+            flex-direction: column;
+            margin: 1em;
+    
+            div {
+                display: flex;
+                flex-direction: row;
+    
+                position: relative;
+    
+                i {
+                    font-size: 23px;
+                }
+    
+                a{
+                    &:first-of-type{
+                        position: absolute;
+                        left: 1em;
+                        bottom: 1em;
+                    }
+                    &:last-of-type{
+                        position: absolute;
+                        right: 1em;
+                        bottom: 1em;
+        
+                    }
+                }
+            }
+    
+            a {
+                display: block;
+                max-width: fit-content;
+    
+                img {
+                    display: block;
+    
+                    border: 5px solid #ddd;
+                    border-radius: 25px;
+                    padding: 5px;
+                    
+                    max-height: 150px;
+                    max-width: 300px;
+    
+                    height: auto;
+    
+                    &:hover {
+                        box-shadow: 0 0 2px 5px rgba(0, 140, 186, 0.5);
+                    }
+                }
+            }
+        }
     }
 }

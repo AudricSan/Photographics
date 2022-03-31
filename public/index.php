@@ -18,13 +18,11 @@ $slugs = ['article-1' => 'Article 1', 'article-2' => 'Article 2', 'article-3' =>
 // NOTE This function just renders a simple header
 function head()
 {
-  global $slugs;
   include_once('include/header.php');
 }
 
 function foot()
 {
-  global $slugs;
   include_once('include/footer.php');
 }
 
@@ -49,6 +47,18 @@ Route::add('/about', function () {
 Route::add('/contact', function () {
   head();
   include_once('../view/contact.php');
+  foot();
+});
+
+Route::add('/config', function () {
+  head();
+  include_once('../view/admin/index.php');
+  foot();
+});
+
+Route::add('/conf', function () {
+  head();
+  include_once('../view/admin/index.php');
   foot();
 });
 

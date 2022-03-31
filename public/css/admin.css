@@ -1,4 +1,4 @@
-section {
+section.login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +10,7 @@ section {
           align-items: center;
 }
 
-section .login {
+section.login .login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,14 +23,16 @@ section .login {
           align-items: center;
   min-width: 550px;
   max-width: 550px;
+  margin-top: 5em;
+  margin-bottom: 10em;
 }
 
-section .login img {
+section.login .login img {
   width: 350px;
   margin-bottom: 2em;
 }
 
-section form {
+section.login form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,11 +50,11 @@ section form {
   max-width: 550px;
 }
 
-section form label:not(:first-of-type) {
+section.login form label:not(:first-of-type) {
   margin-top: 1em;
 }
 
-section form input:last-of-type {
+section.login form input:last-of-type {
   margin-top: 1.5em;
   min-height: 30px;
   color: var(--primary);

@@ -24,6 +24,10 @@ footer .footer {
       flex-wrap: wrap;
 }
 
+footer .footer h3 {
+  margin-bottom: 1em;
+}
+
 footer .footer .footerright {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,6 +59,10 @@ footer .footer .footerright .row div {
           flex-direction: column;
 }
 
+footer .footer .footerright .row div h3 {
+  margin-top: 2.5em;
+}
+
 footer .footer .footerright .row div:last-child {
   margin-left: 2em;
 }
@@ -73,7 +81,7 @@ footer .footer .footerright .copy {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 40%;
+  margin-top: 35%;
 }
 
 footer .footer .footerright .copy p {
@@ -81,7 +89,7 @@ footer .footer .footerright .copy p {
   padding: 0;
 }
 
-footer .footer .footerright .copy a {
+footer .footer .footerright .copy a:not(:first-of-type) {
   margin-left: 1em;
 }
 

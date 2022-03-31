@@ -5,8 +5,8 @@ section {
 section .about {
   position: relative;
   width: 350px;
-  background: #ffffff;
-  border: 2px solid #c6c4f5;
+  background: var(--white);
+  border: 2px solid var(--primary1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 20px;
@@ -43,8 +43,8 @@ section.about {
 section .contact {
   position: relative;
   width: 350px;
-  background: #ffffff;
-  border: 2px solid #c6c4f5;
+  background: var(--white);
+  border: 2px solid var(--primary1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 20px;
@@ -104,8 +104,8 @@ section .title {
   position: relative;
   width: 280px;
   height: 100px;
-  background: #ffffff;
-  border: 2px solid #c6c4f5;
+  background: var(--white);
+  border: 2px solid var(--primary1);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 20px;
@@ -206,7 +206,7 @@ section .gallery .media a {
 
 section .gallery .media a img {
   display: block;
-  border: 5px solid #ddd;
+  border: 5px solid var(--white);
   border-radius: 25px;
   padding: 5px;
   max-height: 150px;

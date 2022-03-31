@@ -11,7 +11,9 @@ body{
     --secondary2 : #175593;
     --secondary3 : #2983de;
 
-    --headers : #1c1c1c;
+    --black : #1c1c1c;
+    --white : #e7e7e7; 
+
     --body : #525257;
     --disable : #c0c1c2;
 }

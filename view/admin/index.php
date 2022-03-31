@@ -1,4 +1,4 @@
-<section>
+<section class="login">
     <div class="login">
         <img src="../../public/img/logo.png" alt="Photographics Logo">
 

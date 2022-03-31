@@ -2,20 +2,22 @@
 use photographics\env;
 $env = new env;
 
+$imglink = $_SESSION['imgroot'];
+
 echo "
     <footer>
-        <img class='divider' src='img/divider.png'>
+        <img class='divider' src='$imglink/divider.png'>
 
         <div class='footer'>
             <div class='footerleft'>
-                <figure> <a href='/'> <img src='img/logo.png' alt='Logo'> </a> </figure>
+                <figure> <a href='/'> <img src='$imglink/logo.png' alt='Logo'> </a> </figure>
                 <h3> <a href='/about'> Photographer Name </a> </h3>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. rovident fugit iure vel reprehenderit
                     laboriosam amet nihil non olestiae bcaecati ut. Similique istinctio, quibusdam nisi qui quaerat
                     oluptas! Pariatur, temporibus vel. </p>
             </div>
 
-            <img class='divider' src='img/divider2.png'>
+            <img class='divider' src='$imglink/divider2.png'>
 
             <div class='footerright'>
                 <div class='row'>

@@ -53,13 +53,11 @@ Route::add('/contact', function () {
 Route::add('/config', function () {
   head();
   include_once('../view/admin/index.php');
-  foot();
 });
 
 Route::add('/conf', function () {
   head();
   include_once('../view/admin/index.php');
-  foot();
 });
 
 

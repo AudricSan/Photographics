@@ -3,12 +3,9 @@ header {
     width: 97.2%;
 
     top: 1em;
-    z-index: 999;
+    left: 8px;
 
-    figure{
-        margin: 0;
-        padding: 0;
-    }
+    z-index: 999;
 
     nav {
         display: flex;
@@ -39,21 +36,19 @@ header {
                 margin-right: 1em;
 
                 a{
-                    text-decoration: none;
                     color: var(--color2);
 
                     display: flex;
                     flex-direction: column;
 
                     &:hover{
-                        color: #9692FE;
+                        color: var(--color2);
                     }
                 }
 
                 img{
                     margin-top: 1.5em;
                     position: absolute;
-                    // display: none;
                 }
             }
         }

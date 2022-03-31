@@ -15,7 +15,11 @@ output,ruby,section,summary,time,mark,audio,video {
     vertical-align: baseline;
 
     text-decoration: none;
-    color:  #000;
+    color:  var(--body);
+}
+
+a:hover{
+    color: var(--primary2);
 }
 
 /* HTML5 display-role reset for older browsers */

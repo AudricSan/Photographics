@@ -1,4 +1,4 @@
-section.login {
+.login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +10,7 @@ section.login {
           align-items: center;
 }
 
-section.login .login {
+.login .login {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,12 +27,12 @@ section.login .login {
   margin-bottom: 10em;
 }
 
-section.login .login img {
+.login .login img {
   width: 350px;
   margin-bottom: 2em;
 }
 
-section.login form {
+.login form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,15 +50,15 @@ section.login form {
   max-width: 550px;
 }
 
-section.login form h2 {
+.login form h2 {
   margin-bottom: 1em;
 }
 
-section.login form label:not(:first-of-type) {
+.login form label:not(:first-of-type) {
   margin-top: 1em;
 }
 
-section.login form input:last-of-type {
+.login form input:last-of-type {
   margin-top: 1.5em;
   min-height: 30px;
   color: var(--primary);
@@ -152,7 +152,7 @@ main.dashboard nav.lateral ul li:hover a {
   color: var(--white);
 }
 
-main.dashboard section.dashboard {
+main.dashboard div.dashboard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -162,10 +162,11 @@ main.dashboard section.dashboard {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 6.5em;
   margin-left: 17em;
 }
 
-main.dashboard section.dashboard div.dash-content {
+main.dashboard div.dashboard div.dash-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,12 +181,12 @@ main.dashboard section.dashboard div.dash-content {
   border-radius: 10px;
 }
 
-main.dashboard section.dashboard div.dash-content h2 {
+main.dashboard div.dashboard div.dash-content h2 {
   font-weight: 700;
   font-size: x-large;
 }
 
-main.dashboard section.dashboard div.dash-content div {
+main.dashboard div.dashboard div.dash-content div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,7 +196,7 @@ main.dashboard section.dashboard div.dash-content div {
           flex-direction: row;
 }
 
-main.dashboard section.dashboard div.dash-content div a:not(:first-of-type) {
+main.dashboard div.dashboard div.dash-content div a:not(:first-of-type) {
   margin-left: 1em;
 }
 /*# sourceMappingURL=admin.css.map */

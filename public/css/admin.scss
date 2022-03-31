@@ -1,4 +1,4 @@
-section.login {
+.login {
     display:flex;
     justify-content:center;
     align-items:center;
@@ -124,12 +124,13 @@ main.dashboard {
         }
     }
 
-    section.dashboard {
+    div.dashboard {
         display: flex;
         flex-direction: row;
 
         flex-wrap: wrap;
 
+        margin-top: 6.5em;
         margin-left: 17em;
 
         div.dash-content {

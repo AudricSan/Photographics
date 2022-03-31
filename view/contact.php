@@ -20,7 +20,6 @@
 
                 <input class='btn validate' type='submit' value='Submit'>
             </form>
-
         </div>
   ";
 ?>

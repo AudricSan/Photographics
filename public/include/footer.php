@@ -22,22 +22,22 @@ echo "
                     <div>
                         <p> Photographics </p>
                         <ul>
-                            <li><a href='#'>Gallery</a></li>
-                            <li><a href='#'>Gallery</a></li>
-                            <li><a href='#'>Gallery</a></li>
-                            <li><a href='#'>Gallery</a></li>
-                            <li><a href='#'>Gallery</a></li>
+                            <li><a href='/'>Gallery</a></li>
+                            <li><a href='/'>Gallery</a></li>
+                            <li><a href='/'>Gallery</a></li>
+                            <li><a href='/'>Gallery</a></li>
+                            <li><a href='/'>Gallery</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <p> Photographer Name </p>
                         <ul>
-                            <li><a href='#'>About</a></li>
-                            <li><a href='#'>Contact</a></li>
-                            <li><a href='#'>Social</a></li>
-                            <li><a href='#'>Social</a></li>
-                            <li><a href='#'>Social</a></li>
+                            <li><a href='/about'>About</a></li>
+                            <li><a href='/contact'>Contact</a></li>
+                            <li><a href='/'>Social</a></li>
+                            <li><a href='/'>Social</a></li>
+                            <li><a href='/'>Social</a></li>
                         </ul>
                     </div>
                 </div>

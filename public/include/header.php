@@ -45,13 +45,13 @@ echo "
         <meta name='msapplication-TileColor' content='#ffffff'>
         <meta name='theme-color' content='#ffffff'>
 
+        <link rel='stylesheet' type='text/css' href='css/colors.css' />
         <link rel='stylesheet' type='text/css' href='css/reset.css' />
-        <link rel='stylesheet' type='text/css' href='css/footer.css' />
-        <link rel='stylesheet' type='text/css' href='css/header.css' />
+
+        <link rel='stylesheet' type='text/css' href='css/header.css' />        
+        <link rel='stylesheet' type='text/css' href='css/footer.css' />        
         <link rel='stylesheet' type='text/css' href='css/index.css' />
-        <link rel='stylesheet' type='text/css' href='css/gallery.css' />
-        <link rel='stylesheet' type='text/css' href='css/about.css' />
-        <link rel='stylesheet' type='text/css' href='css/contact.css' />
+
 
         <!--icones importées-->
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>

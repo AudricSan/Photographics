@@ -32,6 +32,10 @@ section.login {
         min-width: 550px;
         max-width: 550px;
 
+        h2{
+            margin-bottom: 1em;
+        }
+
         label {
             &:not(:first-of-type) {
                 margin-top: 1em;
@@ -44,6 +48,113 @@ section.login {
 
                 min-height: 30px;
                 color: var(--primary);
+            }
+        }
+    }
+}
+
+main.dashboard {
+    display: flex;
+    flex-direction: row;
+
+    min-height: 25em;
+
+    nav.lateral {
+        position: fixed;
+        z-index: 100;
+
+        margin-top: 6.5em;
+
+        margin-left: 8px;
+
+        display: flex;
+        flex-direction: column;
+
+        width: fit-content;
+
+        background-color: var(--white);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
+        border-radius: 0px 20px 20px 0px;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                width: 200px;
+
+                margin: 1em;
+                padding: 1em;
+
+                border-radius: 10px;
+
+                span {
+                    font-size: 2em;
+                    color: var(--primary1);
+                }
+
+                a {
+                    margin-left: 1em;
+                    color: var(--primary1);
+                }
+
+                &.selected,
+                &.selected:hover {
+                    span,
+                    a {
+                        color: var(--white);
+                    }
+
+                    background-color: var(--primary1);
+                }
+
+                &:hover {
+                    span,
+                    a {
+                        color: var(--white);
+                    }
+
+                    background-color: var(--primary2);
+                }
+            }
+        }
+    }
+
+    section.dashboard {
+        display: flex;
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        margin-left: 17em;
+
+        div.dash-content {
+            display: flex;
+            flex-direction: column;
+
+            margin-left: 1em;
+            margin-bottom: 1em;
+            padding: 1em;
+            border: solid 3px var(--primary2);
+
+            border-radius: 10px;
+
+            h2 {
+                font-weight: 700;
+                font-size: x-large;
+            }
+
+            div{
+                display: flex;
+                flex-direction: row;
+
+                a:not(:first-of-type){
+                    margin-left: 1em;
+                }
             }
         }
     }

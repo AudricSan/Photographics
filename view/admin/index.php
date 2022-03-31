@@ -1,16 +1,134 @@
-<section class="login">
-    <div class="login">
-        <img src="../../public/img/logo.png" alt="Photographics Logo">
+<main class="dashboard">
+        <nav class="lateral">
+            <ul>
+                <li class='latnav selected'>
+                    <span class="material-icons-round">dashboard</span>
+                    <a href='/'>Gallery</a>
+                </li>
 
-        <form class='' method='' action='' target=''>
-            <h2> Login Form</h2>
-            <label for='login'> login:</label>
-            <input type='login' id='login' name='login'>
+                <li class='latnav'>
+                    <span class="material-icons-round">image</span>
+                    <a href='/'>Gallery</a>
+                </li>
 
-            <label for='pass'> password:</label>
-            <input type='pass' id='pass' name='pass'>
+                <li class='latnav'>
+                    <span class="material-icons-round">local_offer</span>
+                    <a href='/'>Gallery</a>
+                </li>
 
-            <input type='submit' value='Submit'>
-        </form>
-    </div>
-</section>
+                <li class='latnav'>
+                    <span class="material-icons-round">admin_panel_settings</span>
+                    <a href='/'>Gallery</a>
+                </li>
+
+                <li class='latnav'>
+                    <span class="material-icons-round">api</span>
+                    <a href='/'>Gallery</a>
+                </li>
+
+                <li class='latnav'>
+                    <span class="material-icons-round">class</span>
+                    <a href='/'>Gallery</a>
+                </li>
+
+                <li class='latnav'>
+                    <span class="material-icons-round">bug_report</span>
+                    <a href='/'>Gallery</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="dashboard">
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+            
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+            <div class="dash-content">
+                <h2>Title</h2>
+                <h3>Desctipyion</h3>
+
+                <div>
+                    <a class="btn disable" href=""> More option </a>
+                    <a class="btn validate" href="/"> More option </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>

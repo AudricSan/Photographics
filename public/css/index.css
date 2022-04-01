@@ -32,6 +32,10 @@ section .about a:not(:first-of-type) {
   margin-left: 1em;
 }
 
+section .about p {
+  margin-top: 0.5em;
+}
+
 section.about {
   padding: 5em;
   margin-top: 6.5em;
@@ -222,5 +226,18 @@ section .gallery .media a img {
 
 section .gallery .media a img:hover {
   border-color: var(--primary1);
+}
+
+section.privacy {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+section.privacy h2 {
+  margin-top: 1em;
+}
+
+section.privacy h2 + p {
+  margin-top: 0.2em;
 }
 /*# sourceMappingURL=index.css.map */

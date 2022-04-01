@@ -39,6 +39,16 @@ if (!isset($title)) {
     $subtitle = 'Photographics';
 }
 
+include("../model/class/BasicInfo.php");
+include("../model/dao/BasicInfoDAO.php");
+
+$basicinfo = new BasicInfoDAO;
+$basicinfo = $basicinfo->fetchAll();
+
+foreach($basicinfo as $key => $value){
+    $_SESSION['basicinfo'][$value->_name] = $value->_content;
+}
+
 //ANCHOR Meta html
 echo "
 <!DOCTYPE HTML>

@@ -52,7 +52,6 @@ ol,
 ul,
 li,
 fieldset,
-form,
 label,
 legend,
 table,
@@ -173,11 +172,12 @@ form label {
   margin-bottom: 0.5em;
 }
 
-input {
+form input {
   color: var(--body);
+  padding-left: 5px;
 }
 
-input[type=submit] {
+form input[type="submit"] {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -186,10 +186,25 @@ input[type=submit] {
   color: var(--white);
 }
 
+form textarea {
+  height: 150px;
+  text-overflow: ellipsis;
+}
+
+form div.submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .btn {
   font-weight: 400;
   font-size: medium;
   color: var(--white);
+  text-align: center;
   margin-top: 1em;
   padding: 0.5em;
   border-radius: 5px;

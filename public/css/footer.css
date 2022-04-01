@@ -12,9 +12,6 @@ footer {
           align-items: center;
   margin-top: 1.5em;
   z-index: 998;
-  background: var(--white);
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
 }
 
 footer .footer {
@@ -94,7 +91,7 @@ footer .footer .footerright .copy p {
   padding: 0;
 }
 
-footer .footer .footerright .copy a:not(:first-of-type) {
+footer .footer .footerright .copy a:last-of-type {
   margin-left: 1em;
 }
 

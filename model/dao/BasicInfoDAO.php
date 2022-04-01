@@ -73,7 +73,8 @@ class BasicInfoDAO extends Env
             return false;
         }
         try {
-            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE bi_id = ?");
+            // $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE bi_id = ?");
+            $statement = $this->connection->prepare("UPDATE {$this->table} SET bi_content = 'NULL' WHERE bi_id = ?");
             $statement->execute([
                 $id
             ]);
@@ -115,11 +116,13 @@ class BasicInfoDAO extends Env
         if (empty($data)) {
             return false;
         }
+
+        $old = $this->fetch($data['id']);
         
         $basicinfo = $this->create([
-            "_id" => $id,
-            '_name' => $data['name'],
-            '_content' => $data['content'],
+            'bi_id' => $old->_id,
+            'bi_name' => $old->_name,
+            'bi_content' => $data['content'],
         ]);
 
         if ($basicinfo) {

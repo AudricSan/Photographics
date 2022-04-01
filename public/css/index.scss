@@ -38,6 +38,10 @@ section {
                 margin-left: 1em;
             }
         }
+        
+        p{
+            margin-top: 0.5em;
+        }
     }
 
     &.about {
@@ -224,6 +228,20 @@ section {
                         border-color: var(--primary1);
                     }
                 }
+            }
+        }
+    }
+
+    &.privacy{
+        margin-left: 1em;
+        margin-right: 1em;
+
+        h2{
+            margin-top: 1em;
+
+
+            &+p{
+                margin-top: 0.2em;
             }
         }
     }

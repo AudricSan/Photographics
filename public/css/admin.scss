@@ -152,6 +152,11 @@ main.dashboard {
 
             h3{
                 margin-top: 0.3em;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 250px;
             }
 
             div{

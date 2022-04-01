@@ -10,23 +10,23 @@ $keyword = 'SEO, keyword';
 
 
 // var_dump($_SERVER);
-$root = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+$root = 'http://' . $_SERVER['HTTP_HOST'];
 $_SESSION['root'] = $root;
 
 // var_dump($root);
 //CSS link//
-$anim_css = $root   . 'public/css/anim.css';
-$style_css = $root   . 'public/css/index.css';
-$globals_css = $root   . 'public/css/globals.css';
+$anim_css = $root   . '/public/css/anim.css';
+$style_css = $root   . '/public/css/index.css';
+$globals_css = $root   . '/public/css/globals.css';
 
-$colors = $root . 'public/css/colors.css';
-$reset  = $root . 'public/css/reset.css';
-$header = $root . 'public/css/header.css';
-$footer = $root . 'public/css/footer.css';
-$index  = $root . 'public/css/index.css';
-$admin  = $root . 'public/css/admin.css';
+$colors = $root . '/public/css/colors.css';
+$reset  = $root . '/public/css/reset.css';
+$header = $root . '/public/css/header.css';
+$footer = $root . '/public/css/footer.css';
+$index  = $root . '/public/css/index.css';
+$admin  = $root . '/public/css/admin.css';
 
-$imglink = $_SESSION['root'] . 'public/img';
+$imglink = $_SESSION['root'] . '/public/img';
 $_SESSION['imgroot'] = $imglink;
 
 if (!isset($_COOKIE['rootimg'])) {

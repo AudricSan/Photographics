@@ -158,7 +158,18 @@ h3 {
   font-weight: 600;
 }
 
-label {
+form {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form label {
   margin-bottom: 0.5em;
 }
 
@@ -167,8 +178,6 @@ input {
 }
 
 input[type=submit] {
-  margin: 0;
-  padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;

@@ -11,13 +11,41 @@
 </head>
 
 <body>
-    <form method='POST' action='/basicinfo/$value->_id/edit/' target='_self'>
-        <label for='content'>New data : </label>";
-        <textarea type='textarea' id='content' rows="5" cols="33" name='content'
-            value='Attiré par la recherche graphique, les belles images, la découverte de nouveaux environnements et de différentes cultures, je prends des photos depuis que j’ai reçu un appareil Canon EOS 1100D en 2010.J’ai entrepris des études d’infographiste que j’ai terminées en 2019. La photographie est pour moi un moyen de figer le temps, de représenter notre univers à travers des clichés qui racontent une histoire.Mon côté perfectionniste et minutieux me permet de toujours rechercher la photo qui correspond le mieux au modèle. Ouvert à tous les défis et styles de prise de vue, je m’engage à obtenir un résultat qui corresponde précisément à la demande du modèle. Et dans le cas où le cadre le permet, j’y propose un regard esthétique et technique afin d’apporter un plus à la qualité finale des images.Que ce soit en extérieur ou en studio, une attention particulière est toujours donnée au cadrage, à la composition et à la lumière.Par l’évolution de l’image numérique et toujours dans le souci de pousser la qualité des images à leur maximum, je me suis perfectionné dans le domaine de l’édition, de la retouche, de la retouche créative / photomontage et de la postproduction. Cela m’a permis de développer une approche qualitative où l’image et son sens restent en avant.'
-            required></textarea>
 
-    </form>
+
+    <div class='dashboard'>
+        <div class='container admin'>
+        <div class='dash-picture'>
+        <h1><a href='#' class='btn additems success'><span class='material-icons-round'>add</span></a></h1>
+    
+        <table>
+        <thead>
+            <tr>
+                <th>Miniature</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>File Name</th>
+                <th>Tags</th>
+                <th>Sharable</th>
+                <th>Quick Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> $value->_name </td>
+                <td> $value->_description </td>
+                <td> $value->_link </td>
+                <td> $value->_tag </td>
+                <td> $value->_sharable </td>
+                <td class=action with=500>
+                    <a class='btn validate' href='#'><span class='glyphicon glyphicon-eye-open'></span> See</a>
+                    <a class='btn success' href='#'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
+                    <a class='btn error' href='#'><span class='glyphicon glyphicon-trash'></span> Delete</a>
+                </td>
+            </tr>
+        </tbody>
+</table></div></div></div></main>
 </body>
 
 </html>

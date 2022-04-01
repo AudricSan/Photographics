@@ -25,6 +25,7 @@ $header = $root . '/public/css/header.css';
 $footer = $root . '/public/css/footer.css';
 $index  = $root . '/public/css/index.css';
 $admin  = $root . '/public/css/admin.css';
+$check  = $root . '/public/css/checkbox.css';
 
 $imglink = $_SESSION['root'] . '/public/img';
 $_SESSION['imgroot'] = $imglink;
@@ -41,9 +42,8 @@ if (!isset($title)) {
 
 include("../model/class/BasicInfo.php");
 include("../model/dao/BasicInfoDAO.php");
-
-$basicinfo = new BasicInfoDAO;
-$basicinfo = $basicinfo->fetchAll();
+$basicinfoDAO = new BasicInfoDAO;
+$basicinfo = $basicinfoDAO->fetchAll();
 
 foreach($basicinfo as $key => $value){
     $_SESSION['basicinfo'][$value->_name] = $value->_content;
@@ -87,13 +87,13 @@ echo "
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
-
-
     </head>
 ";
 
 //ANCHOR Nav html
-$nav = str_contains($title, "admin");
+
+$title = explode($title, ' ');
+$nav = in_array('admin', $title);
 
 echo "
     <header>

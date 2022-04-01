@@ -49,6 +49,12 @@ Route::add('/about', function () {
   foot();
 });
 
+Route::add('/privacy', function () {
+  head();
+  include_once('../view/privacy.php');
+  foot();
+});
+
 Route::add('/contact', function () {
   head();
   include_once('../view/contact.php');
@@ -262,34 +268,14 @@ Route::add('/admin/store', function () {
 }, 'post');
 // !SECTION
 
-// SECTION Basic Info
-// ANCHOR 
-Route::add('/basicinfo', function () {
-  include_once('../model/class/BasicInfo.php');
-  include_once('../model/dao/BasicInfoDAO.php');
-  $basicinfo = new BasicInfoDAO;
-  $basicinfo = $basicinfo->fetchAll();
-  
-  var_dump($basicinfo);
-});
-
-// ANCHOR Specific Admin
-Route::add('/basicinfo/([0-9]*)', function ($id) {
-  head();
-  include_once('../model/class/BasicInfo.php');
-  include_once('../model/dao/BasicInfoDAO.php');
-  $basicinfo = new BasicInfoDAO;
-  $basicinfo = $basicinfo->fetch($id);
-
-  var_dump($basicinfo);
-});
-
 //ANCHOR Delete Admin
 Route::add('/basicinfo/([0-9]*)/delete', function ($id) {
   include_once('../model/class/BasicInfo.php');
   include_once('../model/dao/BasicInfoDAO.php');
   $basicinfo = new BasicInfoDAO;
   $basicinfo = $basicinfo->delete($id);
+
+  header("location: /admin");
 });
 
 //ANCHOR Edit Admin
@@ -300,16 +286,9 @@ Route::add('/basicinfo/([0-9]*)/edit', function ($id) {
 
   $basicinfo = new BasicInfoDAO;
   $basicinfo = $basicinfo->update($id, $_POST);
-}, 'post');
 
-//ANCHOR Store Admin
-Route::add('/basicinfo/store', function () {
-  include_once('../model/class/BasicInfo.php');
-  include_once('../model/dao/BasicInfoDAO.php');
-  $basicinfo = new BasicInfoDAO;
-  $basicinfo = $basicinfo->store($_POST);
+  header("location: /admin");
 }, 'post');
-// !SECTION
 
 // SECTION Picture
 // ANCHOR 

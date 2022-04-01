@@ -190,6 +190,10 @@ main.dashboard div.dashboard div.dash-content h2 {
 
 main.dashboard div.dashboard div.dash-content h3 {
   margin-top: 0.3em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 250px;
 }
 
 main.dashboard div.dashboard div.dash-content div {

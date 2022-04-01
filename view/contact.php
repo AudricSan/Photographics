@@ -5,7 +5,7 @@
             <h2>Title</h2>
             <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing.</p>
 
-            <form class=''  method='GET' action='submit.php'  target='_self'>
+            <form class=''  method='POST' action='/submit'  target='_self'>
                 <label for='name'> Name:</label>
                 <input type='name' id='name' name='name'>
 

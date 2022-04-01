@@ -209,4 +209,35 @@ main.dashboard div.dashboard div.dash-content div {
 main.dashboard div.dashboard div.dash-content div a:not(:first-of-type) {
   margin-left: 1em;
 }
+
+main.dashboard table {
+  margin-left: 1em;
+  text-align: left;
+}
+
+main.dashboard table th,
+main.dashboard table td {
+  padding: 0.5em;
+}
+
+main.dashboard table thead {
+  background: var(--primary1);
+  border-bottom: 2px solid #444444;
+}
+
+main.dashboard table thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+main.dashboard table img {
+  width: 100px;
+}
+
+main.dashboard h1 {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
 /*# sourceMappingURL=admin.css.map */

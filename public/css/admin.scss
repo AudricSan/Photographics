@@ -173,20 +173,41 @@ main.dashboard {
     table {
         margin-left: 1em;
         text-align: left;
-        
+
         th,
         td {
             padding: 0.5em;
         }
 
         thead {
-            background: var(--primary1);
             border-bottom: 2px solid #444444;
 
             th {
                 font-size: 15px;
                 font-weight: bold;
-                color: #ffffff;
+                color: var(--primary1);
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    vertical-align: middle;
+
+                    &.inline {
+                        p {
+                            display: inline;
+
+                            &:not(:first-of-type) {
+                                margin-left: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(2n + 1) {
+                background-color: var(--primary3);
             }
         }
 

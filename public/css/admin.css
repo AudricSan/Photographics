@@ -221,14 +221,29 @@ main.dashboard table td {
 }
 
 main.dashboard table thead {
-  background: var(--primary1);
   border-bottom: 2px solid #444444;
 }
 
 main.dashboard table thead th {
   font-size: 15px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--primary1);
+}
+
+main.dashboard table tbody tr td {
+  vertical-align: middle;
+}
+
+main.dashboard table tbody tr td.inline p {
+  display: inline;
+}
+
+main.dashboard table tbody tr td.inline p:not(:first-of-type) {
+  margin-left: 1em;
+}
+
+main.dashboard table tbody:nth-child(2n + 1) {
+  background-color: var(--primary3);
 }
 
 main.dashboard table img {

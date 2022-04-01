@@ -43,7 +43,7 @@ foreach ($pictures as $key => $picture) {
             <td> $picture->_description </td>
             <td> $picture->_link </td>";
 
-            echo "<td>";
+            echo "<td class='inline'>";
             foreach ($tags as $key => $tag) {
                 if ($tag->_pic === $picture->_id) {
                     $mytag = $tagDAO->fetch($tag->_tag);

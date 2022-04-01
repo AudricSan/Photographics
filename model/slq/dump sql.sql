@@ -4,3 +4,7 @@ INSERT INTO `role` (`role_id`, `role_name`) VALUES
                    (NULL, 'admin'),
                    (NULL, 'editor');
 
+INSERT INTO `basicinfo` (`bi_id`, `bi_name`, `bi_content`) VALUES
+                        (NULL, 'PhotographerName', 'AudricSan'),
+                        (NULL, 'PhotographerAbout', 'content'),
+                        (NULL, 'PhotographerMail', 'audricrosier@gmail.com');

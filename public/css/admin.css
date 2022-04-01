@@ -188,6 +188,10 @@ main.dashboard div.dashboard div.dash-content h2 {
   font-size: x-large;
 }
 
+main.dashboard div.dashboard div.dash-content h3 {
+  margin-top: 0.3em;
+}
+
 main.dashboard div.dashboard div.dash-content div {
   display: -webkit-box;
   display: -ms-flexbox;

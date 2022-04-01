@@ -265,12 +265,11 @@ Route::add('/admin/store', function () {
 // SECTION Basic Info
 // ANCHOR 
 Route::add('/basicinfo', function () {
-  head();
   include_once('../model/class/BasicInfo.php');
   include_once('../model/dao/BasicInfoDAO.php');
   $basicinfo = new BasicInfoDAO;
   $basicinfo = $basicinfo->fetchAll();
-
+  
   var_dump($basicinfo);
 });
 

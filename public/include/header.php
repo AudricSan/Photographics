@@ -47,6 +47,13 @@ include('../model/class/Tag.php');
 include('../model/dao/TagDAO.php');
 $tagDAO = new TagDAO;
 
+include("../model/class/Picture.php");
+include("../model/dao/PictureDAO.php");
+
+include("../model/class/PictureTag.php");
+include("../model/dao/PictureTagDAO.php");
+$pictureTagDAO = new PictureTagDAO; 
+
 $basicinfo = $basicinfoDAO->fetchAll();
 
 foreach($basicinfo as $key => $value){
@@ -91,10 +98,6 @@ echo "
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
-
-        <!-- JS library
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> -->
-
     </head>
 ";
 
@@ -114,7 +117,12 @@ echo "
         <ul>
             <li class='nava'> <a href='/'>Gallery</a> </li>";
             foreach ($tag as $tag) {
-                echo "<li role='presentation'><a href='$tag->_id' data-toggle='tab'>$tag->_name</a></li>";
+                $pictureTag = $pictureTagDAO->fetch($tag->_id);
+                $cpt = count($pictureTag);
+
+                if ($cpt > 5) {
+                    echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
+                }
             };
 
 echo "

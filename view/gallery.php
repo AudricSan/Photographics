@@ -21,12 +21,7 @@
 
   echo "<div class='gallery'>";
 
-  include("../model/class/Picture.php");
-  include("../model/dao/PictureDAO.php");
   $pictureDAO = new PictureDAO;
-  
-  include("../model/class/PictureTag.php");
-  include("../model/dao/PictureTagDAO.php");
   $pictureTagDAO = new PictureTagDAO; 
 
   if (!empty($_GET['id'])) {

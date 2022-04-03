@@ -1,44 +1,74 @@
 <section>
-<?php
-$a = 50;
+  <?phP
 
-$img = [
-  '1.jpg',
-  '2.jpg',
-  '3.jpg',
-  '4.jpg',
-  '5.jpg',
-  '6.jpg'
-];
+  if (!empty($_GET['id'])) {
+    $tagDao = new TagDAO;
+    $tag = $tagDao->fetch($_GET['id']);
 
-$title = 'Title Pages';
-$subtitle = 'Sub Title Pages';
+    $title = $tag->_name;
+    $subtitle = "Some of my $tag->_name";
+  }else{
+    $title = 'Gallery';
+    $subtitle = 'Some of my Work';
+  }
 
-echo "  <div class='title'>
-          <h2>$title</h2>
-          <h3>$subtitle</h3>
-          </div>
-";
+  echo "
+    <div class='title'>
+      <h2>$title</h2>
+      <h3>$subtitle</h3>
+    </div>
+  ";
 
-echo "<div class='gallery'>";
+  echo "<div class='gallery'>";
 
-for ($i=0; $i < $a; $i++) { 
-  $z = random_int(1,5);
-  $p = $img[$z];
+  include("../model/class/Picture.php");
+  include("../model/dao/PictureDAO.php");
+  $pictureDAO = new PictureDAO;
+  
+  include("../model/class/PictureTag.php");
+  include("../model/dao/PictureTagDAO.php");
+  $pictureTagDAO = new PictureTagDAO; 
 
-  echo "<div class='media'>
-          <a href='#'>
-            <img src='/public/img/img/$p' alt=''></a>
+  if (!empty($_GET['id'])) {
+    $pictureTag = $pictureTagDAO->fetch($_GET['id']);
+    // var_dump($pictureTag);
 
-          <div>
+    foreach ($pictureTag as $key => $value) {
+      // var_dump($value->_pic);
+      $picture = $pictureDAO->fetch($value->_pic);
+
+      echo "<div class='media'>
             <a href='#'>
-              <i class='fa-solid fa-heart'></i></a>
-            <a href='#'>
-              <i class='fa-solid fa-share-nodes'></i></a>
-          </div>
-        </div>";
-}
+              <img src='/public/img/img/$picture->_link' alt='$picture->_name'></a>
+  
+            <div>
+              <a href='#'>
+                <i class='fa-solid fa-heart'></i></a>
+              <a href='#'>
+                <i class='fa-solid fa-share-nodes'></i></a>
+            </div>
+          </div>";
+    }
 
-echo "</div>";
-?>
+
+  }else{
+    $picture = $pictureDAO->fetchAll();
+    foreach ($picture as $picture) {  
+      $pic = $pictureDAO->fetch($picture->_id);
+      echo "<div class='media'>
+            <a href='#'>
+              <img src='/public/img/img/$pic->_link' alt='$pic->_name'></a>
+  
+            <div>
+              <a href='#'>
+                <i class='fa-solid fa-heart'></i></a>
+              <a href='#'>
+                <i class='fa-solid fa-share-nodes'></i></a>
+            </div>
+          </div>";
+    }
+  }
+
+  echo  '</div>';
+  ?>
 </section>

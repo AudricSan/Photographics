@@ -30,7 +30,7 @@ $imglink = $_SESSION['root'] . '/public/img';
 $_SESSION['imgroot'] = $imglink;
 
 if (!isset($_COOKIE['rootimg'])) {
-    setcookie("rootimg", $imglink);
+    setcookie('rootimg', $imglink);
 }
 
 //TITLE//
@@ -39,12 +39,12 @@ if (!isset($title)) {
     $subtitle = 'Photographics';
 }
 
-include("../model/class/BasicInfo.php");
-include("../model/dao/BasicInfoDAO.php");
+include('../model/class/BasicInfo.php');
+include('../model/dao/BasicInfoDAO.php');
 $basicinfoDAO = new BasicInfoDAO;
 
-include("../model/class/Tag.php");
-include("../model/dao/TagDAO.php");
+include('../model/class/Tag.php');
+include('../model/dao/TagDAO.php');
 $tagDAO = new TagDAO;
 
 $basicinfo = $basicinfoDAO->fetchAll();
@@ -92,8 +92,8 @@ echo "
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
 
-        <!-- JS library -->
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+        <!-- JS library
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> -->
 
     </head>
 ";
@@ -104,7 +104,6 @@ $title = explode($title, ' ');
 $nav = in_array('admin', $title);
 
 $tag = $tagDAO->fetchAll();
-
 echo "
     <header>
     <nav>
@@ -114,14 +113,14 @@ echo "
 
         <ul>
             <li class='nava'> <a href='/'>Gallery</a> </li>";
+            foreach ($tag as $tag) {
+                echo "<li role='presentation'><a href='$tag->_id' data-toggle='tab'>$tag->_name</a></li>";
+            };
 
-            foreach ($tag as $tag) {    
-                echo '<li role="presentation"><a href="#'. $tag->_id . '" data-toggle="tab">' . $tag->_name . '</a></li>';
-            }
+echo "
+        <li class='nava'> <a href='/about'>About</a> </li>
+        <li class='nava'> <a href='/contact'>Contact</a> </li>
+    </ul>
+</nav>";
 
-echo "      <li class='nava'> <a href='/about'>About</a> </li>
-            <li class='nava'> <a href='/contact'>Contact</a> </li>
-        </ul>
-    </nav>
-    </header>
-";
+echo"</header>";

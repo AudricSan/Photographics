@@ -41,11 +41,16 @@ class PictureTagDAO extends Env
     public function fetch($id)
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE pt_id = ?");
+            $statement = $this->connection->prepare("SELECT * FROM picturetag WHERE pt_tag = ?");
             $statement->execute([$id]);
-            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            return $this->create($result);
+            $picturetag = array();
+            foreach ($results as $result) {
+                array_push($picturetag, $this->create($result));
+            }
+
+            return $picturetag;
         } catch (PDOException $e) {
             var_dump($e);
         }

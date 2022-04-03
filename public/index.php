@@ -28,6 +28,7 @@ function foot()
 
 function gallery($how)
 {
+  $_GET['id'] = $how;
   include_once('../view/gallery.php');
 }
 
@@ -39,7 +40,13 @@ function adnav()
 // SECTION Base Route
 Route::add('/', function () {
   head();
-  gallery('all');
+  gallery(false);
+  foot();
+});
+
+Route::add('/([0-9]*)', function ($id) {
+  head();
+  gallery($id);
   foot();
 });
 

@@ -32,7 +32,9 @@ class TagDAO extends Env
                 array_push($tags, $this->create($result));
             }
 
+            // var_dump($tags);
             return $tags;
+
         } catch (PDOException $e) {
             var_dump($e);
         }

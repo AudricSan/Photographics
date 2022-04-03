@@ -1,7 +1,6 @@
 <?php
 session_start();
 use photographics\env;
-$env = new env;
 
 //Meta Var//
 $autor = 'Audric Rosier';
@@ -43,6 +42,11 @@ if (!isset($title)) {
 include("../model/class/BasicInfo.php");
 include("../model/dao/BasicInfoDAO.php");
 $basicinfoDAO = new BasicInfoDAO;
+
+include("../model/class/Tag.php");
+include("../model/dao/TagDAO.php");
+$tagDAO = new TagDAO;
+
 $basicinfo = $basicinfoDAO->fetchAll();
 
 foreach($basicinfo as $key => $value){
@@ -87,6 +91,10 @@ echo "
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
+
+        <!-- JS library -->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+
     </head>
 ";
 
@@ -94,6 +102,8 @@ echo "
 
 $title = explode($title, ' ');
 $nav = in_array('admin', $title);
+
+$tag = $tagDAO->fetchAll();
 
 echo "
     <header>
@@ -103,8 +113,13 @@ echo "
         </figure>
 
         <ul>
-            <li class='nava'> <a href='/'>Gallery</a> </li>
-            <li class='nava'> <a href='/about'>About</a> </li>
+            <li class='nava'> <a href='/'>Gallery</a> </li>";
+
+            foreach ($tag as $tag) {    
+                echo '<li role="presentation"><a href="#'. $tag->_id . '" data-toggle="tab">' . $tag->_name . '</a></li>';
+            }
+
+echo "      <li class='nava'> <a href='/about'>About</a> </li>
             <li class='nava'> <a href='/contact'>Contact</a> </li>
         </ul>
     </nav>

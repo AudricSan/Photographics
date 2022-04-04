@@ -3,7 +3,7 @@
 $imgroot = $_SESSION['imgroot'];
 
 echo "<div class='dashboard'>
-    <h1><a href='#' class='btn additems success'><span class='material-icons-round'>add</span></a></h1>
+    <h1> <a href='#' class='btn additems success'> <span class='material-icons-round'> add </span> </a> </h1>
 
     <table>
     <thead>

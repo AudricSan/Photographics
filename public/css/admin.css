@@ -210,6 +210,43 @@ main.dashboard div.dashboard div.dash-content div a:not(:first-of-type) {
   margin-left: 1em;
 }
 
+main.dashboard div.dashboard h1 {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+main.dashboard div.dashboard h1 a {
+  margin: 0;
+  padding: 0px;
+  border-radius: 50px;
+  min-width: 70px;
+  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main.dashboard div.dashboard h1 a span {
+  font-size: 30pt;
+}
+
 main.dashboard table {
   margin-left: 1em;
   text-align: left;
@@ -248,11 +285,5 @@ main.dashboard table tbody:nth-child(2n + 1) {
 
 main.dashboard table img {
   width: 100px;
-}
-
-main.dashboard h1 {
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
 }
 /*# sourceMappingURL=admin.css.map */

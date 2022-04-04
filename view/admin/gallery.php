@@ -19,16 +19,8 @@ echo "<div class='dashboard'>
     </thead>
 ";
 
-include("../model/class/Picture.php");
-include("../model/dao/PictureDAO.php");
 $pictureDAO = new PictureDAO;
-
-include("../model/class/PictureTag.php");
-include("../model/dao/PictureTagDAO.php");
 $pictureTagDAO = new PictureTagDAO;
-
-include("../model/class/Tag.php");
-include("../model/dao/TagDAO.php");
 $tagDAO = new TagDAO;
 
 $pictures = $pictureDAO->fetchAll();

@@ -86,6 +86,16 @@ Route::add('/admin/picture/add', function () {
   include_once('../view/admin/addPicture.php');
 });
 
+Route::add('/admin/picture/create', function () {
+  // var_dump($_POST);
+
+  include_once('../model/class/Picture.php');
+  include_once('../model/dao/PictureDAO.php');
+  $picture = new PictureDAO;
+  $picture = $picture->store($_POST);
+
+}, 'post');
+
 // Route::add('/adminv/tags', function () {
 //   head();
 //   adnav();

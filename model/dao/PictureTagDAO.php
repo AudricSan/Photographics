@@ -94,27 +94,30 @@ class PictureTagDAO extends Env
         $picid = intval($picid);
         $tagid = intval($tagid);
 
-        $picturetag = $this->create([
-            "pt_id" => 0,
-            'pt_picture'  => $picid,
-            'pt_tag'  => $tagid
-        ]);
+        // $picturetag = $this->create([
+        //     "pt_id" => 0,
+        //     'pt_picture'  => $picid,
+        //     'pt_tag'  => $tagid
+        // ]);
 
-        if ($picturetag) {
+        // if ($picturetag) {
             try {
                 $statement = $this->connection->prepare("INSERT INTO {$this->table} (pt_picture, pt_tag) VALUES (?, ?)");
                 $statement->execute([
-                    $picturetag->_picture,
-                    $picturetag->_tag
+                    // $picturetag->_picture,
+                    // $picturetag->_tag
+                    $picid,
+                    $tagid
                 ]);
 
-                $picturetag->_id = $this->connection->lastInsertId();
-                return $picturetag;
+                // $picturetag->_id = $this->connection->lastInsertId();
+                // return $picturetag;
+                return true;
             } catch (PDOException $e) {
                 echo $e;
                 return false;
             }
-        }
+        // }
     }
 
     public function update($id, $data)

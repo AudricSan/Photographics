@@ -80,6 +80,12 @@ Route::add('/admin/picture', function () {
   include_once('../view/admin/gallery.php');
 });
 
+Route::add('/admin/picture/add', function () {
+  head();
+  adnav();
+  include_once('../view/admin/addPicture.php');
+});
+
 // Route::add('/adminv/tags', function () {
 //   head();
 //   adnav();

@@ -30,7 +30,7 @@ foreach ($pictures as $key => $picture) {
     echo "
     <tbody>
         <tr>
-            <td> <img src='$imgroot/img/$picture->_link' > </td>
+            <td> <img src='$imgroot/images/$picture->_link' > </td>
             <td> $picture->_name </td>
             <td> $picture->_description </td>
             <td> $picture->_link </td>";

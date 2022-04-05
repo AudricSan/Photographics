@@ -5,7 +5,7 @@ console.log(nava);
 
 nava.forEach(element => {
     var line = new Image();
-    line.src = 'img/underline.png';
+    line.src = 'images/underline.png';
 
     element.addEventListener('mouseenter', event => {
         // console.log(element);

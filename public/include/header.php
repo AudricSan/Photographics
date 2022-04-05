@@ -26,7 +26,7 @@ $index  = $root . '/public/css/index.css';
 $admin  = $root . '/public/css/admin.css';
 $check  = $root . '/public/css/checkbox.css';
 
-$imglink = $_SESSION['root'] . '/public/img';
+$imglink = $_SESSION['root'] . '/public/images';
 $_SESSION['imgroot'] = $imglink;
 
 if (!isset($_COOKIE['rootimg'])) {

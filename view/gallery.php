@@ -32,7 +32,7 @@
 
       echo "<div class='media'>
             <a href='#'>
-              <img src='/public/img/img/$picture->_link' alt='$picture->_name'></a>
+              <img src='/public/images/img/$picture->_link' alt='$picture->_name'></a>
   
             <div>
               <a href='#'>
@@ -52,7 +52,7 @@
 
       echo "<div class='media'>
             <a href='#'>
-              <img src='/public/img/img/$pic->_link' alt='$pic->_name'></a>
+              <img src='/public/images/img/$pic->_link' alt='$pic->_name'></a>
   
               <div>
               <a href='#'>

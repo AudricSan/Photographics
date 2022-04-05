@@ -247,6 +247,56 @@ main.dashboard div.dashboard h1 a span {
   font-size: 30pt;
 }
 
+main.dashboard div.dashboard form {
+  margin: 0;
+  margin-left: 1em;
+  padding: 1em;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
+  border-radius: 20px 0px 0px 20px;
+}
+
+main.dashboard div.dashboard form div {
+  margin-top: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.dashboard div.dashboard form div p {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+main.dashboard div.dashboard form div label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 6px;
+}
+
+main.dashboard div.dashboard form div div {
+  margin-top: 0.5em;
+}
+
+main.dashboard div.dashboard form label:not(:first-of-type) {
+  margin-top: 1.5em;
+}
+
+main.dashboard div.dashboard form label + input {
+  margin: 0;
+  padding-left: 0;
+}
+
 main.dashboard table {
   margin-left: 1em;
   text-align: left;

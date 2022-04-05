@@ -127,22 +127,23 @@ main.dashboard {
 
     div.dashboard {
         display: flex;
-        flex-direction: row;
-
         flex-wrap: wrap;
 
         margin-top: 6.5em;
-        margin-left: 17em;
+        margin-left: 18em;
+        padding: 1em;
+        padding-bottom: 0;
+
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
+        border-radius: 20px 0px 0px 20px;
 
         div.dash-content {
-            display: flex;
-            flex-direction: column;
-
-            margin-left: 1em;
             margin-bottom: 1em;
+            margin-right: 1em;
             padding: 1em;
-            border: solid 3px var(--primary2);
 
+            border: solid 3px var(--primary2);
             border-radius: 10px;
 
             h2 {
@@ -176,7 +177,7 @@ main.dashboard {
 
             min-width: fit-content;
             min-height: fit-content;
-    
+
             a {
                 margin: 0;
                 padding: 0px;
@@ -191,7 +192,7 @@ main.dashboard {
                 align-items: center;
                 justify-content: center;
 
-                span{
+                span {
                     font-size: 30pt;
                 }
             }
@@ -199,39 +200,35 @@ main.dashboard {
 
         form {
             margin: 0;
-            margin-left: 1em;
-            padding: 1em;
-            background: #ffffff;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
-            border-radius: 20px 0px 0px 20px;
-    
+            padding-bottom: 1em;
+
             div {
                 margin-top: 1.5em;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
                 align-items: center;
-    
+
                 p {
                     flex-basis: 100%;
                 }
-    
+
                 label {
                     flex: 0 0 auto;
                     margin: 6px;
                 }
-    
+
                 div {
                     margin-top: 0.5em;
                 }
             }
-    
+
             label:not(:first-of-type) {
                 margin-top: 1.5em;
                 // margin-top: 1em;
             }
-    
-            label + input{
+
+            label + input {
                 margin: 0;
                 padding-left: 0;
             }
@@ -239,12 +236,20 @@ main.dashboard {
     }
 
     table {
-        margin-left: 1em;
         text-align: left;
+        margin-bottom: 1em;
 
         th,
         td {
             padding: 0.5em;
+
+            &:first-of-type{
+                border-radius: 10px 0 0 10px;
+            }
+            
+            &:last-of-type{
+                border-radius: 0 10px 10px 0;
+            }
         }
 
         thead {
@@ -283,6 +288,4 @@ main.dashboard {
             width: 100px;
         }
     }
-
-
 }

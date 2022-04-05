@@ -158,26 +158,21 @@ main.dashboard div.dashboard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 6.5em;
-  margin-left: 17em;
+  margin-left: 18em;
+  padding: 1em;
+  padding-bottom: 0;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
+  border-radius: 20px 0px 0px 20px;
 }
 
 main.dashboard div.dashboard div.dash-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-left: 1em;
   margin-bottom: 1em;
+  margin-right: 1em;
   padding: 1em;
   border: solid 3px var(--primary2);
   border-radius: 10px;
@@ -249,12 +244,7 @@ main.dashboard div.dashboard h1 a span {
 
 main.dashboard div.dashboard form {
   margin: 0;
-  margin-left: 1em;
-  padding: 1em;
-  background: #ffffff;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(9, 30, 66, 0.31);
-  border-radius: 20px 0px 0px 20px;
+  padding-bottom: 1em;
 }
 
 main.dashboard div.dashboard form div {
@@ -298,13 +288,23 @@ main.dashboard div.dashboard form label + input {
 }
 
 main.dashboard table {
-  margin-left: 1em;
   text-align: left;
+  margin-bottom: 1em;
 }
 
 main.dashboard table th,
 main.dashboard table td {
   padding: 0.5em;
+}
+
+main.dashboard table th:first-of-type,
+main.dashboard table td:first-of-type {
+  border-radius: 10px 0 0 10px;
+}
+
+main.dashboard table th:last-of-type,
+main.dashboard table td:last-of-type {
+  border-radius: 0 10px 10px 0;
 }
 
 main.dashboard table thead {

@@ -9,24 +9,26 @@ $keyword = 'SEO, keyword';
 
 
 // var_dump($_SERVER);
-$root = 'http://' . $_SERVER['HTTP_HOST'];
-$_SESSION['root'] = $root;
+$rootHost = 'http://' . $_SERVER['HTTP_HOST'];
+$rootDoc = $_SERVER['DOCUMENT_ROOT'];
+$_SESSION['root'] = $rootHost;
+$_SESSION['rootDoc'] = $rootDoc;
 
 // var_dump($root);
 //CSS link//
-$anim_css = $root   . '/public/css/anim.css';
-$style_css = $root   . '/public/css/index.css';
-$globals_css = $root   . '/public/css/globals.css';
+$anim_css = $rootHost   . '/public/css/anim.css';
+$style_css = $rootHost   . '/public/css/index.css';
+$globals_css = $rootHost   . '/public/css/globals.css';
 
-$colors = $root . '/public/css/colors.css';
-$reset  = $root . '/public/css/reset.css';
-$header = $root . '/public/css/header.css';
-$footer = $root . '/public/css/footer.css';
-$index  = $root . '/public/css/index.css';
-$admin  = $root . '/public/css/admin.css';
-$check  = $root . '/public/css/checkbox.css';
+$colors = $rootHost . '/public/css/colors.css';
+$reset  = $rootHost . '/public/css/reset.css';
+$header = $rootHost . '/public/css/header.css';
+$footer = $rootHost . '/public/css/footer.css';
+$index  = $rootHost . '/public/css/index.css';
+$admin  = $rootHost . '/public/css/admin.css';
+$check  = $rootHost . '/public/css/checkbox.css';
 
-$imglink = $_SESSION['root'] . '/public/images';
+$imglink = $rootHost . '/public/images';
 $_SESSION['imgroot'] = $imglink;
 
 if (!isset($_COOKIE['rootimg'])) {

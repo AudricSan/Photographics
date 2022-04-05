@@ -54,9 +54,9 @@ foreach ($pictures as $key => $picture) {
             ></td>
 
             <td class=action with=500>
-                <a class='btn validate' href='#'><span class='glyphicon glyphicon-eye-open'></span> See</a>
-                <a class='btn success' href='#'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
-                <a class='btn error' href='#'><span class='glyphicon glyphicon-trash'></span> Delete</a>
+                <a class='btn validate' href='#'>See</a>
+                <a class='btn success' href='/admin/picture/add/$picture->_id'>Edit</a>
+                <a class='btn error' href='#'>Delete</a>
             </td>
         </tr>
     </tbody>

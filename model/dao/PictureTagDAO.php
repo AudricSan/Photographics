@@ -86,17 +86,20 @@ class PictureTagDAO extends Env
         }
     }
 
-    public function store($data)
+    public function store($tagid, $picid)
     {
 
-        if (empty($data)) {
+        if (empty($tagid) || empty($picid)) {
             return false;
         }
 
+        $picid = intval($picid);
+        $tagid = intval($tagid);
+
         $picturetag = $this->create([
             "pt_id" => 0,
-            'pt_picture'  => $data['picture'],
-            'pt_tag'  => $data['tag']
+            'pt_picture'  => $picid,
+            'pt_tag'  => $tagid
         ]);
 
         if ($picturetag) {

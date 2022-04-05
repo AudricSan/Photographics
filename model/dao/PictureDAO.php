@@ -145,7 +145,6 @@ class PictureDAO extends Env
 
                 $picture->_id = $this->connection->lastInsertId();
 
-                // include('../class/PictureTag.php');
                 include('PictureTagDAO.php');
 
                 foreach ($data as $key => $value) {
@@ -167,15 +166,20 @@ class PictureDAO extends Env
         if (empty($data)) {
             return false;
         }
+        var_dump($data);
+        $data['share'] = (isset($data['share'])) ? 1 : 0 ;
 
         $picture = $this->create([
-            "_id" => $id,
-            '_name' => $data['name'],
-            '_description' => $data['desc'],
-            '_link' => $data['link'],
-            '_tag' => $data['tag'],
-            '_sharable' => $data['share'],
+            "picture_id" => $id,
+            'picture_name' => $data['title'],
+            'picture_description' => $data['desc'],
+            'picture_link' => $data['link'],
+            'picture_tag' => 0,
+            'picture_sharable' => $data['share'],
         ]);
+
+        var_dump($picture);
+        exit;
 
         if ($picture) {
             try {
@@ -189,11 +193,21 @@ class PictureDAO extends Env
                     $picture->_id
                 ]);
 
-                return $picture;
+                include('PictureTagDAO.php');
+
+                foreach ($data as $key => $value) {
+                    if (strpos($key, 'tag') !== false) {
+                        $pictureTagDAO = new PictureTagDAO;
+                        $pictureTagDAO->store($value, $picture->_id);
+                        header('location: /admin/picture');
+                    }
+                }
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
+                header('location: /admin/picture');
                 return false;
             }
         }
+        header('location: /admin/picture');
     }
 }

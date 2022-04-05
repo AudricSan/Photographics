@@ -87,38 +87,29 @@ Route::add('/admin/picture/add', function () {
 });
 
 Route::add('/admin/picture/create', function () {
-  // var_dump($_POST);
-
+  
   include_once('../model/class/Picture.php');
   include_once('../model/dao/PictureDAO.php');
+
   $picture = new PictureDAO;
   $picture = $picture->store($_POST);
 
 }, 'post');
 
-// Route::add('/adminv/tags', function () {
-//   head();
-//   adnav();
-//   include_once('../view/admin/tags.php');
-// });
 
-// Route::add('/adminv/poeple', function () {
-//   head();
-//   adnav();
-//   include_once('../view/admin/poeple.php');
-// });
 
-// Route::add('/adminv/api', function () {
-//   head();
-//   adnav();
-//   include_once('../view/admin/api.php');
-// });
 
-// Route::add('/adminv/doc', function () {
-//   head();
-//   adnav();
-//   include_once('../view/admin/doc.php');
-// });
+
+
+
+
+
+
+
+
+
+
+
 
 // ANCHOR This example shows how to include files and how to push data to them
 Route::add('/blog/([a-z-0-9-]*)', function ($slug) {
@@ -499,14 +490,6 @@ Route::add('/picturetag/([0-9]*)/edit', function ($id) {
   include_once('../model/dao/PictureTagDAO.php');
   $picturetag = new PictureTagDAO;
   $picturetag = $picturetag->update($id, $_POST);
-}, 'post');
-
-//ANCHOR Store Admin
-Route::add('/picturetag/store', function () {
-  include_once('../model/class/PictureTag.php');
-  include_once('../model/dao/PictureTagDAO.php');
-  $picturetag = new PictureTagDAO;
-  $picturetag = $picturetag->store($_POST);
 }, 'post');
 // !SECTION
 // !SECTION

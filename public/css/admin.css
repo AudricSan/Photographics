@@ -278,6 +278,16 @@ main.dashboard div.dashboard form div div {
   margin-top: 0.5em;
 }
 
+main.dashboard div.dashboard form div.img {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main.dashboard div.dashboard form div.img img {
+  max-height: 200px;
+}
+
 main.dashboard div.dashboard form label:not(:first-of-type) {
   margin-top: 1.5em;
 }

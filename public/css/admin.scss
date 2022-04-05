@@ -221,6 +221,15 @@ main.dashboard {
                 div {
                     margin-top: 0.5em;
                 }
+
+                &.img{
+                    justify-content: center;
+
+                    img{
+                        max-height: 200px;
+                    }
+                }
+                
             }
 
             label:not(:first-of-type) {

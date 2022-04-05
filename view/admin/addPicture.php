@@ -57,7 +57,11 @@ echo "
                 <label for='file'>File:</label>
                 <input type='file' id='file' name='file' required>";
             }else{
-                echo "<div class='img'><img src='$imgroot/img/$picture->_link' ></div>";
+                echo "
+                <div class='img'><img src='$imgroot/img/$picture->_link' ></div>
+                <input type='number' name='picture_id' value='$picture->_id' style='display:none'></input>
+                <input type='text' name='link' value='$picture->_link' style='display:none'></input>";
+                // var_dump($picture);
             }
 
 echo"

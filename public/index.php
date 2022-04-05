@@ -102,6 +102,16 @@ Route::add('/admin/picture/create', function () {
 
 }, 'post');
 
+Route::add('/admin/picture/edit', function () {
+  
+  include_once('../model/class/Picture.php');
+  include_once('../model/dao/PictureDAO.php');
+
+  $picture = new PictureDAO;
+  $picture = $picture->update($_POST['picture_id'], $_POST);
+
+}, 'post');
+
 
 
 

@@ -5,47 +5,59 @@
     <!-- <script src="https://kit.fontawesome.com/eb747bd21c.js" crossorigin="anonymous"></script> -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"> -->
-    <!-- <link rel='stylesheet' type='text/css' href='debug.css' media='screen' /> -->
+    <link rel='stylesheet' type='text/css' href='debug.css' media='screen' />
 
 
 </head>
 
 <body>
-
-
     <div class='dashboard'>
-        <div class='container admin'>
-        <div class='dash-picture'>
-        <h1><a href='#' class='btn additems success'><span class='material-icons-round'>add</span></a></h1>
-    
-        <table>
-        <thead>
-            <tr>
-                <th>Miniature</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>File Name</th>
-                <th>Tags</th>
-                <th>Sharable</th>
-                <th>Quick Action</th>
-            </tr>
-        </thead>
+        <form method="POST" action="" enctype="multipart/form-data" target="_self">
+            <label for="title">Image Title :</label>
+            <input type="text" id="title" name="title">
 
-        <tbody>
-            <tr>
-                <td> $value->_name </td>
-                <td> $value->_description </td>
-                <td> $value->_link </td>
-                <td> $value->_tag </td>
-                <td> $value->_sharable </td>
-                <td class=action with=500>
-                    <a class='btn validate' href='#'><span class='glyphicon glyphicon-eye-open'></span> See</a>
-                    <a class='btn success' href='#'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
-                    <a class='btn error' href='#'><span class='glyphicon glyphicon-trash'></span> Delete</a>
-                </td>
-            </tr>
-        </tbody>
-</table></div></div></div></main>
+            <label for="desc">Image Description :</label>
+            <input type="text" id="desc" name="desc">
+
+            <div>
+                <p>Select Tags : </p>
+
+                <div>
+                    <label for="tags1">Tags1</label>
+                    <input type="checkbox" id="tags1" name="tags1" value="tags1">
+                </div>
+
+                <div>
+                    <label for="tags2">Tags2</label>
+                    <input type="checkbox" id="tags2" name="tags2" value="tags2">
+                </div>
+
+                <div>
+                    <label for="tags3">Tags3</label>
+                    <input type="checkbox" id="tags3" name="tags3" value="tags3">
+                </div>
+
+                <div>
+                    <label for="tags4">Tags4</label>
+                    <input type="checkbox" id="tags4" name="tags4" value="tags4">
+                </div>
+
+                <div>
+                    <label for="tags5">Tags5</label>
+                    <input type="checkbox" id="tags5" name="tags5" value="tags5">
+                </div>
+            </div>
+
+            <label for="share">Sharable</label>
+            <input type="checkbox" class="switch" id="share" name="share" value="1">
+
+            <label for="file">File:</label>
+            <input type="file" id="file" name="file">
+
+
+            <input class="btn validate" type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 
 </html>

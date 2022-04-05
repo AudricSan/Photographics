@@ -86,6 +86,12 @@ Route::add('/admin/picture/add', function () {
   include_once('../view/admin/addPicture.php');
 });
 
+Route::add('/admin/picture/add/([0-9]*)', function ($id) {
+  head();
+  adnav();
+  include_once('../view/admin/addPicture.php');
+});
+
 Route::add('/admin/picture/create', function () {
   
   include_once('../model/class/Picture.php');

@@ -58,8 +58,6 @@ class PictureDAO extends Env
             return false;
         }
 
-        // NOTE DUMP OF OBJECT CREATE
-        // var_dump($result);
         return new Picture(
             $result['picture_id'],
             $result['picture_name'],
@@ -91,19 +89,52 @@ class PictureDAO extends Env
             return false;
         }
 
+        $name = $this->checkInput($data['title']);
+        $desc = $this->checkInput($data['desc']);
+
+        $share = ($data['share'] === 'on') ? 1 : 0;
+
+        session_start();
+        $imgroot = $_SESSION['rootDoc'] . "/public/images";
+
+        $image              = $this->checkInput($_FILES['file']["name"]);
+        $imagePath          = $imgroot . '/img/' . basename($image);
+        $imageExtension     = pathinfo($imagePath, PATHINFO_EXTENSION);
+
+        if (empty($image)) {
+            $imageError = 'Ce champ ne peut pas être vide';
+        } else {
+            $isUploadSuccess = true;
+            if ($imageExtension != "jpg" && $imageExtension != "png" && $imageExtension != "jpeg" && $imageExtension != "gif") {
+                $imageError = "Les fichiers autorises sont: .jpg, .jpeg, .png, .gif";
+                $isUploadSuccess = false;
+            }
+            if ($_FILES["file"]["size"] > 500000) {
+                $imageError = "Le fichier ne doit pas depasser les 500KB";
+                $isUploadSuccess = false;
+            }
+            if ($isUploadSuccess) {
+                if (!move_uploaded_file($_FILES["file"]["tmp_name"], $imagePath)) {
+                    $imageError = "Il y a eu une erreur lors de l'upload";
+                    $isUploadSuccess = false;
+                } else {;
+                }
+            }
+        }
+
         $picture = $this->create([
             'picture_id' => 0,
-            'picture_name' => $data['name'],
-            'picture_description' => $data['desc'],
-            'picture_link' => $data['link'],
-            'picture_tag' => $data['tag'],
-            'picture_sharable' => $data['share']
+            'picture_name' => $name,
+            'picture_description' => $desc,
+            'picture_link' => $image,
+            'picture_tag' => 0,
+            'picture_sharable' => $share
         ]);
 
         if ($picture) {
             try {
                 $statement = $this->connection->prepare("INSERT INTO {$this->table} (
-                picture_name, picture_description, picture_link, picture_tag, picture_sharable) VALUES (?, ?, ?, ?, ?, ?)");
+                picture_name, picture_description, picture_link, picture_tag, picture_sharable) VALUES (?, ?, ?, ?, ?)");
                 $statement->execute([
                     $picture->_name,
                     $picture->_description,
@@ -112,8 +143,18 @@ class PictureDAO extends Env
                     $picture->_sharable
                 ]);
 
-                $picture->id = $this->connection->lastInsertId();
-                return $picture;
+                $picture->_id = $this->connection->lastInsertId();
+
+                // include('../class/PictureTag.php');
+                include('PictureTagDAO.php');
+
+                foreach ($data as $key => $value) {
+                    if (strpos($key, 'tag') !== false) {
+                        $pictureTagDAO = new PictureTagDAO;
+                        $result = $pictureTagDAO->store($value, $picture->_id);
+                        header('location: /admin/picture');
+                    }
+                }
             } catch (PDOException $e) {
                 echo $e;
                 return false;

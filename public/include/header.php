@@ -88,6 +88,7 @@ echo "
 
         <link rel='stylesheet' type='text/css' href='$colors' />
         <link rel='stylesheet' type='text/css' href='$reset' />
+        <link rel='stylesheet' type='text/css' href='$check' />
 
         <link rel='stylesheet' type='text/css' href='$header' />        
         <link rel='stylesheet' type='text/css' href='$footer' />        

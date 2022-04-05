@@ -55,6 +55,24 @@ class PictureTagDAO extends Env
             var_dump($e);
         }
     }
+    
+    public function fetchByPic($id)
+    {
+        try {
+            $statement = $this->connection->prepare("SELECT * FROM picturetag WHERE pt_picture = ?");
+            $statement->execute([$id]);
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $picturetag = array();
+            foreach ($results as $result) {
+                array_push($picturetag, $this->create($result));
+            }
+
+            return $picturetag;
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+    }
 
     public function create($result)
     {

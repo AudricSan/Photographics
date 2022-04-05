@@ -1,6 +1,6 @@
 <?php
-use photographics\PictureTag;
 use photographics\Env;
+use photographics\PictureTag;
 
 class PictureTagDAO extends Env
 {
@@ -61,9 +61,7 @@ class PictureTagDAO extends Env
         if (!$result) {
             return false;
         }
-
-        // NOTE DUMP OF OBJECT CREATE
-        // var_dump($result);
+        
         return new PictureTag(
             $result['pt_id'],
             $result['pt_picture'],

@@ -42,12 +42,12 @@
         }
 
         &:disabled {
-            --b: var(--disabled);
+            // --b: var(--disabled);
             cursor: not-allowed;
-            opacity: 0.9;
+            // opacity: 0.9;
             &:checked {
-                --b: var(--disabled-inner);
-                --bc: var(--border);
+                // --b: var(--disabled-inner);
+                // --bc: var(--border);
             }
 
             & + label {
@@ -126,13 +126,13 @@
                 --x: 17px;
             }
 
-            &:disabled {
-                &:not(:checked) {
-                    &:after {
-                        opacity: 0.6;
-                    }
-                }
-            }
+            // &:disabled {
+            //     &:not(:checked) {
+            //         &:after {
+            //             opacity: 0.6;
+            //         }
+            //     }
+            // }
         }
     }
 

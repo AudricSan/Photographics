@@ -47,14 +47,7 @@
   }
   input[type="checkbox"]:disabled,
   input[type="radio"]:disabled {
-    --b: var(--disabled);
     cursor: not-allowed;
-    opacity: 0.9;
-  }
-  input[type="checkbox"]:disabled:checked,
-  input[type="radio"]:disabled:checked {
-    --b: var(--disabled-inner);
-    --bc: var(--border);
   }
   input[type="checkbox"]:disabled + label,
   input[type="radio"]:disabled + label {
@@ -124,9 +117,6 @@
   input[type="checkbox"].switch:checked {
     --ab: var(--active-inner);
     --x: 17px;
-  }
-  input[type="checkbox"].switch:disabled:not(:checked):after {
-    opacity: 0.6;
   }
   input[type="radio"] {
     border-radius: 50%;

@@ -51,7 +51,7 @@ foreach ($pictures as $key => $picture) {
                     echo "checked";
                 }
             echo"
-            ></td>
+            disabled ></td>
 
             <td class=action with=500>
                 <a class='btn validate' href='#'>See</a>

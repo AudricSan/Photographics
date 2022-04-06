@@ -112,89 +112,134 @@ Route::add('/admin/picture/edit', function () {
 
 }, 'post');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ANCHOR This example shows how to include files and how to push data to them
-Route::add('/blog/([a-z-0-9-]*)', function ($slug) {
+Route::add('/admin/tags', function () {
   head();
-  include_once('include-example.php');
-  foot();
+  adnav();
+  include_once('../view/admin/tags.php');
 });
 
-// ANCHOR Get route example
-Route::add('/contact-form', function () {
+Route::add('/admin/tags/add', function () {
   head();
-  echo '<form method="post"><input type="text" name="test"><input type="submit" value="send"></form>';
-}, 'get');
+  adnav();
+  include_once('../view/admin/addTags.php');
+});
 
-// ANCHOR Post route example
-Route::add('/contact-form', function () {
+Route::add('/admin/tags/add/([0-9]*)', function ($id) {
   head();
-  echo 'Hey! The form has been sent:<br>';
-  print_r($_POST);
+  adnav();
+  include_once('../view/admin/addTags.php');
+});
+
+Route::add('/admin/tags/create', function () {
+  
+  include_once('../model/class/Picture.php');
+  include_once('../model/dao/PictureDAO.php');
+
+  $picture = new PictureDAO;
+  $picture = $picture->store($_POST);
+
 }, 'post');
 
-// ANCHOR Get and Post route example
-Route::add('/get-post-sample', function () {
-  head();
-  echo 'You can GET this page and also POST this form back to it';
-  echo '<form method="post"><input type="text" name="input"><input type="submit" value="send"></form>';
-  if (isset($_POST['input'])) {
-    echo 'I also received a POST with this data:<br>';
-    print_r($_POST);
-  }
-}, ['get', 'post']);
+Route::add('/admin/tags/edit', function () {
+  
+  include_once('../model/class/Picture.php');
+  include_once('../model/dao/PictureDAO.php');
 
-// ANCHOR Route with regexp parameter
-// Be aware that (.*) will match / (slash) too. For example: /user/foo/bar/edit
-// Also users could inject SQL statements or other untrusted data if you use (.*)
-// You should better use a saver expression like /user/([0-9]*)/edit or /user/([A-Za-z]*)/edit
-Route::add('/user/(.*)/edit', function ($id) {
-  head();
-  echo 'Edit user with id ' . $id . '<br>';
-});
+  $picture = new PictureDAO;
+  $picture = $picture->update($_POST['picture_id'], $_POST);
 
-// ANCHOR Accept only numbers as parameter. Other characters will result in a 404 error
-Route::add('/foo/([0-9]*)/bar', function ($var1) {
-  head();
-  echo $var1 . ' is a great number!';
-});
+}, 'post');
 
-// ANCHOR Auto generate dynamic routes from a database or from another source
-// For this example we will just use a predefined array
-foreach ($slugs as $slug => $entry) {
-  Route::add('/my-blog-articles/' . $slug, function () use ($entry) {
-    head();
-    echo 'You are here: ' . $entry;
-  });
-}
 
-// ANCHOR Use variables from global scope
-// You can use for example use() to inject variables to local scope
-// You can use global to register the variable in local scope
-$foo = 'foo';
-$bar = 'bar';
-Route::add('/global/([a-z-0-9-]*)', function ($param) use ($foo) {
-  global $bar;
-  head();
-  echo 'The param is ' . $param . '<br/>';
-  echo 'Foo is ' . $foo . '<br/>';
-  echo 'Bar is ' . $bar . '<br/>';
-});
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SECTION ERROR
 // ANCHOR 404 not found route
 Route::pathNotFound(function ($path) {
   head();
@@ -233,285 +278,8 @@ Route::add('/routes', function () {
   }
   echo '</ul>';
 });
-// !SECTION
-// !SECTION
-
-//SECTION 
-
-// SECTION Dao Route
-// SECTION admin
-// ANCHOR 
-Route::add('/admin', function () {
-  head();
-  include_once('../model/class/Admin.php');
-  include_once('../model/dao/AdminDAO.php');
-
-  $admin = new AdminDAO;
-  $admin = $admin->fetchAll();
-
-  var_dump($admin);
-  foot();
-});
-
-// ANCHOR Specific Admin
-Route::add('/admin/([0-9]*)', function ($id) {
-  head();
-  include_once('../model/class/Admin.php');
-  include_once('../model/dao/AdminDAO.php');
-
-  $admin = new AdminDAO;
-  $admin = $admin->fetch($id);
-
-  var_dump($admin);
-});
-
-//ANCHOR Delete Admin
-Route::add('/admin/([0-9]*)/delete', function ($id) {
-  include_once('../model/class/Admin.php');
-  include_once('../model/dao/AdminDAO.php');
-  $admin = new AdminDAO;
-  $admin = $admin->delete($id);
-
-  var_dump($admin);
-});
-
-//ANCHOR Edit Admin
-Route::add('/admin/([0-9]*)/edit', function ($id) {
-  head();
-  include_once('../model/class/Admin.php');
-  include_once('../model/dao/AdminDAO.php');
-
-  $admin = new AdminDAO;
-  $admin = $admin->update($id, $_POST);
-
-  var_dump($admin);
-}, 'post');
-
-//ANCHOR Store Admin
-Route::add('/admin/store', function () {
-  include_once('../model/class/Admin.php');
-  include_once('../model/dao/AdminDAO.php');
-  $admin = new AdminDAO;
-  $admin = $admin->store($_POST);
-
-  var_dump($admin);
-}, 'post');
-// !SECTION
-
-//ANCHOR Delete Admin
-Route::add('/basicinfo/([0-9]*)/delete', function ($id) {
-  include_once('../model/class/BasicInfo.php');
-  include_once('../model/dao/BasicInfoDAO.php');
-  $basicinfo = new BasicInfoDAO;
-  $basicinfo = $basicinfo->delete($id);
-
-  header("location: /admin");
-});
-
-//ANCHOR Edit Admin
-Route::add('/basicinfo/([0-9]*)/edit', function ($id) {
-  head();
-  include_once('../model/class/BasicInfo.php');
-  include_once('../model/dao/BasicInfoDAO.php');
-
-  $basicinfo = new BasicInfoDAO;
-  $basicinfo = $basicinfo->update($id, $_POST);
-
-  header("location: /admin");
-}, 'post');
-
-// SECTION Picture
-// ANCHOR 
-Route::add('/picture', function () {
-  head();
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-  $picture = new PictureDAO;
-  $picture = $picture->fetchAll();
-
-  var_dump($picture);
-});
-
-// ANCHOR Specific Admin
-Route::add('/picture/([0-9]*)', function ($id) {
-  head();
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-  $picture = new PictureDAO;
-  $picture = $picture->fetch($id);
-
-  var_dump($picture);
-});
-
-//ANCHOR Delete Admin
-Route::add('/picture/([0-9]*)/delete', function ($id) {
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-  $picture = new PictureDAO;
-  $picture = $picture->delete($id);
-});
-
-//ANCHOR Edit Admin
-Route::add('/picture/([0-9]*)/edit', function ($id) {
-  head();
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-
-  $picture = new PictureDAO;
-  $picture = $picture->update($id, $_POST);
-}, 'post');
-
-//ANCHOR Store Admin
-Route::add('/picture/store', function () {
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-  $picture = new PictureDAO;
-  $picture = $picture->store($_POST);
-}, 'post');
-// !SECTION
-
-// SECTION Role
-// ANCHOR 
-Route::add('/role', function () {
-  head();
-  include_once('../model/class/Role.php');
-  include_once('../model/dao/roleDAO.php');
-  $role = new RoleDAO;
-  $role = $role->fetchAll();
-
-  var_dump($role);
-});
-
-// ANCHOR Specific Admin
-Route::add('/role/([0-9]*)', function ($id) {
-  head();
-  include_once('../model/class/Role.php');
-  include_once('../model/dao/roleDAO.php');
-  $role = new RoleDAO;
-  $role = $role->fetch($id);
-
-  var_dump($role);
-});
-
-//ANCHOR Delete Admin
-Route::add('/role/([0-9]*)/delete', function ($id) {
-  include_once('../model/class/Role.php');
-  include_once('../model/dao/roleDAO.php');
-  $role = new RoleDAO;
-  $role = $role->delete($id);
-});
-
-//ANCHOR Edit Admin
-Route::add('/role/([0-9]*)/edit', function ($id) {
-  head();
-  include_once('../model/class/Role.php');
-  include_once('../model/dao/roleDAO.php');
-
-  $role = new RoleDAO;
-  $role = $role->update($id, $_POST);
-}, 'post');
-
-//ANCHOR Store Admin
-Route::add('/role/store', function () {
-  include_once('../model/class/Role.php');
-  include_once('../model/dao/roleDAO.php');
-  $role = new RoleDAO;
-  $role = $role->store($_POST);
-}, 'post');
-// !SECTION
-
-// SECTION Tag
-// ANCHOR 
-Route::add('/tag', function () {
-  head();
-  include_once('../model/class/Tag.php');
-  include_once('../model/dao/TagDAO.php');
-  $tag = new TagDAO;
-  $tag = $tag->fetchAll();
-
-  var_dump($tag);
-});
-
-// ANCHOR Specific Admin
-Route::add('/tag/([0-9]*)', function ($id) {
-  head();
-  include_once('../model/class/Tag.php');
-  include_once('../model/dao/TagDAO.php');
-  $tag = new TagDAO;
-  $tag = $tag->fetch($id);
-
-  var_dump($tag);
-});
-
-//ANCHOR Delete Admin
-Route::add('/tag/([0-9]*)/delete', function ($id) {
-  include_once('../model/class/Tag.php');
-  include_once('../model/dao/TagDAO.php');
-  $tag = new TagDAO;
-  $tag = $tag->delete($id);
-});
-
-//ANCHOR Edit Admin
-Route::add('/tag/([0-9]*)/edit', function ($id) {
-  head();
-  include_once('../model/class/Tag.php');
-  include_once('../model/dao/TagDAO.php');
-
-  $tag = new TagDAO;
-  $tag = $tag->update($id, $_POST);
-}, 'post');
-
-//ANCHOR Store Admin
-Route::add('/tag/store', function () {
-  include_once('../model/class/Tag.php');
-  include_once('../model/dao/TagDAO.php');
-  $tag = new TagDAO;
-  $tag = $tag->store($_POST);
-}, 'post');
-// !SECTION
-
-// SECTION PictureTag
-// ANCHOR 
-Route::add('/picturetag', function () {
-  head();
-  include_once('../model/class/PictureTag.php');
-  include_once('../model/dao/PictureTagDAO.php');
-  $picturetag = new PictureTagDAO;
-  $picturetag = $picturetag->fetchAll();
-  var_dump($tag);
-});
-
-// ANCHOR Specific Admin
-Route::add('/picturetag/([0-9]*)', function ($id) {
-  head();
-  include_once('../model/class/PictureTag.php');
-  include_once('../model/dao/PictureTagDAO.php');
-  $picturetag = new PictureTagDAO;
-  $picturetag = $picturetag->fetch($id);
-  var_dump($tag);
-});
-
-//ANCHOR Delete Admin
-Route::add('/picturetag/([0-9]*)/delete', function ($id) {
-  include_once('../model/class/PictureTag.php');
-  include_once('../model/dao/PictureTagDAO.php');
-  $picturetag = new PictureTagDAO;
-  $picturetag = $picturetag->delete($id);
-});
-
-//ANCHOR Edit Admin
-Route::add('/picturetag/([0-9]*)/edit', function ($id) {
-  head();
-  include_once('../model/class/PictureTag.php');
-  include_once('../model/dao/PictureTagDAO.php');
-  $picturetag = new PictureTagDAO;
-  $picturetag = $picturetag->update($id, $_POST);
-}, 'post');
-// !SECTION
-// !SECTION
 
 // ANCHOR Run the Router with the given Basepath
 Route::run(BASEPATH);
-
 // ANCHOR Activez le mode sensible à la casse, les barres obliques de fin de ligne et le mode de correspondance multiple en définissant les paramètres à true.
 // Route::run(BASEPATH, true, true, true) ;

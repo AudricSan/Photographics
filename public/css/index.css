@@ -39,7 +39,7 @@ section .about p {
 section.about {
   padding: 5em;
   margin-top: 6.5em;
-  background-image: url(../img/img/3.jpg);
+  background-image: url(../images/img/1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -79,7 +79,7 @@ section.contact {
           flex-direction: row-reverse;
   padding: 5em;
   margin-top: 6.5em;
-  background-image: url(../img/img/3.jpg);
+  background-image: url(../images/img/3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

@@ -179,8 +179,6 @@ class PictureDAO extends Env
         ]);
 
         var_dump($picture);
-        exit;
-
         if ($picture) {
             try {
                 $statement = $this->connection->prepare("UPDATE {$this->table} SET picture_name = ?, picture_description = ?, picture_link = ?, picture_tag = ?, picture_sharable = ? WHERE picture_id = ?");
@@ -194,14 +192,36 @@ class PictureDAO extends Env
                 ]);
 
                 include('PictureTagDAO.php');
+                // var_dump($picture);
 
+                //FIXME CANT EDIT TAGS ATRIBUTE TO AN IMAGE
+                $pictureTagDAO = new PictureTagDAO;
+                $pictureByTag = $pictureTagDAO->fetchByPic($picture->_id);
+                $pictureTag = $pictureTagDAO->fetchAll();
+
+                $tags = array();
                 foreach ($data as $key => $value) {
                     if (strpos($key, 'tag') !== false) {
-                        $pictureTagDAO = new PictureTagDAO;
-                        $pictureTagDAO->store($value, $picture->_id);
-                        header('location: /admin/picture');
+                        array_push($tags, $value);
                     }
                 }
+
+                if (!empty($pictureByTag)) {
+                    foreach ($pictureByTag as $key => $value) {
+                        if ($value->_pic === $picture->_id) {
+                            if (!in_array($value->_tag, $tags)) {
+                                $pictureTagDAO->store($value, $picture->_id);
+                            }
+                        }
+                    }
+                } else {
+                    foreach ($tags as $key => $value) {
+                        $pictureTagDAO->store($value, $picture->_id);
+                    }
+                }
+                //END FIXME 
+
+                header('location: /admin/picture');
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 header('location: /admin/picture');

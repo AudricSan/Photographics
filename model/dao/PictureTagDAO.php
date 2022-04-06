@@ -2,6 +2,9 @@
 use photographics\Env;
 use photographics\PictureTag;
 
+$root = $_SERVER['DOCUMENT_ROOT'];
+include_once("$root/model/class/PictureTag.php");
+
 class PictureTagDAO extends Env
 {
     //DON'T TOUCH IT, LITTLE PRICK
@@ -112,30 +115,27 @@ class PictureTagDAO extends Env
         $picid = intval($picid);
         $tagid = intval($tagid);
 
-        // $picturetag = $this->create([
-        //     "pt_id" => 0,
-        //     'pt_picture'  => $picid,
-        //     'pt_tag'  => $tagid
-        // ]);
+        $picturetag = $this->create([
+            "pt_id" => 0,
+            'pt_picture'  => $picid,
+            'pt_tag'  => $tagid
+        ]);
 
-        // if ($picturetag) {
+        if ($picturetag) {
             try {
                 $statement = $this->connection->prepare("INSERT INTO {$this->table} (pt_picture, pt_tag) VALUES (?, ?)");
                 $statement->execute([
-                    // $picturetag->_picture,
-                    // $picturetag->_tag
-                    $picid,
-                    $tagid
+                    $picturetag->_pic,
+                    $picturetag->_tag
                 ]);
 
-                // $picturetag->_id = $this->connection->lastInsertId();
-                // return $picturetag;
-                return true;
+                $picturetag->_id = $this->connection->lastInsertId();
+                return $picturetag;
             } catch (PDOException $e) {
                 echo $e;
                 return false;
             }
-        // }
+        }
     }
 
     public function update($id, $data)

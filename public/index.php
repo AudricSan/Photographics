@@ -1,7 +1,6 @@
 <?php
 
 // NOTE Use this namespace
-
 use photographics\Route;
 
 // NOTE Include class
@@ -10,10 +9,6 @@ include '../model/class/env.php';
 
 // NOTE Define a global basepath
 define('BASEPATH', '/');
-
-// NOTE Lets define some slugs for automatic route and headgation generation
-// See examples below
-$slugs = ['article-1' => 'Article 1', 'article-2' => 'Article 2', 'article-3' => 'Article 3'];
 
 // NOTE This function just renders a simple header
 function head()

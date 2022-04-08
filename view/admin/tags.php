@@ -31,8 +31,7 @@ foreach ($tags as $key => $tag) {
                 <a class='btn error' href='/admin/tag/delete/$tag->_id'>Delete</a>
             </td>
         </tr>
-    </tbody>
-";
+    </tbody>";
 }
 
 echo "</table></div></main>";
@@ -40,9 +39,12 @@ echo "</table></div></main>";
 if(!empty($_SESSION['error']['tags'])){
     // var_dump($_SESSION);
     $errors = $_SESSION['error']['tags'];
+    echo "<div class='error'>";
     foreach($errors as $error){
-        echo "<div class='error'><p>$error</p></div>";
-    }
-
+        echo "<p>$error</p>";
+    }    
+    
+    echo " <a href='#' class='btn validate'> OK </a>";
     unset($_SESSION['error']['tags']);
+    echo "</div>";
 }

@@ -26,8 +26,8 @@ foreach ($tags as $key => $tag) {
             <td> $tag->_description </td>
 
             <td class=action with=500>
-                <a class='btn validate' href='#'>See</a>
-                <a class='btn success' href='/admin/tags/add/$tag->_id'>Edit</a>
+                <!-- <a class='btn validate' href='#'>See</a> -->
+                <a class='btn success' href='/admin/tag/add/$tag->_id'>Edit</a>
                 <a class='btn error' href='#'>Delete</a>
             </td>
         </tr>

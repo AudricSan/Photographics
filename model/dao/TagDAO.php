@@ -92,7 +92,7 @@ class TagDAO extends Env
 
         $tag = $this->create([
             "tag_id" => 0,
-            'tag_name'  => $data['name'],
+            'tag_name'  => $data['title'],
             'tag_description'  => $data['desc'],
         ]);
 
@@ -103,14 +103,12 @@ class TagDAO extends Env
                     $tag->_name,
                     $tag->_description
                 ]);
-
-                $tag->id = $this->connection->lastInsertId();
-                return $tag;
+                
             } catch (PDOException $e) {
                 echo $e;
-                return false;
             }
         }
+        header('location: /admin/tag');
     }
 
     public function update($id, $data)
@@ -120,9 +118,9 @@ class TagDAO extends Env
         }
 
         $tag = $this->create([
-            "_id" => $id,
-            '_name' => $data['name'],
-            '_description' => $data['desc'],
+            'tag_id' => $id,
+            'tag_name' => $data['title'],
+            'tag_description' => $data['desc'],
         ]);
 
         if ($tag) {
@@ -134,11 +132,11 @@ class TagDAO extends Env
                     $tag->_id
                 ]);
 
-                return $tag;
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;
             }
         }
+        header('location: /admin/tag');
     }
 }

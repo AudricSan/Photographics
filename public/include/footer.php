@@ -74,5 +74,8 @@ echo "
             </div>
         </div>
     </footer>
+    
     <script src='js/nav.js'></script>
+    <script src='js/love.js'></script>
+    <script src='js/share.js'></script>
 ";

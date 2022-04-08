@@ -73,14 +73,24 @@ class TagDAO extends Env
         if (!$id) {
             return false;
         }
-        try {
-            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE tag_id = ?");
-            $statement->execute([
-                $id
-            ]);
-        } catch (PDOException $e) {
-            var_dump($e->getMessage());
+
+        $tags = $this->fetchAll();
+        $tagcount = count($tags);
+
+        if ($tagcount > 1) {
+            try {
+                $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE tag_id = ?");
+                $statement->execute([
+                    $id
+                ]);
+            } catch (PDOException $e) {
+                var_dump($e->getMessage());
+            }
+        }else{
+            $_SESSION['error']['tags']['delete'] = "You can't have less than 1 Tag";
         }
+
+        header('location: /admin/tag');
     }
 
     public function store($data)
@@ -103,7 +113,7 @@ class TagDAO extends Env
                     $tag->_name,
                     $tag->_description
                 ]);
-                
+
             } catch (PDOException $e) {
                 echo $e;
             }

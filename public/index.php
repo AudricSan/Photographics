@@ -107,45 +107,6 @@ Route::add('/admin/picture/edit', function () {
 
 }, 'post');
 
-Route::add('/admin/tags', function () {
-  head();
-  adnav();
-  include_once('../view/admin/tags.php');
-});
-
-Route::add('/admin/tags/add', function () {
-  head();
-  adnav();
-  include_once('../view/admin/addTags.php');
-});
-
-Route::add('/admin/tags/add/([0-9]*)', function ($id) {
-  head();
-  adnav();
-  include_once('../view/admin/addTags.php');
-});
-
-Route::add('/admin/tags/create', function () {
-  
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-
-  $picture = new PictureDAO;
-  $picture = $picture->store($_POST);
-
-}, 'post');
-
-Route::add('/admin/tags/edit', function () {
-  
-  include_once('../model/class/Picture.php');
-  include_once('../model/dao/PictureDAO.php');
-
-  $picture = new PictureDAO;
-  $picture = $picture->update($_POST['picture_id'], $_POST);
-
-}, 'post');
-
-
 Route::add('/admin/picture/delete/([0-9]*)', function ($id) {
   head();
   adnav();
@@ -157,8 +118,47 @@ Route::add('/admin/picture/delete/([0-9]*)', function ($id) {
   $picture = $picture->delete($id);
 });
 
+Route::add('/admin/tag', function () {
+  head();
+  adnav();
+  include_once('../view/admin/tags.php');
+});
+
+Route::add('/admin/tag/add/([0-9]*)', function ($id) {
+  head();
+  adnav();
+  include_once('../view/admin/addTag.php');
+});
+
+Route::add('/admin/tag/add', function () {
+  head();
+  adnav();
+  include_once('../view/admin/addTag.php');
+});
 
 
+
+
+
+
+
+Route::add('/admin/tag/create', function () {
+  
+  include_once('../model/class/Tag.php');
+  include_once('../model/dao/TagDAO.php');
+
+  $tagDao = new TagDAO;
+  $tag = $tagDao->store($_POST);
+}, 'post');
+
+Route::add('/admin/tag/edit', function () {
+  
+  include_once('../model/class/Tag.php');
+  include_once('../model/dao/TagDAO.php');
+
+  $tagDao = new TagDAO;
+  $tagDao->update($_POST['tag_id'], $_POST);
+}, 'post');
 
 
 

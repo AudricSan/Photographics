@@ -259,3 +259,12 @@ section {
         }
     }
 }
+
+.loveAlert {
+    transform-origin: center 70%;
+    animation: LoveAlert 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+
+    i{
+        color: var(--primary2) !important;
+    }
+}

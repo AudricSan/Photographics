@@ -35,11 +35,11 @@
               <img src='/public/images/img/$picture->_link' alt='$picture->_name'></a>
   
             <div>
-              <a href='/love/$picture->_id'>
+              <a id='$picture->_id' onclick='love(this, event)'>
                 <i class='fa-solid fa-heart'></i></a>";
 
       if ($picture->_sharable) {
-        echo "<a href='/share/$picture->_id'><i class='fa-solid fa-share-nodes'></i></a>";
+        echo "<a id='$picture->_id' onclick='share(this, event)'><i class='fa-solid fa-share-nodes'></i></a>";
       }
       echo "</div></div>";
     }
@@ -53,10 +53,10 @@
               <img src='/public/images/img/$pic->_link' alt='$pic->_name'></a>
   
               <div>
-              <a><i class='fa-solid fa-heart'></i></a>";
+              <a id='$picture->_id' onclick='love(this, event)'><i class='fa-solid fa-heart'></i></a>";
 
       if ($picture->_sharable) {
-        echo "<a onclick='share()'><i class='fa-solid fa-share-nodes'></i></a>";
+        echo "<a id='$picture->_id' onclick='share(this, event)'><i class='fa-solid fa-share-nodes'></i></a>";
       }
 
       echo "</div></div>";

@@ -165,6 +165,11 @@ Route::add('/admin/tag/delete/([0-9]*)', function ($id) {
   $tagDao->delete($id);
 });
 
+Route::add('/see/([0-9]*)', function ($id) {
+    head();
+    include_once('../view/see.php');
+    foot();
+});
 
 
 

@@ -31,18 +31,16 @@
       $picture = $pictureDAO->fetch($value->_pic);
 
       echo "<div class='media'>
-            <a href='#'>
+            <a href='/see/$picture->_id'>
               <img src='/public/images/img/$picture->_link' alt='$picture->_name'></a>
   
             <div>
-              <a href='#'>
+              <a href='/love/$picture->_id'>
                 <i class='fa-solid fa-heart'></i></a>";
 
       if ($picture->_sharable) {
-        echo "<a href='#'>
-        <i class='fa-solid fa-share-nodes'></i></a>";
+        echo "<a href='/share/$picture->_id'><i class='fa-solid fa-share-nodes'></i></a>";
       }
-
       echo "</div></div>";
     }
   } else {
@@ -51,16 +49,15 @@
       $pic = $pictureDAO->fetch($picture->_id);
 
       echo "<div class='media'>
-            <a href='#'>
+            <a href='/see/$picture->_id'>
               <img src='/public/images/img/$pic->_link' alt='$pic->_name'></a>
   
               <div>
-              <a href='#'>
+              <a href='/love/$picture->_id'>
                 <i class='fa-solid fa-heart'></i></a>";
 
       if ($picture->_sharable) {
-        echo "<a href='#'>
-        <i class='fa-solid fa-share-nodes'></i></a>";
+        echo "<a href='/see/$picture->_id'><i class='fa-solid fa-share-nodes'></i></a>";
       }
 
       echo "</div></div>";

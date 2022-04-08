@@ -27,6 +27,7 @@ $footer = $rootHost . '/public/css/footer.css';
 $index  = $rootHost . '/public/css/index.css';
 $admin  = $rootHost . '/public/css/admin.css';
 $check  = $rootHost . '/public/css/checkbox.css';
+$anim  = $rootHost . '/public/css/animation.css';
 
 $imglink = $rootHost . '/public/images';
 $_SESSION['imgroot'] = $imglink;
@@ -91,6 +92,7 @@ echo "
         <link rel='stylesheet' type='text/css' href='$colors' />
         <link rel='stylesheet' type='text/css' href='$reset' />
         <link rel='stylesheet' type='text/css' href='$check' />
+        <link rel='stylesheet' type='text/css' href='$anim' />
 
         <link rel='stylesheet' type='text/css' href='$header' />        
         <link rel='stylesheet' type='text/css' href='$footer' />        

@@ -1,9 +1,7 @@
-console.log('hello World, Love')
+console.log('hello World, Love');
 
 function love(id){
-    console.log('function love')
-    id = id.id
-    console.log(id)
+    console.log('function love');
+    id = id.id;
 
-    
 }

@@ -43,8 +43,8 @@ if(!empty($_SESSION['error']['tags'])){
     foreach($errors as $error){
         echo "<p>$error</p>";
     }    
-    
-    echo " <a href='#' class='btn validate'> OK </a>";
+
+    echo " <a href='#' onclick = 'error(this, event)' class='btn validate'> OK </a>";
     unset($_SESSION['error']['tags']);
     echo "</div>";
 }

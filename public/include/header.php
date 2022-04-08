@@ -101,7 +101,7 @@ echo "
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
-        <script src='../js/error.js' crossorigin='anonymous'></script>
+        <script src='../js/error.js'></script>
     </head>
 ";
 

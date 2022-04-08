@@ -211,22 +211,35 @@ section {
             a {
                 display: block;
                 max-width: fit-content;
+            
+            }
 
-                img {
-                    display: block;
+            img {
+                display: block;
 
-                    border: 5px solid var(--primary3);
-                    border-radius: 25px;
-                    padding: 5px;
+                border: 5px solid var(--primary3);
+                border-radius: 25px;
+                padding: 5px;
 
-                    max-height: 150px;
-                    max-width: 300px;
+                max-height: 150px;
+                max-width: 300px;
+
+                height: auto;
+
+                &:hover {
+                    border-color: var(--primary1);
+                }
+            }
+
+            &.see{
+                margin-top: 7em;
+                display: block;
+
+                img{
+                    min-height: 100vh;
+                    min-width: 180vh;
 
                     height: auto;
-
-                    &:hover {
-                        border-color: var(--primary1);
-                    }
                 }
             }
         }

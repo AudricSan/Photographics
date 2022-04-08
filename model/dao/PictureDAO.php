@@ -235,12 +235,12 @@ class PictureDAO extends Env
                     //     }
                     // }
                 //END
-
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;
             }
         }
+        
         header('location: /admin/picture');
     }
 }

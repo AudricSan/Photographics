@@ -63,9 +63,9 @@ foreach ($pictures as $key => $picture) {
             disabled ></td>
 
             <td class=action with=500>
-                <a class='btn validate' href='#'>See</a>
+                <!-- <a class='btn validate' href='#'>See</a> -->
                 <a class='btn success' href='/admin/picture/add/$picture->_id'>Edit</a>
-                <a class='btn error' href='#'>Delete</a>
+                <a class='btn error' href='/admin/picture/delete/$picture->_id'>Delete</a>
             </td>
         </tr>
     </tbody>

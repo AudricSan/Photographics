@@ -13,7 +13,7 @@
 
         <li class='latnav'>
             <span class="material-icons-round">local_offer</span>
-            <a href='/admin/tags'>Tags Dashboard</a>
+            <a href='/admin/tag'>Tags Dashboard</a>
         </li>
 
         <li class='latnav'>

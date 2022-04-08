@@ -73,14 +73,27 @@ class PictureDAO extends Env
         if (!$id) {
             return false;
         }
-        try {
-            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE picture_id = ?");
-            $statement->execute([
-                $id
-            ]);
-        } catch (PDOException $e) {
-            var_dump($e->getMessage());
+
+        $oldpicture = $this->fetch($id);
+        $oldpicture = $oldpicture->_link;
+
+        $rootHost = $_SERVER['DOCUMENT_ROOT'];
+        $imglink = $rootHost . '/public/images/img/' . $oldpicture;
+
+        if (file_exists($imglink)) {
+            unlink($imglink);
+            try {
+                $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE picture_id = ?");
+                $statement->execute([
+                    $id
+                ]);
+            } catch (PDOException $e) {
+                var_dump($e->getMessage());
+            }
+        } else {
+            echo 'Could not delete '.$oldpicture.', file does not exist';
         }
+        header('location: /admin/picture');
     }
 
     public function store($data)
@@ -151,7 +164,6 @@ class PictureDAO extends Env
                     if (strpos($key, 'tag') !== false) {
                         $pictureTagDAO = new PictureTagDAO;
                         $result = $pictureTagDAO->store($value, $picture->_id);
-                        header('location: /admin/picture');
                     }
                 }
             } catch (PDOException $e) {
@@ -159,6 +171,8 @@ class PictureDAO extends Env
                 return false;
             }
         }
+
+        header('location: /admin/picture');
     }
 
     public function update($id, $data)
@@ -221,11 +235,9 @@ class PictureDAO extends Env
                     //     }
                     // }
                 //END
-                
-                header('location: /admin/picture');
+
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
-                header('location: /admin/picture');
                 return false;
             }
         }

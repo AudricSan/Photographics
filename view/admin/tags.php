@@ -43,4 +43,6 @@ if(!empty($_SESSION['error']['tags'])){
     foreach($errors as $error){
         echo "<div class='error'><p>$error</p></div>";
     }
+
+    unset($_SESSION['error']['tags']);
 }

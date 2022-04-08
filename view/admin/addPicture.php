@@ -33,17 +33,30 @@ echo "
             <div>
                 <p>Select Tags : </p>";
                 foreach ($tags as $tag){
-                    echo "
-                        <div>
-                            <label for='$tag->_id'>$tag->_name</label>
-                            <input type='checkbox' id='$tag->_id' name='tag_$tag->_id' value='$tag->_id'"; 
+                    //PICTURE CAN HAVE MULTIPLE TAGS
+                        // echo "  <div>
+                        //             <label for='$tag->_id'>$tag->_name</label>
+                        //             <input type='checkbox' id='$tag->_id' name='tag_$tag->_id' value='$tag->_id'"; 
 
-                            foreach ($pictureTags as $pictureTag){
-                                if($pictureTag->_tag == $tag->_id){
-                                    echo "checked";
-                                } 
-                            }
-                        echo"></div>";
+                        //             foreach ($pictureTags as $pictureTag){
+                        //                 if($pictureTag->_tag == $tag->_id){
+                        //                     echo "checked";
+                        //                 } 
+                        //             }
+                            
+                        // echo"></div>";
+                    //END
+
+                    //PICTURE CAN HAVE ONLY ONE TAG
+                        echo "  <div>
+                                    <label for='$tag->_id'>$tag->_name</label>
+                                    <input type='radio' id='$tag->_id' name='tag' value='$tag->_id'";
+
+                                    if($picture->_tag == $tag->_id){
+                                        echo "checked";
+                                    } 
+                        echo"   ></div>";
+                    //END
                 }
 
 echo "

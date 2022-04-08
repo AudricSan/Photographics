@@ -174,7 +174,7 @@ class PictureDAO extends Env
             'picture_name' => $data['title'],
             'picture_description' => $data['desc'],
             'picture_link' => $data['link'],
-            'picture_tag' => 0,
+            'picture_tag' => $data['tag'],
             'picture_sharable' => $data['share'],
         ]);
 
@@ -191,36 +191,37 @@ class PictureDAO extends Env
                     $picture->_id
                 ]);
 
-                include('PictureTagDAO.php');
-                // var_dump($picture);
+                //PICTURE CAN HAVE MULTIPLE TAGS => BUGS
+                    // include('PictureTagDAO.php');
+                    // // var_dump($picture);
 
-                //FIXME CANT EDIT TAGS ATRIBUTE TO AN IMAGE
-                $pictureTagDAO = new PictureTagDAO;
-                $pictureByTag = $pictureTagDAO->fetchByPic($picture->_id);
-                $pictureTag = $pictureTagDAO->fetchAll();
+                    // //FIXME CANT EDIT TAGS ATRIBUTE TO AN IMAGE
+                    // $pictureTagDAO = new PictureTagDAO;
+                    // $pictureByTag = $pictureTagDAO->fetchByPic($picture->_id);
+                    // $pictureTag = $pictureTagDAO->fetchAll();
 
-                $tags = array();
-                foreach ($data as $key => $value) {
-                    if (strpos($key, 'tag') !== false) {
-                        array_push($tags, $value);
-                    }
-                }
+                    // $tags = array();
+                    // foreach ($data as $key => $value) {
+                    //     if (strpos($key, 'tag') !== false) {
+                    //         array_push($tags, $value);
+                    //     }
+                    // }
 
-                if (!empty($pictureByTag)) {
-                    foreach ($pictureByTag as $key => $value) {
-                        if ($value->_pic === $picture->_id) {
-                            if (!in_array($value->_tag, $tags)) {
-                                $pictureTagDAO->store($value, $picture->_id);
-                            }
-                        }
-                    }
-                } else {
-                    foreach ($tags as $key => $value) {
-                        $pictureTagDAO->store($value, $picture->_id);
-                    }
-                }
-                //END FIXME 
-
+                    // if (!empty($pictureByTag)) {
+                    //     foreach ($pictureByTag as $key => $value) {
+                    //         if ($value->_pic === $picture->_id) {
+                    //             if (!in_array($value->_tag, $tags)) {
+                    //                 $pictureTagDAO->store($value, $picture->_id);
+                    //             }
+                    //         }
+                    //     }
+                    // } else {
+                    //     foreach ($tags as $key => $value) {
+                    //         $pictureTagDAO->store($value, $picture->_id);
+                    //     }
+                    // }
+                //END
+                
                 header('location: /admin/picture');
             } catch (PDOException $e) {
                 var_dump($e->getMessage());

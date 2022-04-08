@@ -36,12 +36,21 @@ foreach ($pictures as $key => $picture) {
             <td> $picture->_link </td>";
 
             echo "<td class='inline'>";
-            foreach ($tags as $key => $tag) {
-                if ($tag->_pic === $picture->_id) {
-                    $mytag = $tagDAO->fetch($tag->_tag);
-                    echo "<p>$mytag->_name</p>";
-                }
-            }
+                //PICTURE CAN HAVE MULTIPLE TAGS
+                    // foreach ($tags as $key => $tag) {
+                    //     if ($tag->_pic === $picture->_id) {
+                    //         $mytag = $tagDAO->fetch($tag->_tag);
+                    //         echo "<p>$mytag->_name</p>";
+                    //     }
+                    // }
+                //END
+                
+                //PICTURE CAN HAVE ONLY ONE TAG
+                    $tag = $tagDAO->fetch($picture->_tag);
+                    $tag = ($tag) ? $tag->_name : '' ;
+                    echo $tag;
+                //END
+
             echo "</td>";
 
     echo "

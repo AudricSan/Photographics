@@ -53,11 +53,10 @@
               <img src='/public/images/img/$pic->_link' alt='$pic->_name'></a>
   
               <div>
-              <a href='/love/$picture->_id'>
-                <i class='fa-solid fa-heart'></i></a>";
+              <a><i class='fa-solid fa-heart'></i></a>";
 
       if ($picture->_sharable) {
-        echo "<a href='/see/$picture->_id'><i class='fa-solid fa-share-nodes'></i></a>";
+        echo "<a onclick='share()'><i class='fa-solid fa-share-nodes'></i></a>";
       }
 
       echo "</div></div>";

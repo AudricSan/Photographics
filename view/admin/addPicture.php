@@ -50,11 +50,13 @@ echo "
                     //PICTURE CAN HAVE ONLY ONE TAG
                         echo "  <div>
                                     <label for='$tag->_id'>$tag->_name</label>
-                                    <input type='radio' id='$tag->_id' name='tag' value='$tag->_id'";
+                                    <input required type='radio' id='$tag->_id' name='tag' value='$tag->_id'";
 
-                                    if($picture->_tag == $tag->_id){
+                                if (isset($picture)) {
+                                    if ($picture->_tag == $tag->_id) {
                                         echo "checked";
-                                    } 
+                                    }
+                                }
                         echo"   ></div>";
                     //END
                 }

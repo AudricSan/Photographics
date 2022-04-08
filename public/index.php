@@ -146,6 +146,17 @@ Route::add('/admin/tags/edit', function () {
 }, 'post');
 
 
+Route::add('/admin/picture/delete/([0-9]*)', function ($id) {
+  head();
+  adnav();
+
+  include_once('../model/class/Picture.php');
+  include_once('../model/dao/PictureDAO.php');
+
+  $picture = new PictureDAO;
+  $picture = $picture->delete($id);
+});
+
 
 
 

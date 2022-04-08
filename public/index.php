@@ -136,12 +136,6 @@ Route::add('/admin/tag/add', function () {
   include_once('../view/admin/addTag.php');
 });
 
-
-
-
-
-
-
 Route::add('/admin/tag/create', function () {
   
   include_once('../model/class/Tag.php');
@@ -160,9 +154,16 @@ Route::add('/admin/tag/edit', function () {
   $tagDao->update($_POST['tag_id'], $_POST);
 }, 'post');
 
+Route::add('/admin/tag/delete/([0-9]*)', function ($id) {
+  head();
+  adnav();
 
+  include_once('../model/class/Tag.php');
+  include_once('../model/dao/TagDAO.php');
 
-
+  $tagDao = new TagDAO;
+  $tagDao->delete($id);
+});
 
 
 

@@ -24,7 +24,7 @@ class PictureDAO extends Env
     public function fetchAll()
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM {$this->table}");
+            $statement = $this->connection->prepare("SELECT * FROM {$this->table} ORDER BY picture_name");
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             $picture = array();

@@ -210,6 +210,43 @@ Route::add('/basicinfo/([0-9]*)/delete', function ($id) {
   $basicInfoDAO->delete($id);
 });
 
+Route::add('/admin/admin/add/([0-9]*)', function ($id) {
+  head();
+  adnav();
+
+  include_once('../view/admin/addPoeple.php');
+});
+
+Route::add('/admin/admin/add', function () {
+  head();
+  adnav();
+  include_once('../view/admin/addPoeple.php');
+});
+
+Route::add('/admin/admin/delete/([0-9]*)', function ($id) {
+  include_once('../model/class/Admin.php');
+  include_once('../model/dao/AdminDAO.php');
+
+  $adminDAO = new AdminDAO;
+  $admin->delete($id);
+});
+
+Route::add('/admin/admin/create', function () {
+  include_once('../model/class/Admin.php');
+  include_once('../model/dao/AdminDAO.php');
+
+  $adminDAO = new AdminDAO;
+  $adminDAO->store($_POST);
+}, 'post');
+
+Route::add('/admin/admin/edit', function () {
+  include_once('../model/class/Admin.php');
+  include_once('../model/dao/AdminDAO.php');
+
+  $adminDAO = new AdminDAO;
+  $adminDAO->update($_POST['tag_id'], $_POST);
+}, 'post');
+
 // IS COMMING
 Route::add('/admin/api', function () {
   head();

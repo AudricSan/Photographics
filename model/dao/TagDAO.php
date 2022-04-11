@@ -90,7 +90,7 @@ class TagDAO extends Env
             $_SESSION['error']['tags']['delete'] = "You can't have less than 1 Tag";
         }
 
-        header('location: /admin/tag');
+        echo "<script language='Javascript'>document.location.replace('/admin/tag');</script>";
     }
 
     public function store($data)

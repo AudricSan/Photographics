@@ -36,7 +36,7 @@ foreach ($admins as $key => $admin) {
             echo "</td>";
 
     echo "
-            <td class=action with=500>
+            <td class=action>
                 <!-- <a class='btn validate' href='#'>See</a> -->
                 <a class='btn success' href='/admin/admin/add/$admin->_id'>Edit</a>
                 <a class='btn error' href='/admin/admin/delete/$admin->_id'>Delete</a>

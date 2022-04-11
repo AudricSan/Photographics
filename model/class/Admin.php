@@ -6,14 +6,12 @@ class Admin
 
     private string $_name;
     private string $_mail;
-    private string $_login;
     private string $_password;
     private int $_role;
 
     //Constructeur
-    public function __construct($id, $name, $mail, $login, $password, $role)
+    public function __construct($id, $name, $mail, $password, $role)
     {
-        $this->_login = $login;
         $this->_name = $name;
         $this->_mail = $mail;
         $this->_password = $password;

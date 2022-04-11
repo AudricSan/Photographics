@@ -63,7 +63,6 @@ class AdminDAO extends Env
             $result['admin_id'],
             $result['admin_name'],
             $result['admin_mail'],
-            $result['admin_login'],
             $result['admin_password'],
             $result['admin_role']
         );
@@ -94,16 +93,14 @@ class AdminDAO extends Env
         $admin = $this->create([
             "Admin_ID" => 0,
             'Admin_Mail'  => $data['mail'],
-            'Admin_Login' => $data['log'],
             'Admin_Password'  => $data['pass'],
             'Admin_Name'  => $data['name'],
-            'Admin_Firstname' => $data['fname'],
             'Admin_Role'  => $data['role']
         ]);
 
         if ($admin) {
             try {
-                $statement = $this->connection->prepare("INSERT INTO {$this->table} (Admin_Mail, Admin_Login, Admin_Password, Admin_Name, Admin_Firstname, Admin_Role) VALUES (?, ?, ?, ?, ?, ?)");
+                $statement = $this->connection->prepare("INSERT INTO {$this->table} (Admin_Mail, Admin_Password, Admin_Name, Admin_Role) VALUES (?, ?, ?, ?)");
                 $statement->execute([
                     $admin->_email,
                     $admin->_login,
@@ -130,9 +127,7 @@ class AdminDAO extends Env
 
         $admin = $this->create([
             "_id" => $id,
-            '_login' => $data['log'],
             '_name' => $data['name'],
-            '_fname' => $data['fname'],
             '_mail' => $data['mail'],
             '_pass' => $data['pass'],
             '_role' => $data['role']
@@ -140,11 +135,9 @@ class AdminDAO extends Env
 
         if ($admin) {
             try {
-                $statement = $this->connection->prepare("UPDATE {$this->table} SET Admin_Login = ?, Admin_Name = ?, Admin_Firstname = ?, Admin_Mail = ?, Admin_Password = ?, Admin_Role = ? WHERE Admin_ID = ?");
+                $statement = $this->connection->prepare("UPDATE {$this->table} SET Admin_Name = ?, Admin_Mail = ?, Admin_Password = ?, Admin_Role = ? WHERE Admin_ID = ?");
                 $statement->execute([
-                    $admin->_login,
                     $admin->_name,
-                    $admin->_fname,
                     $admin->_mail,
                     $admin->_pass,
                     $admin->_role,

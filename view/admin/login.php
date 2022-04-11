@@ -10,7 +10,7 @@ echo "
         <form method='POST' action='/admin/log'>
             <h2> Login Form</h2>
             <label for='login'> login:</label>
-            <input type='text' id='login' name='login'>
+            <input type='login' id='login' name='login'>
 
             <label for='pass'> password:</label>
             <input type='password' id='pass' name='pass'>

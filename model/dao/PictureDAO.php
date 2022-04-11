@@ -93,6 +93,7 @@ class PictureDAO extends Env
         } else {
             echo 'Could not delete '.$oldpicture.', file does not exist';
         }
+
         header('location: /admin/picture');
     }
 

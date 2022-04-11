@@ -64,6 +64,10 @@ include("../model/class/Admin.php");
 include("../model/dao/AdminDAO.php");
 $adminDAO = new AdminDAO; 
 
+include("../model/class/Role.php");
+include("../model/dao/RoleDAO.php");
+$adminDAO = new RoleDAO; 
+
 $basicinfo = $basicinfoDAO->fetchAll();
 
 foreach($basicinfo as $key => $value){

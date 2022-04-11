@@ -91,7 +91,7 @@ class PictureDAO extends Env
                 var_dump($e->getMessage());
             }
         } else {
-            echo 'Could not delete '.$oldpicture.', file does not exist';
+            echo 'Could not delete ' . $oldpicture . ', file does not exist';
         }
 
         header('location: /admin/picture');
@@ -182,7 +182,7 @@ class PictureDAO extends Env
             return false;
         }
         var_dump($data);
-        $data['share'] = (isset($data['share'])) ? 1 : 0 ;
+        $data['share'] = (isset($data['share'])) ? 1 : 0;
 
         $picture = $this->create([
             "picture_id" => $id,
@@ -207,41 +207,41 @@ class PictureDAO extends Env
                 ]);
 
                 //PICTURE CAN HAVE MULTIPLE TAGS => BUGS
-                    // include('PictureTagDAO.php');
-                    // // var_dump($picture);
+                // include('PictureTagDAO.php');
+                // // var_dump($picture);
 
-                    // //FIXME CANT EDIT TAGS ATRIBUTE TO AN IMAGE
-                    // $pictureTagDAO = new PictureTagDAO;
-                    // $pictureByTag = $pictureTagDAO->fetchByPic($picture->_id);
-                    // $pictureTag = $pictureTagDAO->fetchAll();
+                // //FIXME CANT EDIT TAGS ATRIBUTE TO AN IMAGE
+                // $pictureTagDAO = new PictureTagDAO;
+                // $pictureByTag = $pictureTagDAO->fetchByPic($picture->_id);
+                // $pictureTag = $pictureTagDAO->fetchAll();
 
-                    // $tags = array();
-                    // foreach ($data as $key => $value) {
-                    //     if (strpos($key, 'tag') !== false) {
-                    //         array_push($tags, $value);
-                    //     }
-                    // }
+                // $tags = array();
+                // foreach ($data as $key => $value) {
+                //     if (strpos($key, 'tag') !== false) {
+                //         array_push($tags, $value);
+                //     }
+                // }
 
-                    // if (!empty($pictureByTag)) {
-                    //     foreach ($pictureByTag as $key => $value) {
-                    //         if ($value->_pic === $picture->_id) {
-                    //             if (!in_array($value->_tag, $tags)) {
-                    //                 $pictureTagDAO->store($value, $picture->_id);
-                    //             }
-                    //         }
-                    //     }
-                    // } else {
-                    //     foreach ($tags as $key => $value) {
-                    //         $pictureTagDAO->store($value, $picture->_id);
-                    //     }
-                    // }
+                // if (!empty($pictureByTag)) {
+                //     foreach ($pictureByTag as $key => $value) {
+                //         if ($value->_pic === $picture->_id) {
+                //             if (!in_array($value->_tag, $tags)) {
+                //                 $pictureTagDAO->store($value, $picture->_id);
+                //             }
+                //         }
+                //     }
+                // } else {
+                //     foreach ($tags as $key => $value) {
+                //         $pictureTagDAO->store($value, $picture->_id);
+                //     }
+                // }
                 //END
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;
             }
         }
-        
+
         header('location: /admin/picture');
     }
 }

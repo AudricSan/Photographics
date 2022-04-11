@@ -10,7 +10,6 @@ echo "<div class='dashboard'>
         <tr>
             <th>Name</th>
             <th>Mail</th>
-            <th>Password</th>
             <th>Role</th>
             <th>Quick Action</th>
         </tr>
@@ -29,14 +28,7 @@ foreach ($admins as $key => $admin) {
         <tr>
             <td> $admin->_name </td>
             <td> $admin->_mail </td>
-            <td class='password'> $admin->_password </td>";
-
-            echo "<td class='inline"; 
-            if($admin->_role === 0){
-                echo " canhover'>";
-            }else{
-                echo "'>";
-            }            
+            <td>";        
                 //admin CAN HAVE ONLY ONE TAG
                     $role = $roleDAO->fetch($admin->_role);
                     $role = ($role) ? $role->_name : '' ;

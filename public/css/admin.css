@@ -206,7 +206,7 @@ main.dashboard div.dashboard div.dash-content div a:not(:first-of-type) {
 }
 
 main.dashboard div.dashboard h1 {
-  position: absolute;
+  position: fixed;
   right: 5%;
   bottom: 5%;
   min-width: -webkit-fit-content;

@@ -2,7 +2,8 @@ ALTER TABLE `admin` ADD `admin_login` VARCHAR(25) CHARACTER SET utf8 COLLATE utf
 
 INSERT INTO `role` (`role_id`, `role_name`) VALUES
                    (NULL, 'admin'),
-                   (NULL, 'editor');
+                   (NULL, 'editor'),
+                   (NULL, 'photographer');
 
 INSERT INTO `basicinfo` (`bi_id`, `bi_name`, `bi_content`) VALUES
                         (NULL, 'PhotographerName', 'AudricSan'),

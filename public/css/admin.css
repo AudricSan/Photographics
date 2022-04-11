@@ -346,4 +346,13 @@ main.dashboard table tbody:nth-child(2n + 1) {
 main.dashboard table img {
   height: 100px;
 }
+
+main.dashboard div.comming {
+  display: block;
+  padding-bottom: 1em;
+}
+
+main.dashboard div.comming p {
+  margin-top: 1em;
+}
 /*# sourceMappingURL=admin.css.map */

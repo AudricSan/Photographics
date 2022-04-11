@@ -29,7 +29,7 @@ function gallery($how)
 
 function adnav()
 {
-  include_once('include/adnav.php');
+  include_once('include/adnav.html');
 }
 
 // SECTION Base Route

@@ -243,6 +243,17 @@ main.dashboard {
                 margin: 0;
                 padding-left: 0;
             }
+
+            i{
+                margin: 0;
+                margin-bottom: -1.1em;
+                margin-left: 0.5em;
+                z-index: 999;
+            }
+
+            input#pass{
+                padding-left: 2em;
+            }
         }
     }
 

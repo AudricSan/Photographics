@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Flow+Rounded&display=swap");
 html,
 body,
 div,
@@ -287,6 +288,12 @@ div.error p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  color: red;
+}
+
+.password {
+  background-color: aqua;
+  font-family: 'Flow Rounded';
   color: red;
 }
 /*# sourceMappingURL=reset.css.map */

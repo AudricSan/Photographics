@@ -3,7 +3,7 @@
 $imgroot = $_SESSION['imgroot'];
 
 echo "<div class='dashboard'>
-    <h1> <a href='/admin/picture/add' class='btn additems success'> <span class='material-icons-round'> add </span> </a> </h1>
+    <h1> <a href='/admin/admin/add' class='btn additems success'> <span class='material-icons-round'> add </span> </a> </h1>
 
     <table>
     <thead>
@@ -19,36 +19,38 @@ echo "<div class='dashboard'>
     </thead>
 ";
 
-$pictureDAO = new PictureDAO;
-$pictureTagDAO = new PictureTagDAO;
-$tagDAO = new TagDAO;
+$adminDAO = new AdminDAO;
+$roleDAO = new RoleDAO;
 
-$pictures = $pictureDAO->fetchAll();
-$tags = $pictureTagDAO->fetchAll();
+var_dump($adminDAO);
+var_dump($roleDAO);
 
-foreach ($pictures as $key => $picture) {
+$admins = $adminDAO->fetchAll();
+$roles = $roleDAO->fetchAll();
+
+foreach ($admins as $key => $admin) {
     echo "
     <tbody>
         <tr>
-            <td> <img src='$imgroot/img/$picture->_link' > </td>
-            <td> $picture->_name </td>
-            <td> $picture->_description </td>
-            <td> $picture->_link </td>";
+            <td> <img src='$imgroot/img/$admin->_link' > </td>
+            <td> $admin->_name </td>
+            <td> $admin->_description </td>
+            <td> $admin->_link </td>";
 
             echo "<td class='inline'>";
-                //PICTURE CAN HAVE MULTIPLE TAGS
+                //admin CAN HAVE MULTIPLE TAGS
                     // foreach ($tags as $key => $tag) {
-                    //     if ($tag->_pic === $picture->_id) {
+                    //     if ($tag->_pic === $admin->_id) {
                     //         $mytag = $tagDAO->fetch($tag->_tag);
                     //         echo "<p>$mytag->_name</p>";
                     //     }
                     // }
                 //END
                 
-                //PICTURE CAN HAVE ONLY ONE TAG
-                    $tag = $tagDAO->fetch($picture->_tag);
-                    $tag = ($tag) ? $tag->_name : '' ;
-                    echo $tag;
+                //admin CAN HAVE ONLY ONE TAG
+                    $role = $roleDAO->fetch($admin->_role);
+                    $role = ($role) ? $role->_name : '' ;
+                    echo $role;
                 //END
 
             echo "</td>";
@@ -56,7 +58,7 @@ foreach ($pictures as $key => $picture) {
     echo "
             <td>
                 <input type='checkbox'";
-                if ($picture->_sharable) {
+                if ($admin->_sharable) {
                     echo "checked";
                 }
             echo"
@@ -64,8 +66,8 @@ foreach ($pictures as $key => $picture) {
 
             <td class=action with=500>
                 <!-- <a class='btn validate' href='#'>See</a> -->
-                <a class='btn success' href='/admin/picture/add/$picture->_id'>Edit</a>
-                <a class='btn error' href='/admin/picture/delete/$picture->_id'>Delete</a>
+                <a class='btn success' href='/admin/admin/add/$admin->_id'>Edit</a>
+                <a class='btn error' href='/admin/admin/delete/$admin->_id'>Delete</a>
             </td>
         </tr>
     </tbody>

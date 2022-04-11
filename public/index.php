@@ -210,6 +210,19 @@ Route::add('/basicinfo/([0-9]*)/delete', function ($id) {
   $basicInfoDAO->delete($id);
 });
 
+// IS COMMING
+Route::add('/admin/api', function () {
+  head();
+  adnav();
+  include_once('../view/commingsoon.php');
+});
+
+Route::add('/admin/doc', function () {
+  head();
+  adnav();
+  include_once('../view/commingsoon.php');
+});
+
 
 
 

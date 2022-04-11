@@ -88,23 +88,21 @@ Route::add('/admin/picture/add/([0-9]*)', function ($id) {
 });
 
 Route::add('/admin/picture/create', function () {
-  
+
   include_once('../model/class/Picture.php');
   include_once('../model/dao/PictureDAO.php');
 
   $picture = new PictureDAO;
   $picture = $picture->store($_POST);
-
 }, 'post');
 
 Route::add('/admin/picture/edit', function () {
-  
+
   include_once('../model/class/Picture.php');
   include_once('../model/dao/PictureDAO.php');
 
   $picture = new PictureDAO;
   $picture = $picture->update($_POST['picture_id'], $_POST);
-
 }, 'post');
 
 Route::add('/admin/picture/delete/([0-9]*)', function ($id) {
@@ -137,7 +135,7 @@ Route::add('/admin/tag/add', function () {
 });
 
 Route::add('/admin/tag/create', function () {
-  
+
   include_once('../model/class/Tag.php');
   include_once('../model/dao/TagDAO.php');
 
@@ -146,7 +144,7 @@ Route::add('/admin/tag/create', function () {
 }, 'post');
 
 Route::add('/admin/tag/edit', function () {
-  
+
   include_once('../model/class/Tag.php');
   include_once('../model/dao/TagDAO.php');
 
@@ -166,10 +164,17 @@ Route::add('/admin/tag/delete/([0-9]*)', function ($id) {
 });
 
 Route::add('/see/([0-9]*)', function ($id) {
-    head();
-    include_once('../view/see.php');
-    foot();
+  head();
+  include_once('../view/see.php');
+  foot();
 });
+
+Route::add('/admin/poeple', function () {
+  head();
+  adnav();
+  include_once('../view/admin/poeple.php');
+});
+
 
 
 

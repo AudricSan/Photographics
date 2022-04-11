@@ -1,6 +1,11 @@
-<section class="login">
-    <div class="login">
-        <img src="../../public/img/logo.png" alt="Photographics Logo">
+<?php
+
+$imgroot = $_SESSION['imgroot'];
+
+echo "
+<section class='login'>
+    <div class='login'>
+        <img src='$imgroot/logoadmin.png' alt='Photographics Admin Logo'>
 
         <form class='' method='' action='' target=''>
             <h2> Login Form</h2>
@@ -13,4 +18,4 @@
             <input type='submit' value='Submit'>
         </form>
     </div>
-</section>
+</section>";

@@ -298,6 +298,17 @@ main.dashboard div.dashboard form label + input {
   padding-left: 0;
 }
 
+main.dashboard div.dashboard form i {
+  margin: 0;
+  margin-bottom: -1.1em;
+  margin-left: 0.5em;
+  z-index: 999;
+}
+
+main.dashboard div.dashboard form input#pass {
+  padding-left: 2em;
+}
+
 main.dashboard table {
   text-align: left;
   margin-bottom: 1em;

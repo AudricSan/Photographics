@@ -7,13 +7,13 @@ echo "
     <div class='login'>
         <img src='$imgroot/logoadmin.png' alt='Photographics Admin Logo'>
 
-        <form class='' method='' action='' target=''>
+        <form method='POST' action='/admin/log'>
             <h2> Login Form</h2>
             <label for='login'> login:</label>
-            <input type='login' id='login' name='login'>
+            <input type='text' id='login' name='login'>
 
             <label for='pass'> password:</label>
-            <input type='pass' id='pass' name='pass'>
+            <input type='password' id='pass' name='pass'>
 
             <input type='submit' value='Submit'>
         </form>

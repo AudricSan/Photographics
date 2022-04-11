@@ -69,6 +69,11 @@ Route::add('/admin', function () {
   include_once('../view/admin/index.php');
 });
 
+Route::add('/admin/login', function () {
+  head();
+  include_once('../view/admin/login.php');
+});
+
 Route::add('/admin/picture', function () {
   head();
   adnav();

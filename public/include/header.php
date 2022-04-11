@@ -119,11 +119,8 @@ echo "
 ";
 
 //ANCHOR Nav html
-
-$title = explode($title, ' ');
-$nav = in_array('admin', $title);
-
 $tag = $tagDAO->fetchAll();
+
 echo "
     <header>
     <nav>

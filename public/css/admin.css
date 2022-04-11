@@ -344,6 +344,6 @@ main.dashboard table tbody:nth-child(2n + 1) {
 }
 
 main.dashboard table img {
-  width: 100px;
+  height: 100px;
 }
 /*# sourceMappingURL=admin.css.map */

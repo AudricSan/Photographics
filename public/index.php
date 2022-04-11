@@ -74,6 +74,12 @@ Route::add('/admin/login', function () {
   include_once('../view/admin/login.php');
 });
 
+Route::add('/admin/logout', function () {
+  session_start();
+  session_unset();
+  header('location: /');
+});
+
 Route::add('/admin/log', function () {
   include_once('../model/class/Admin.php');
   include_once('../model/dao/AdminDAO.php');

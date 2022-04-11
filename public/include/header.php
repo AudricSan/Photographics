@@ -113,6 +113,7 @@ echo "
 
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css' />
         <script src='https://kit.fontawesome.com/eb747bd21c.js' crossorigin='anonymous'></script>
         <script src='../js/error.js'></script>
     </head>

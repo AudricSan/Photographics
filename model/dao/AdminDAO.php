@@ -1,4 +1,5 @@
 <?php
+
 use photographics\Admin;
 use photographics\Env;
 
@@ -43,6 +44,19 @@ class AdminDAO extends Env
         try {
             $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE Admin_ID = ?");
             $statement->execute([$id]);
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+            return $this->create($result);
+        } catch (PDOException $e) {
+            var_dump($e);
+        }
+    }
+
+    public function fetchMail($mail)
+    {
+        try {
+            $statement = $this->connection->prepare("SELECT * FROM {$this->table} WHERE admin_mail = ?");
+            $statement->execute([$mail]);
             $result = $statement->fetch(PDO::FETCH_ASSOC);
 
             return $this->create($result);
@@ -103,10 +117,8 @@ class AdminDAO extends Env
                 $statement = $this->connection->prepare("INSERT INTO {$this->table} (Admin_Mail, Admin_Password, Admin_Name, Admin_Role) VALUES (?, ?, ?, ?)");
                 $statement->execute([
                     $admin->_email,
-                    $admin->_login,
                     $admin->_password,
                     $admin->_name,
-                    $admin->_firstname,
                     $admin->_role
                 ]);
 
@@ -150,5 +162,31 @@ class AdminDAO extends Env
                 return false;
             }
         }
+    }
+
+    public function login($data)
+    {
+        if (!isset($data)) {
+            return false;
+        }
+
+        if (!isset($data['login']) || !isset($data['pass'])) {
+            return false;
+        }
+
+        $existAdmin = $this->fetchMail($data['login']);
+        if (!$existAdmin) {
+            echo 'NOT EXIST';
+            return false;
+        }
+
+        if (!password_verify($data['pass'], $existAdmin->_password)) {
+            return false;
+        }
+
+        session_start();
+        $_SESSION['logged'] = $existAdmin->_id;
+
+        header('location: /admin');
     }
 }

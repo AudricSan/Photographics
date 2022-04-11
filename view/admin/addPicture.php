@@ -2,6 +2,18 @@
 
 use photographics\PictureTag;
 
+
+if (!isset($_SESSION['logged'])) {
+    echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";
+} else {
+    $adminDAO = new AdminDAO;
+    $adminConnected = $adminDAO->fetch($_SESSION['logged']);
+
+    if (!$adminConnected) {
+        echo "<script language='Javascript'>document.location.replace('/');</script>";
+    }
+}
+
 $tagDao = new TagDAO;
 $tags = $tagDao->fetchAll();
 

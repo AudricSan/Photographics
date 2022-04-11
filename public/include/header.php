@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+use photographics\Admin;
 use photographics\env;
 
 //Meta Var//
@@ -52,10 +54,15 @@ $tagDAO = new TagDAO;
 
 include("../model/class/Picture.php");
 include("../model/dao/PictureDAO.php");
+$pictureDAO = new PictureDAO; 
 
 include("../model/class/PictureTag.php");
 include("../model/dao/PictureTagDAO.php");
 $pictureTagDAO = new PictureTagDAO; 
+
+include("../model/class/Admin.php");
+include("../model/dao/AdminDAO.php");
+$adminDAO = new AdminDAO; 
 
 $basicinfo = $basicinfoDAO->fetchAll();
 

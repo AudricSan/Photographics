@@ -1,10 +1,14 @@
 
 <?php
-if(!isset($_SESSION['loggin'])){
-    echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";}
-else{
+if (!isset($_SESSION['logged'])) {
+    echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";
+} else {
+    $adminDAO = new AdminDAO;
+    $adminConnected = $adminDAO->fetch($_SESSION['logged']);
 
-    echo 'CONNECTED';
+    if (!$adminConnected) {
+        echo "<script language='Javascript'>document.location.replace('/');</script>";
+    }
 }
 
 echo "<div class='dashboard'>";
@@ -13,7 +17,6 @@ $root = $_SESSION['root'];
 
 $basicinfo = new BasicInfoDAO;
 $basicinfo = $basicinfo->fetchAll();
-// var_dump($basicinfo);
 
 foreach ($basicinfo as $key => $value) {
     echo "

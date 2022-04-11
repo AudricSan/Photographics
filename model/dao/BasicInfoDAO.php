@@ -72,8 +72,8 @@ class BasicInfoDAO extends Env
         if (!$id) {
             return false;
         }
+        
         try {
-            // $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE bi_id = ?");
             $statement = $this->connection->prepare("UPDATE {$this->table} SET bi_content = 'NULL' WHERE bi_id = ?");
             $statement->execute([
                 $id
@@ -81,13 +81,15 @@ class BasicInfoDAO extends Env
         } catch (PDOException $e) {
             var_dump($e->getMessage());
         }
+
+        echo "<script language='Javascript'>document.location.replace('/admin');</script>";
     }
 
     public function store($data)
     {
         if (empty($data)) {
-        return false;
-    }
+            return false;
+        }
         $basicinfo = $this->create([
             "basicinfo_id" => 0,
             'basicinfo_name'  => $data['name'],
@@ -109,6 +111,8 @@ class BasicInfoDAO extends Env
                 return false;
             }
         }
+
+        echo "<script language='Javascript'>document.location.replace('/admin');</script>";
     }
 
     public function update($id, $data)
@@ -118,7 +122,7 @@ class BasicInfoDAO extends Env
         }
 
         $old = $this->fetch($data['id']);
-        
+
         $basicinfo = $this->create([
             'bi_id' => $old->_id,
             'bi_name' => $old->_name,
@@ -133,12 +137,12 @@ class BasicInfoDAO extends Env
                     $basicinfo->_content,
                     $basicinfo->_id
                 ]);
-
-                return $basicinfo;
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;
             }
         }
+
+        echo "<script language='Javascript'>document.location.replace('/admin');</script>";
     }
 }

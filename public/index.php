@@ -194,9 +194,21 @@ Route::add('/admin/poeple', function () {
   include_once('../view/admin/poeple.php');
 });
 
+Route::add('/basicinfo/([0-9]*)/edit', function ($id) {
+  include_once('../model/class/BasicInfo.php');
+  include_once('../model/dao/BasicInfoDAO.php');
 
+  $basicInfoDAO = new BasicInfoDAO;
+  $basicInfoDAO->update($id, $_POST);
+}, 'post');
 
+Route::add('/basicinfo/([0-9]*)/delete', function ($id) {
+  include_once('../model/class/BasicInfo.php');
+  include_once('../model/dao/BasicInfoDAO.php');
 
+  $basicInfoDAO = new BasicInfoDAO;
+  $basicInfoDAO->delete($id);
+});
 
 
 

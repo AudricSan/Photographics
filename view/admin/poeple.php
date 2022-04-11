@@ -29,9 +29,14 @@ foreach ($admins as $key => $admin) {
         <tr>
             <td> $admin->_name </td>
             <td> $admin->_mail </td>
-            <td class'password'> $admin->_password </td>";
+            <td class='password'> $admin->_password </td>";
 
-            echo "<td class='inline'>";               
+            echo "<td class='inline"; 
+            if($admin->_role === 0){
+                echo " canhover'>";
+            }else{
+                echo "'>";
+            }            
                 //admin CAN HAVE ONLY ONE TAG
                     $role = $roleDAO->fetch($admin->_role);
                     $role = ($role) ? $role->_name : '' ;

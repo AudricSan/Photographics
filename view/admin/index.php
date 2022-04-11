@@ -1,5 +1,12 @@
 
 <?php
+if(!isset($_SESSION['loggin'])){
+    echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";}
+else{
+
+    echo 'CONNECTED';
+}
+
 echo "<div class='dashboard'>";
 
 $root = $_SESSION['root'];

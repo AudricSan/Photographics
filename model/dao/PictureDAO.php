@@ -94,7 +94,9 @@ class PictureDAO extends Env
             echo 'Could not delete ' . $oldpicture . ', file does not exist';
         }
 
-        header('location: /admin/picture');
+        //PHP Header Brocken for any reason => use Js redirect tu patch//
+        // header('location: /admin/picture');
+        echo "<script language='Javascript'>document.location.replace('/admin/picture');</script>";
     }
 
     public function store($data)

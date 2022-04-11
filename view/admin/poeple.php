@@ -1,5 +1,16 @@
 <?php
 
+if (!isset($_SESSION['logged'])) {
+    echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";
+} else {
+    $adminDAO = new AdminDAO;
+    $adminConnected = $adminDAO->fetch($_SESSION['logged']);
+
+    if (!$adminConnected) {
+        echo "<script language='Javascript'>document.location.replace('/');</script>";
+    }
+}
+
 $imgroot = $_SESSION['imgroot'];
 
 echo "<div class='dashboard'>

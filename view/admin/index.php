@@ -7,7 +7,9 @@ if (!isset($_SESSION['logged'])) {
     $adminConnected = $adminDAO->fetch($_SESSION['logged']);
 
     if (!$adminConnected) {
-        echo "<script language='Javascript'>document.location.replace('/');</script>";
+        session_start();
+        session_unset();
+        header('location /');
     }
 }
 

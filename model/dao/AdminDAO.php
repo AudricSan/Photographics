@@ -87,14 +87,18 @@ class AdminDAO extends Env
         if (!$id) {
             return false;
         }
+
         try {
             $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE Admin_ID = ?");
             $statement->execute([
                 $id
             ]);
+
         } catch (PDOException $e) {
             var_dump($e->getMessage());
         }
+
+        header('location: /admin/poeple');
     }
 
     public function store($data)

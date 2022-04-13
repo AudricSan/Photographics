@@ -29,7 +29,7 @@ echo "
             echo"/admin/admin/create";
         }
 
-        echo"'enctype='multipart/form-data' target='_self'>
+        echo"' enctype='multipart/form-data' target='_self'>
             <label for='name'>Name :</label>
             <input type='text' id='name' name='name'"; if (isset($admin)) {echo "value = '$admin->_name'";} echo"required>
 
@@ -61,7 +61,7 @@ echo "
                echo "<input type='number' name='admin_id' value='$admin->_id' style='display:none'></input>";
             }
 
-        echo"<input class='btn validate' type='submit' value='Submit' required>
+        echo"<input class='btn validate' type='submit' value='Submit'>
         </form>";
 echo"</div></div></main>";
 
@@ -80,11 +80,5 @@ echo"
 
             // toggle the icon
             this.classList.toggle('bi-eye');
-        });
-
-        // prevent form submit
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
         });
     </script>";

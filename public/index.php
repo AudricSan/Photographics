@@ -85,7 +85,7 @@ Route::add('/admin/log', function () {
   include_once('../model/dao/AdminDAO.php');
 
   $adminDAO = new AdminDAO;
-  $admin = $adminDAO->login($_POST);
+  $adminDAO->login($_POST);
 }, 'post');
 
 Route::add('/admin/picture', function () {

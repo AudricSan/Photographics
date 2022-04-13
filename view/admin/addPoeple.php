@@ -38,7 +38,7 @@ echo "
             
             <label for='pass'>Password :</label>
             <i class='bi bi-eye-slash' id='togglePassword'></i>
-            <input type='password' id='pass' name='pass'"; if (isset($admin)) {echo "value = '$admin->_password'";} echo"required>
+            <input type='password' id='pass' name='pass' required>
 
             <div>
                 <p>Select Tags : </p>";

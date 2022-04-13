@@ -14,6 +14,11 @@ class env
         'DB_NAME' => 'photographics',
         'DB_PORT' => 3306,
 
+        // 'DB_HOST' => 'audricldatabase.mysql.db',
+        // 'DB_USERNAME' => 'audricldatabase',
+        // 'DB_PASSWORD' => '297Hne7Y77',
+        // 'DB_NAME' => 'audricldatabase',
+        // 'DB_PORT' => 3306,
     ];
 
     public function env($key, $default = null)

@@ -244,7 +244,7 @@ Route::add('/admin/admin/edit', function () {
   include_once('../model/dao/AdminDAO.php');
 
   $adminDAO = new AdminDAO;
-  $adminDAO->update($_POST['tag_id'], $_POST);
+  $adminDAO->update($_POST['admin_id'], $_POST);
 }, 'post');
 
 // IS COMMING

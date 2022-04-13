@@ -47,8 +47,8 @@ echo "
                                     <label for='$role->_id'>$role->_name</label>
                                     <input required type='radio' id='$role->_id' name='role' value='$role->_id'";
 
-                                if (isset($picture)) {
-                                    if ($picture->_role == $role->_id) {
+                                if (isset($admin)) {
+                                    if ($admin->_role === $role->_id) {
                                         echo "checked";
                                     }
                                 }

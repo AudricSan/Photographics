@@ -137,6 +137,15 @@ class AdminDAO extends Env
             return false;
         }
 
+        $data['pass'] = password_hash($data['pass'], PASSWORD_BCRYPT);
+        $data['mail'] = filter_var($data['mail'], FILTER_VALIDATE_EMAIL);
+
+        if($data['mail'] === false){
+            echo 'false';
+            header('location: /admin/poeple');
+            return false;
+        }
+
         $admin = $this->create([
             "admin_id" => $id,
             'admin_name' => $data['name'],
@@ -147,11 +156,16 @@ class AdminDAO extends Env
 
         if ($admin) {
             try {
-                $statement = $this->connection->prepare("UPDATE {$this->table} SET Admin_Name = ?, Admin_Mail = ?, Admin_Password = ?, Admin_Role = ? WHERE Admin_ID = ?");
+                $statement = $this->connection->prepare("UPDATE {$this->table} SET
+                admin_name = ?,
+                admin_mail = ?,
+                admin_password = ?,
+                admin_role = ? WHERE
+                admin_id = ?");
                 $statement->execute([
                     $admin->_name,
                     $admin->_mail,
-                    $admin->_pass,
+                    $admin->_password,
                     $admin->_role,
                     $admin->_id
                 ]);

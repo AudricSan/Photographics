@@ -17,7 +17,7 @@ class BasicInfoDAO extends Env
         $this->dbname =   parent::env('DB_NAME');                 //The name of the DB you want to attack.
         $this->table =    "basicinfo";                            // The table to attack
 
-        $this->connection = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password, $this->options);;
+        $this->connection = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->username, $this->password, $this->options);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 

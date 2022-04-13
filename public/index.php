@@ -228,7 +228,7 @@ Route::add('/admin/admin/delete/([0-9]*)', function ($id) {
   include_once('../model/dao/AdminDAO.php');
 
   $adminDAO = new AdminDAO;
-  $admin->delete($id);
+  $adminDAO->delete($id);
 });
 
 Route::add('/admin/admin/create', function () {

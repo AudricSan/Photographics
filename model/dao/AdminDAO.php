@@ -105,11 +105,11 @@ class AdminDAO extends Env
         }
 
         $admin = $this->create([
-            "Admin_ID" => 0,
-            'Admin_Mail'  => $data['mail'],
-            'Admin_Password'  => $data['pass'],
-            'Admin_Name'  => $data['name'],
-            'Admin_Role'  => $data['role']
+            "admin_id" => 0,
+            'admin_mail'  => $data['mail'],
+            'admin_password'  => $data['pass'],
+            'admin_name'  => $data['name'],
+            'admin_role'  => $data['role']
         ]);
 
         if ($admin) {
@@ -133,16 +133,16 @@ class AdminDAO extends Env
 
     public function update($id, $data)
     {
-        if (empty($data)) {
+        if (empty($data) || empty($id)) {
             return false;
         }
 
         $admin = $this->create([
-            "_id" => $id,
-            '_name' => $data['name'],
-            '_mail' => $data['mail'],
-            '_pass' => $data['pass'],
-            '_role' => $data['role']
+            "admin_id" => $id,
+            'admin_name' => $data['name'],
+            'admin_mail' => $data['mail'],
+            'admin_password' => $data['pass'],
+            'admin_role' => $data['role']
         ]);
 
         if ($admin) {
@@ -156,31 +156,39 @@ class AdminDAO extends Env
                     $admin->_id
                 ]);
 
-                return $admin;
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
                 return false;
             }
         }
+
+        header('location: /admin/poeple');
     }
 
     public function login($data)
     {
         if (!isset($data)) {
+            echo 'NOT DATA SET';
+            // header('location: /');
             return false;
         }
 
         if (!isset($data['login']) || !isset($data['pass'])) {
+            echo 'NOT LOGIN OR PASSOWRD SET';
+            // header('location: /');
             return false;
         }
 
         $existAdmin = $this->fetchMail($data['login']);
         if (!$existAdmin) {
             echo 'NOT EXIST';
+            // header('location: /');
             return false;
         }
 
         if (!password_verify($data['pass'], $existAdmin->_password)) {
+            echo 'NOT NOT GOOD PASS';
+            // header('location: /');
             return false;
         }
 

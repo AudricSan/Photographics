@@ -3,7 +3,7 @@
   echo "
         <div class='contact'>
             <h2>Title</h2>
-            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing.</p>
+            <p> You like my work, do not hesitate to contact me.</p>
 
             <form class=''  method='POST' action='/email/send'  target='_self'>
                 <label for='name'> Name:</label>

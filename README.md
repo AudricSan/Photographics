@@ -98,17 +98,38 @@ It is a list of the elements necessary to use the software and to install them.
   ```
 
 ### Installation
-1. Install Wamp local sever
+1. Install Wamp local sever.
    ```sh
    https://www.wampserver.com/
    ```
-1. Clone the repo
+1. Clone the repo.
    ```sh
    git clone https://github.com/AudricSan/Photographics.git
    ```
-1. Put photographics in Wamp www folder and create a Vhost
+1. Put photographics in Wamp www folder.
    ```sh
    C:\wamp64\www\[PHOTOGRAPHICS FOLDER]
+   ```
+1. Create a Vhost in Wamp to use Photographics.
+
+1. Edit Env.php with your Database info
+   ```js
+    ===> [PHOTOGRAPHIC FOLDER]\model\class\env.php
+        private $env = [
+        //APP
+        'APP_NAME' => 'photographics',
+        'APP_KEY' => '',
+
+        //DATABASE
+        'DB_HOST' => 'localhost',
+        'DB_USERNAME' => 'root',
+        'DB_PASSWORD' => 'root',
+        'DB_NAME' => 'photographics',
+        'DB_PORT' => 3306,
+   ```
+1. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
    ```
 1. Enter your API in `config.js`
    ```js

@@ -2,7 +2,6 @@
 
 use photographics\PictureTag;
 
-
 if (!isset($_SESSION['logged'])) {
     echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";
 } else {
@@ -21,8 +20,8 @@ if(isset($id)){
     $pictureDAO = new PictureDAO;
     $picture = $pictureDAO->fetch($id);
 
-    $pictureTagDAO = new PictureTagDAO;
-    $pictureTags = $pictureTagDAO->fetchByPic($id);
+    // $pictureTagDAO = new PictureTagDAO;
+    // $pictureTags = $pictureTagDAO->fetchByPic($id);
 
     $imgroot = $_SESSION['imgroot'];
 }

@@ -23,8 +23,7 @@
   echo "<div class='gallery'>";
 
   $pictureDAO = new PictureDAO;
-  $pictureTagDAO = new PictureTagDAO;
-
+  
   if (!empty($_GET['id'])) {
     $pictureTag = $pictureTagDAO->fetch($_GET['id']);
     foreach ($pictureTag as $key => $value) {

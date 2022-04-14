@@ -31,11 +31,9 @@ echo "<div class='dashboard'>
 ";
 
 $pictureDAO = new PictureDAO;
-$pictureTagDAO = new PictureTagDAO;
 $tagDAO = new TagDAO;
 
 $pictures = $pictureDAO->fetchAll();
-$tags = $pictureTagDAO->fetchAll();
 
 foreach ($pictures as $key => $picture) {
     echo "

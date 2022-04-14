@@ -175,7 +175,7 @@ Distributed under the  AGPL-3.0 License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-[@AudricSan](https://twitter.com/AudricSan)
+[@AudricSan](https://twitter.com/AudricSan)<br>
 [Email](mailto:audricrosier@gmail.com)
 
 Project Link: [https://github.com/AudricSan/Photographics](https://github.com/AudricSan/Photographics)

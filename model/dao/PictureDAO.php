@@ -137,13 +137,13 @@ class PictureDAO extends Env
                 }
             }
         }
-
+        
         $picture = $this->create([
             'picture_id' => 0,
             'picture_name' => $name,
             'picture_description' => $desc,
             'picture_link' => $image,
-            'picture_tag' => 0,
+            'picture_tag' => $data['tag'],
             'picture_sharable' => $share
         ]);
 

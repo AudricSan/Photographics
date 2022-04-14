@@ -140,7 +140,7 @@ It is a list of the elements necessary to use the software and to install them.
    [YOURVHOSTLINK]/admin
    ```
    ```sh
-   Login : admin
+   Login: admin
    password: password
    ```
 1. Add a new admin and Remove de Default Admin

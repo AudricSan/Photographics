@@ -112,6 +112,11 @@ It is a list of the elements necessary to use the software and to install them.
    ```
 1. Create a Vhost in Wamp to use Photographics.
 
+1. Create the Database in PHP my admin
+   ```sh
+   [PHOTOGRAPHIC FOLDER]\model\sql\db.sql
+   ```
+
 1. Edit Env.php with your Database info
    ```sh
    [PHOTOGRAPHIC FOLDER]\model\class\env.php
@@ -127,7 +132,8 @@ It is a list of the elements necessary to use the software and to install them.
         'DB_USERNAME' => 'root',
         'DB_PASSWORD' => 'root',
         'DB_NAME' => 'photographics',
-        'DB_PORT' => 3306,
+        'DB_PORT' => 3306
+        ];
    ```
 1. Enter your API in `config.js`
    ```js

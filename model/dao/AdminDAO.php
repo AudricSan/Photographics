@@ -102,7 +102,8 @@ class AdminDAO extends Env
                 var_dump($e->getMessage());
             }
         }else{
-            $_SESSION['error']['admin']['delete'] = "You can't have less than 1 Tag";
+            session_start();
+            $_SESSION['error']['admin']['delete'] = "You can't have less than 1 Admin";
         }
         header('location: /admin/poeple');
     }

@@ -149,20 +149,16 @@ It is a list of the elements necessary to use the software and to install them.
 
 <!-- USAGE -->
 ## Usage
-This project was designed so that the photographer's cache can with a minimum of knowledge easily host his photos online via a turnkey site!
+This project was designed so that the photographer's cache can with a minimum of knowledge easily host his photos online via a turnkey website!
 
-these person uses the project !
 <div align="center">
-	<img src="/public/docs/images/audricsan.png" width="100" height="100" style="margin-right:50px" alt="friends">
-	<img src="/public/docs/images/audricsan.png" width="100" height="100" style="margin-right:50px" alt="friends">
-	<img src="/public/docs/images/audricsan.png" width="100" height="100"                           alt="friends">
+    <p>these person uses the project !</p>
+	<img src="/public/docs/images/audricsan.png" width="100" height="100" alt="friends">
 </div>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more info, please refer to the [Documentation](https://github.com/AudricSan/Photographics/tree/main/public/docs/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
 ## Roadmap

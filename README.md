@@ -106,9 +106,9 @@ It is a list of the elements necessary to use the software and to install them.
    ```sh
    git clone https://github.com/AudricSan/Photographics.git
    ```
-1. Install NPM packages
+1. Put photographics in Wamp www folder and create a Vhost
    ```sh
-   npm install
+   C:\wamp64\www\[PHOTOGRAPHICS FOLDER]
    ```
 1. Enter your API in `config.js`
    ```js

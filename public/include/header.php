@@ -44,28 +44,28 @@ if (!isset($title)) {
     $subtitle = 'Photographics';
 }
 
-include('../model/class/BasicInfo.php');
-include('../model/dao/BasicInfoDAO.php');
+include_once('../model/class/BasicInfo.php');
+include_once('../model/dao/BasicInfoDAO.php');
 $basicinfoDAO = new BasicInfoDAO;
 
-include('../model/class/Tag.php');
-include('../model/dao/TagDAO.php');
+include_once('../model/class/Tag.php');
+include_once('../model/dao/TagDAO.php');
 $tagDAO = new TagDAO;
 
-include("../model/class/Picture.php");
-include("../model/dao/PictureDAO.php");
+include_once("../model/class/Picture.php");
+include_once("../model/dao/PictureDAO.php");
 $pictureDAO = new PictureDAO; 
 
-include("../model/class/PictureTag.php");
-include("../model/dao/PictureTagDAO.php");
+include_once("../model/class/PictureTag.php");
+include_once("../model/dao/PictureTagDAO.php");
 $pictureTagDAO = new PictureTagDAO; 
 
-include("../model/class/Admin.php");
-include("../model/dao/AdminDAO.php");
+include_once("../model/class/Admin.php");
+include_once("../model/dao/AdminDAO.php");
 $adminDAO = new AdminDAO; 
 
-include("../model/class/Role.php");
-include("../model/dao/RoleDAO.php");
+include_once("../model/class/Role.php");
+include_once("../model/dao/RoleDAO.php");
 $adminDAO = new RoleDAO; 
 
 $basicinfo = $basicinfoDAO->fetchAll();

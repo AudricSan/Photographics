@@ -118,24 +118,34 @@ class PictureDAO extends Env
         $imageExtension     = pathinfo($imagePath, PATHINFO_EXTENSION);
 
         if (empty($image)) {
+
             $imageError = 'Ce champ ne peut pas être vide';
+
         } else {
             $isUploadSuccess = true;
+
             if ($imageExtension != "jpg" && $imageExtension != "png" && $imageExtension != "jpeg" && $imageExtension != "gif") {
                 $imageError = "Les fichiers autorises sont: .jpg, .jpeg, .png, .gif";
                 $isUploadSuccess = false;
             }
+
             if ($_FILES["file"]["size"] > 500000) {
                 $imageError = "Le fichier ne doit pas depasser les 500KB";
                 $isUploadSuccess = false;
             }
+
             if ($isUploadSuccess) {
                 if (!move_uploaded_file($_FILES["file"]["tmp_name"], $imagePath)) {
                     $imageError = "Il y a eu une erreur lors de l'upload";
                     $isUploadSuccess = false;
-                } else {;
                 }
             }
+        }
+
+        if ($isUploadSuccess != true) {
+            $_SESSION['error']['image']['upload'] = $imageError;
+            header('location: /admin/picture');
+            exit;
         }
         
         $picture = $this->create([

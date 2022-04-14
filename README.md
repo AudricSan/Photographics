@@ -182,7 +182,8 @@ Project Link: [https://github.com/AudricSan/Photographics](https://github.com/Au
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-* [@Thepyrocrafteur](https://github.com/Thepyrocrafteur?tab=repositories)
+* [@Thepyrocrafteur - Github](https://github.com/Thepyrocrafteur)
+* [@Thepyrocrafteur - Gitlab](https://gitlab.com/Thepyrocrafteur)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

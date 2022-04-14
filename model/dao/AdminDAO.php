@@ -88,16 +88,22 @@ class AdminDAO extends Env
             return false;
         }
 
-        try {
-            $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE Admin_ID = ?");
-            $statement->execute([
-                $id
-            ]);
+        $admins = $this->fetchAll();
+        $adminsCount = count($admins);
 
-        } catch (PDOException $e) {
-            var_dump($e->getMessage());
+        if ($adminsCount > 1) {
+            try {
+                $statement = $this->connection->prepare("DELETE FROM {$this->table} WHERE Admin_ID = ?");
+                $statement->execute([
+                    $id
+                ]);
+    
+            } catch (PDOException $e) {
+                var_dump($e->getMessage());
+            }
+        }else{
+            $_SESSION['error']['admin']['delete'] = "You can't have less than 1 Tag";
         }
-
         header('location: /admin/poeple');
     }
 
@@ -120,19 +126,19 @@ class AdminDAO extends Env
             try {
                 $statement = $this->connection->prepare("INSERT INTO {$this->table} (Admin_Mail, Admin_Password, Admin_Name, Admin_Role) VALUES (?, ?, ?, ?)");
                 $statement->execute([
-                    $admin->_email,
+                    $admin->_mail,
                     $admin->_password,
                     $admin->_name,
                     $admin->_role
                 ]);
 
                 $admin->id = $this->connection->lastInsertId();
-                return $admin;
             } catch (PDOException $e) {
                 echo $e;
-                return false;
             }
         }
+
+        header('location: /admin/poeple');
     }
 
     public function update($id, $data)

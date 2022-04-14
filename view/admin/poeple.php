@@ -58,3 +58,16 @@ foreach ($admins as $key => $admin) {
 }
 
 echo "</table></div></main>";
+
+if(!empty($_SESSION['error']['admin'])){
+    // var_dump($_SESSION);
+    $errors = $_SESSION['error']['admin'];
+    echo "<div class='error'>";
+    foreach($errors as $error){
+        echo "<p>$error</p>";
+    }    
+
+    echo " <a href='#' onclick = 'error(this, event)' class='btn validate'> OK </a>";
+    unset($_SESSION['error']['admin']);
+    echo "</div>";
+}

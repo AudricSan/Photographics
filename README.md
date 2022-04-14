@@ -98,19 +98,19 @@ It is a list of the elements necessary to use the software and to install them.
   ```
 
 ### Installation
-3. Install Wamp local sever
+1. Install Wamp local sever
    ```sh
    https://www.wampserver.com/
    ```
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/AudricSan/Photographics.git
    ```
-3. Install NPM packages
+1. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+1. Enter your API in `config.js`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```

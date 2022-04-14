@@ -7,7 +7,16 @@ $env = new env;
 $imglink = $_SESSION['imgroot'];
 
 $photographerName = $_SESSION['basicinfo']['Photographer Name'];
-$photographerDesc = $_SESSION['basicinfo']['Photographer About'];
+
+include_once('../model/class/Tag.php');
+include_once('../model/dao/TagDAO.php');
+
+include_once("../model/class/PictureTag.php");
+include_once("../model/dao/PictureTagDAO.php");
+
+$pictureTagDAO = new PictureTagDAO; 
+$tagDAO = new TagDAO;
+$tag = $tagDAO->fetchAll();
 
 echo "
     <footer>
@@ -29,11 +38,16 @@ echo "
                     <div>
                         <h3> Photographics </h3>
                         <ul>
-                            <li><a href='/'>Gallery</a></li>
-                            <li><a href='/'>Gallery</a></li>
-                            <li><a href='/'>Gallery</a></li>
-                            <li><a href='/'>Gallery</a></li>
-                            <li><a href='/'>Gallery</a></li>
+                            <li> <a href='/'>Gallery</a> </li>";
+                            foreach ($tag as $tag) {
+                                $pictureTag = $pictureTagDAO->fetch($tag->_id);
+                                $cpt = count($pictureTag);
+                
+                                if ($cpt > 5) {
+                                    echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
+                                }
+                            };
+                    echo "
                         </ul>
                     </div>
 

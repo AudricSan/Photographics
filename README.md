@@ -93,8 +93,8 @@ To set up a local copy and get it running, follow the steps below.
 It is a list of the elements necessary to use the software and to install them.
 * 
   ```sh
-    php 7.4
-    MYSQL v.5.6
+  php 7.4
+  MYSQL v.5.6
   ```
 
 ### Installation

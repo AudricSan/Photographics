@@ -260,6 +260,17 @@ Route::add('/admin/doc', function () {
   include_once('../view/commingsoon.php');
 });
 
+Route::add('/email/send', function () {
+  include_once('../model/class/Mail.php');
+  include_once('../model/dao/MailDAO.php');
+
+  session_start();
+  $mail = $_SESSION['basicinfo']['Photographer Mail'];
+
+  $adminDAO = new MailDAO;
+  $adminDAO->send($mail, $_POST);
+}, 'post');
+
 
 
 

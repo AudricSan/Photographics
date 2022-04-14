@@ -14,7 +14,3 @@
 ### Added
 - Upload Project on OVH
 - Make project public on GitHub
-
-### Bugfix
-
-### Removed

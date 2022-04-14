@@ -86,14 +86,15 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <!-- GETTING STARTED -->
 ## Getting Started
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This is an example of how you can give instructions on setting up your project locally or online.
+To set up a local copy and get it running, follow the steps below.
 
 ### Prerequisites
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+It is a list of the elements necessary to use the software and to install them.
+* 
   ```sh
-  npm install npm@latest -g
+    php 7.4
+    MYSQL v.5.6
   ```
 
 ### Installation

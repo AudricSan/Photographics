@@ -185,6 +185,7 @@ Project Link: [Photographics](https://github.com/AudricSan/Photographics)
 ## Acknowledgments
 * [@Thepyrocrafteur - Github](https://github.com/Thepyrocrafteur)
 * [@Thepyrocrafteur - Gitlab](https://gitlab.com/Thepyrocrafteur)
+* [@Uranium - Gitlab](https://gitlab.com/Uranium49)
 
 [product-screenshot]: public/images/logo2.png
 [product-logo]: public/images/logo.png

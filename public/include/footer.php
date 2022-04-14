@@ -26,9 +26,12 @@ echo "
             <div class='footerleft'>
                 <figure> <a href='/'> <img src='$imglink/logo.png' alt='Logo'> </a> </figure>
                 <h3> <a href='/about'> $photographerName </a> </h3>
-                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. rovident fugit iure vel reprehenderit
-                    laboriosam amet nihil non olestiae bcaecati ut. Similique istinctio, quibusdam nisi qui quaerat
-                    oluptas! Pariatur, temporibus vel. </p>
+                <p>
+                    Photographics is a free and open source project for photographers who want to swiftly submit their photos to the internet.
+                    This project seeks to make managing your photographs as simple and quick as possible. </br>
+                    It gives the photographer total control over his images by allowing him to tag and share them.
+                    </br></br> Photographics is an open source project that is completely free!
+                    </br> A site where you may save all of your images in one location. </p>
             </div>
 
             <img class='divider' src='$imglink/divider2.png'>

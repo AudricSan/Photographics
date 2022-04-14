@@ -160,7 +160,7 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
 
 <!-- ROADMAP -->
 ## Roadmap
-- [ ] Feature 1
+- [X] Feature 1
 - [ ] Feature 2
 - [ ] Feature 3
     - [ ] Nested Feature

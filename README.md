@@ -98,7 +98,10 @@ It is a list of the elements necessary to use the software and to install them.
   ```
 
 ### Installation
-1. Get a free API Key at [https://example.com](https://example.com)
+3. Install Wamp local sever
+   ```sh
+   https://www.wampserver.com/
+   ```
 2. Clone the repo
    ```sh
    git clone https://github.com/AudricSan/Photographics.git

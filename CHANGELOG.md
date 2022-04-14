@@ -1,12 +1,15 @@
 # Changelog
-## v1.0.0
+## v1.0.1
 ### Added or Changed
 - Added this changelog :)
-- Fixed typos in both templates
-- Back to top links
-- Added more "Built With" frameworks/libraries
-- Changed table of contents to start collapsed
-- Added checkboxes for major features on roadmap
+- Finished ReadMe
+
+- Fixed use of the 'PictureTag' table, and correction of the assignment of a tag at the upload of an image
 
 ### Removed
-- Some packages/libraries from acknowledgements I no longer use
+- Back to top link in readme
+
+## v1.0.0
+### Added or Changed
+- Upload Project on OVH
+- Make project public on GitHub

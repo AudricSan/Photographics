@@ -135,14 +135,15 @@ It is a list of the elements necessary to use the software and to install them.
         'DB_PORT' => 3306
         ];
    ```
-1. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+1. You can now Connect to the Admin platform
+   ```sh
+   [YOURVHOSTLINK]/admin
    ```
-1. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   ```sh
+   Login : admin
+   password: password
    ```
+1. Add a new admin and Remove de Default Admin
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

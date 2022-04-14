@@ -353,20 +353,9 @@ Route::methodNotAllowed(function ($path, $method) {
   echo 'The requested path "' . $path . '" exists. But the request method "' . $method . '" is not allowed on this path!';
   foot();
 });
+//!SECTION
 
 // SECTION This route is for debugging only
-// ANCHOR PHP INFO
-Route::add('/phpinfo', function () {
-  head();
-  phpinfo();
-});
-
-// ANCHOR 405 test
-Route::add('/this-route-is-defined', function () {
-  head();
-  echo 'You need to patch this route to see this content';
-}, 'patch');
-
 // ANCHOR Return all known routes
 Route::add('/routes', function () {
   $routes = Route::getAll();
@@ -376,6 +365,7 @@ Route::add('/routes', function () {
   }
   echo '</ul>';
 });
+//!SECTION
 
 // ANCHOR Run the Router with the given Basepath
 Route::run(BASEPATH);

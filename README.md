@@ -153,9 +153,9 @@ This project was designed so that the photographer's cache can with a minimum of
 
 these person uses the project !
 <div align="center">
-	<img src="/public/images/docs/audricsan.png" alt="friends">
-	<img src="/public/images/docs/audricsan.png" alt="friends">
-	<img src="/public/images/docs/audricsan.png" alt="friends">
+	<img src="/public/images/docs/audricsan.png" width="80" height="80" alt="friends">
+	<img src="/public/images/docs/audricsan.png" width="80" height="80" alt="friends">
+	<img src="/public/images/docs/audricsan.png" width="80" height="80" alt="friends">
 </div>
 
 _For more examples, please refer to the [Documentation](https://example.com)_

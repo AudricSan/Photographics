@@ -22,5 +22,30 @@
             </form>
         </div>
   ";
+
+
+$basicinfoDAO = new BasicInfoDAO;
+$basicInfo = $basicinfoDAO->fetchAll();
+
+foreach($basicInfo as $key => $value){  
+    if ($value->_name === 'Contact Picture') {
+        $pictureDAO = new PictureDAO; 
+        $picture = $pictureDAO->fetch($value->_content);
+    }
+}
+
 ?>
 </section>
+
+<script>
+var ImgRoot = "<?php echo $_SESSION['imgroot']; ?>";
+var img = "<?php echo $picture->_link; ?>";
+const section = document.getElementsByTagName('section');
+
+ImgRoot = ImgRoot + "/img/";
+link = ImgRoot + img;
+
+section[0].style.backgroundImage = 'url(' + link + ')';
+console.log(section)
+console.log(link)
+</script>

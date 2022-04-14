@@ -111,18 +111,17 @@ It is a list of the elements necessary to use the software and to install them.
    [PHOTOGRAPHICS FOLDER]\model\class\env.php
    ```
    ```php
-        private $env = [
-        //APP
-        'APP_NAME' => 'photographics',
-        'APP_KEY' => '',
-
-        //DATABASE
-        'DB_HOST' => 'localhost',
-        'DB_USERNAME' => 'root',
-        'DB_PASSWORD' => 'root',
-        'DB_NAME' => 'photographics',
-        'DB_PORT' => 3306
-        ];
+   private $env = [
+    //APP
+    'APP_NAME' => 'photographics',
+    'APP_KEY' => '',  
+    //DATABASE
+    'DB_HOST' => 'localhost',
+    'DB_USERNAME' => 'root',
+    'DB_PASSWORD' => 'root',
+    'DB_NAME' => 'photographics',
+    'DB_PORT' => 3306
+   ];
    ```
 1. You can now Connect to the Admin platform
    ```sh

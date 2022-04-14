@@ -18,12 +18,14 @@
 
 <h3 align="center">Photographics</h3>
 
-  <p align="center">
+  <p align="justify">
 Photographics is a free and open source project for photographers who want to swiftly submit their photos to the internet. This project seeks to make managing your photographs as simple and quick as possible.
+
 It gives the photographer total control over his images by allowing him to tag and share them.
 
 Photographics is an open source project that is completely free!
-A site where you may save all of your images in one location.    <br />
+A site where you may save all of your images in one location.
+<br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />

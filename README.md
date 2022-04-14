@@ -152,7 +152,7 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
   ## Known Bug
   - [x] Fix Faild upload images Error -> upload in db is true
   - [x] Fix tags atribute => stop use table PicturesTags
-  - [ ] Fix email administrator
+  - [x] Fix email administrator
 
 See the [open issues](https://github.com/AudricSan/Photographics/issues) for a full list of proposed features (and known issues).
 

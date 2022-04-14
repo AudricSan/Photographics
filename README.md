@@ -113,8 +113,10 @@ It is a list of the elements necessary to use the software and to install them.
 1. Create a Vhost in Wamp to use Photographics.
 
 1. Edit Env.php with your Database info
-   ```js
-    ===> [PHOTOGRAPHIC FOLDER]\model\class\env.php
+   ```sh
+   [PHOTOGRAPHIC FOLDER]\model\class\env.php
+   ```
+   ```php
         private $env = [
         //APP
         'APP_NAME' => 'photographics',

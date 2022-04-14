@@ -178,26 +178,9 @@ Distributed under the  AGPL-3.0 License. See `LICENSE.txt` for more information.
 [@AudricSan](https://twitter.com/AudricSan)<br>
 [Email](mailto:audricrosier@gmail.com)
 
-Project Link: [https://github.com/AudricSan/Photographics](https://github.com/AudricSan/Photographics)
+Project Link: [Photographics](https://github.com/AudricSan/Photographics)
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 * [@Thepyrocrafteur - Github](https://github.com/Thepyrocrafteur)
 * [@Thepyrocrafteur - Gitlab](https://gitlab.com/Thepyrocrafteur)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/AudricSan/Photographics.svg?style=for-the-badge
-[contributors-url]: https://github.com/AudricSan/Photographics/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AudricSan/Photographics.svg?style=for-the-badge
-[forks-url]: https://github.com/AudricSan/Photographics/network/members
-[stars-shield]: https://img.shields.io/github/stars/AudricSan/Photographics.svg?style=for-the-badge
-[stars-url]: https://github.com/AudricSan/Photographics/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AudricSan/Photographics.svg?style=for-the-badge
-[issues-url]: https://github.com/AudricSan/Photographics/issues
-[license-shield]: https://img.shields.io/github/license/AudricSan/Photographics.svg?style=for-the-badge
-[license-url]: https://github.com/AudricSan/Photographics/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/audricrosier
-[product-screenshot]: public/images/logo2.png
-[product-logo]: public/images/logo.png

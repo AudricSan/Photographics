@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AudricSan/Photographics/">
-    <img src="[product-logo]" alt="Logo">
+    <img src=[product-logo] alt="Logo">
   </a>
 
 <h3 align="center">Photographics</h3>

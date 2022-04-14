@@ -64,7 +64,7 @@ A site where you may save all of your images in one location.
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[[product-logo]](https://photo.audricrosier.be)
+[![Product Name Screen Shot][product-logo]](https://photo.audricrosier.be)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `AudricSan`, `Photographics`, `AudricSan`, `audricrosier`, `audricrosier@gmail.com_client`, `audricrosier@gmail.com`, `photographics`, `project_description`
 

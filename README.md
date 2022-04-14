@@ -181,11 +181,8 @@ Distributed under the  AGPL-3.0 License. See `LICENSE.txt` for more information.
 Project Link: [https://github.com/AudricSan/Photographics](https://github.com/AudricSan/Photographics)
 
 <!-- ACKNOWLEDGMENTS -->
-<!-- ## Acknowledgments
-
-* []()
-* []()
-* []() -->
+## Acknowledgments
+* [@Thepyrocrafteur](https://github.com/Thepyrocrafteur?tab=repositories)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

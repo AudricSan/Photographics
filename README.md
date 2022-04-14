@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AudricSan/Photographics/">
-    <img src="public/images/logo.png" alt="Logo">
+    <img src="public/images/logo2.png" alt="Logo">
   </a>
 
 <h3 align="center">Photographics</h3>
@@ -64,7 +64,7 @@ A site where you may save all of your images in one location.
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]](https://photo.audricrosier.be)
+[[product-logo]](https://photo.audricrosier.be)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `AudricSan`, `Photographics`, `AudricSan`, `audricrosier`, `audricrosier@gmail.com_client`, `audricrosier@gmail.com`, `photographics`, `project_description`
 

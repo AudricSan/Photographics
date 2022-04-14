@@ -114,12 +114,12 @@ It is a list of the elements necessary to use the software and to install them.
 
 1. Create the Database in PHP my admin
    ```sh
-   [PHOTOGRAPHIC FOLDER]\model\sql\db.sql
+   [PHOTOGRAPHICS FOLDER]\model\sql\db.sql
    ```
 
 1. Edit Env.php with your Database info
    ```sh
-   [PHOTOGRAPHIC FOLDER]\model\class\env.php
+   [PHOTOGRAPHICS FOLDER]\model\class\env.php
    ```
    ```php
         private $env = [
@@ -147,11 +147,16 @@ It is a list of the elements necessary to use the software and to install them.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- USAGE EXAMPLES -->
+<!-- USAGE -->
 ## Usage
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This project was designed so that the photographer's cache can with a minimum of knowledge easily host his photos online via a turnkey site!
+
+these person uses the project !
+<div align="center">
+	<img src="/public/images/docs/audricsan.png" alt="friends">
+	<img src="/public/images/docs/audricsan.png" alt="friends">
+	<img src="/public/images/docs/audricsan.png" alt="friends">
+</div>
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 

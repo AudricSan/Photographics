@@ -137,7 +137,7 @@ It is a list of the elements necessary to use the software and to install them.
    ```
 1. You can now Connect to the Admin platform
    ```sh
-   [YOURVHOSTLINK]/admin
+   [YOUR VHOST LINK]/admin
    ```
    ```sh
    Login: admin

@@ -82,3 +82,15 @@ foreach ($pictures as $key => $picture) {
 }
 
 echo "</table></div></main>";
+
+if(!empty($_SESSION['error']['image'])){
+    // var_dump($_SESSION);
+    $errors = $_SESSION['error']['image'];
+    echo "<div class='error'>";
+    foreach($errors as $error){
+        echo "<p>$error</p>";
+    }    
+    echo " <a href='#' onclick = 'error(this, event)' class='btn validate'> OK </a>";
+    unset($_SESSION['error']['image']);
+    echo "</div>";
+}

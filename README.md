@@ -24,14 +24,16 @@ It gives the photographer total control over his images by allowing him to tag a
 Photographics is an open source project that is completely free!
 A site where you may save all of your images in one location.
 <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+
+  <p align="center">
+    <a href="https://github.com/AudricSan/Photographics"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="photo.audricrosier.be">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/AudricSan/Photographics/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/AudricSan/Photographics/issues">Request Feature</a>
   </p>
 </div>
 

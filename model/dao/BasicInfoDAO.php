@@ -24,7 +24,7 @@ class BasicInfoDAO extends Env
     public function fetchAll()
     {
         try {
-            $statement = $this->connection->prepare("SELECT * FROM {$this->table}");
+            $statement = $this->connection->prepare("SELECT * FROM {$this->table} ORDER BY bi_id");
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             $basicinfo = array();

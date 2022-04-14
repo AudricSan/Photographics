@@ -150,10 +150,8 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
 - [ ] Fix Faild upload images Error -> upload in db is true
 - [ ] Fix tags atribute => stop use table PicturesTags
 - [ ] Fix email administrator
-- [ ] 
-- [ ] Mutliple Tag by Picture
-- [ ] hyrarchy of the administrator role
-- [ ] 
+    - [ ] Mutliple Tag by Picture
+    - [ ] hyrarchy of the administrator role
 
 See the [open issues](https://github.com/AudricSan/Photographics/issues) for a full list of proposed features (and known issues).
 

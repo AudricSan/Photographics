@@ -57,5 +57,7 @@ class MailDAO extends Env
                 var_dump($e->getMessage());
             }
         }
+
+        header('location: /contact');
     }
 }

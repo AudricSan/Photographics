@@ -12,7 +12,7 @@ class env
         'DB_USERNAME' => 'root',
         'DB_PASSWORD' => 'root',
         'DB_NAME' => 'photographics',
-        'DB_PORT' => 3306,
+        'DB_PORT' => 3306
 
         // 'DB_HOST' => 'audricldatabase.mysql.db',
         // 'DB_USERNAME' => 'audricldatabase',

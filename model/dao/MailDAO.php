@@ -16,7 +16,7 @@ class MailDAO extends Env
         }
 
         // NOTE DUMP OF OBJECT CREATE
-        var_dump($result);
+        // var_dump($result);
         return new Mail(
             $result['to'],
             $result['subject'],
@@ -32,7 +32,6 @@ class MailDAO extends Env
             return false;
         }
 
-        var_dump($data);
         $mail = $data['mail'];
         $sender = "From: $mail";
 
@@ -56,7 +55,6 @@ class MailDAO extends Env
 
             } catch (PDOException $e) {
                 var_dump($e->getMessage());
-                return false;
             }
         }
     }

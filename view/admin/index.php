@@ -9,7 +9,7 @@ if (!isset($_SESSION['logged'])) {
     if (!$adminConnected) {
         session_start();
         session_unset();
-        header('location /');
+        echo "<script language='Javascript'>setTimeout(function(){document.location.replace('/');},200);</script>";
     }
 }
 

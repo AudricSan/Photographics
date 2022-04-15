@@ -10,6 +10,7 @@ if (!isset($_SESSION['logged'])) {
         session_start();
         session_unset();
         echo "<script language='Javascript'>setTimeout(function(){document.location.replace('/');},200);</script>";
+        header('location /');
     }
 }
 

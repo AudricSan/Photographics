@@ -2,6 +2,8 @@
 <?php
 if (!isset($_SESSION['logged'])) {
     echo "<script language='Javascript'>document.location.replace('/admin/login');</script>";
+    die;
+
 } else {
     $adminDAO = new AdminDAO;
     $adminConnected = $adminDAO->fetch($_SESSION['logged']);
@@ -11,6 +13,7 @@ if (!isset($_SESSION['logged'])) {
         session_unset();
         echo "<script language='Javascript'>setTimeout(function(){document.location.replace('/');},200);</script>";
         header('location /');
+        die;
     }
 }
 

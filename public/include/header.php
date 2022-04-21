@@ -9,14 +9,20 @@ $autor = 'Audric Rosier';
 $description = 'Un site pour tous les photographe';
 $keyword = 'SEO, keyword';
 
+if (isset($_SERVER['HTTPS'])) {
+    if ($_SERVER['HTTPS'] === 'on') {
+        $rootHost = 'https://' . $_SERVER['HTTP_HOST'];
+    } else {
+        $rootHost = 'http://' . $_SERVER['HTTP_HOST'];
+    }
+} else {
+    $rootHost = 'http://' . $_SERVER['HTTP_HOST'];
+}
 
-// var_dump($_SERVER);
-$rootHost = 'http://' . $_SERVER['HTTP_HOST'];
 $rootDoc = $_SERVER['DOCUMENT_ROOT'];
 $_SESSION['root'] = $rootHost;
 $_SESSION['rootDoc'] = $rootDoc;
 
-// var_dump($root);
 //CSS link//
 $anim_css = $rootHost   . '/public/css/anim.css';
 $style_css = $rootHost   . '/public/css/index.css';
@@ -54,23 +60,23 @@ $tagDAO = new TagDAO;
 
 include_once("../model/class/Picture.php");
 include_once("../model/dao/PictureDAO.php");
-$pictureDAO = new PictureDAO; 
+$pictureDAO = new PictureDAO;
 
 include_once("../model/class/PictureTag.php");
 include_once("../model/dao/PictureTagDAO.php");
-$pictureTagDAO = new PictureTagDAO; 
+$pictureTagDAO = new PictureTagDAO;
 
 include_once("../model/class/Admin.php");
 include_once("../model/dao/AdminDAO.php");
-$adminDAO = new AdminDAO; 
+$adminDAO = new AdminDAO;
 
 include_once("../model/class/Role.php");
 include_once("../model/dao/RoleDAO.php");
-$adminDAO = new RoleDAO; 
+$adminDAO = new RoleDAO;
 
 $basicinfo = $basicinfoDAO->fetchAll();
 
-foreach($basicinfo as $key => $value){
+foreach ($basicinfo as $key => $value) {
     $_SESSION['basicinfo'][$value->_name] = $value->_content;
 }
 
@@ -131,14 +137,14 @@ echo "
 
         <ul>
             <li class='nava'> <a href='/'>Gallery</a> </li>";
-            foreach ($tag as $tag) {
-                $pictureTag = $pictureTagDAO->fetch($tag->_id);
-                $cpt = count($pictureTag);
+foreach ($tag as $tag) {
+    $pictureTag = $pictureTagDAO->fetch($tag->_id);
+    $cpt = count($pictureTag);
 
-                if ($cpt > 5) {
-                    echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
-                }
-            };
+    if ($cpt > 5) {
+        echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
+    }
+};
 
 echo "
         <li class='nava'> <a href='/about'>About</a> </li>
@@ -146,4 +152,4 @@ echo "
     </ul>
 </nav>";
 
-echo"</header>";
+echo "</header>";

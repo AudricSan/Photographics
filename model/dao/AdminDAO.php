@@ -211,7 +211,10 @@ class AdminDAO extends Env
             return false;
         }
 
-        if (!password_verify($data['pass'], $existAdmin->_password)) {
+        $pass = $data['pass'];
+        $dbpass = $existAdmin->_password;
+        
+        if (!password_verify($pass, $dbpass)) {
             echo 'NOT NOT GOOD PASS';
             // header('location: /');
             return false;

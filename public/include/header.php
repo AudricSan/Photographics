@@ -37,6 +37,8 @@ $admin  = $rootHost . '/public/css/admin.css';
 $check  = $rootHost . '/public/css/checkbox.css';
 $anim  = $rootHost . '/public/css/animation.css';
 
+$px500  = $rootHost . '/public/css/500px.css';
+
 $imglink = $rootHost . '/public/images';
 $_SESSION['imgroot'] = $imglink;
 
@@ -116,6 +118,8 @@ echo "
         <link rel='stylesheet' type='text/css' href='$index' />
 
         <link rel='stylesheet' type='text/css' href='$admin' />
+
+        <link rel='stylesheet' type='text/css' href='$px500' />
 
         <!--icones importées-->
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet'>

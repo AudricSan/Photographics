@@ -20,7 +20,7 @@ $tag = $tagDAO->fetchAll();
 
 echo "
     <footer>
-        <img class='divider' src='$imglink/divider.png'>
+        <img class='divider 1' src='$imglink/divider.png'>
 
         <div class='footer'>
             <div class='footerleft'>
@@ -34,7 +34,7 @@ echo "
                     </br> A site where you may save all of your images in one location. </p>
             </div>
 
-            <img class='divider' src='$imglink/divider2.png'>
+            <img class='divider 2' src='$imglink/divider2.png'>
 
             <div class='footerright'>
                 <div class='row'>

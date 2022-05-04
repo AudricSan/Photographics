@@ -1,0 +1,66 @@
+@media screen and (max-width: 600px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 40px;
+  }
+  header figure {
+    display: none;
+  }
+  header li[role=presentation] {
+    display: none;
+  }
+  footer img.divider {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    left: 0px;
+  }
+  footer .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer .footer .footerleft figure {
+    margin: 0;
+    padding: 0;
+  }
+  footer .footer .footerright {
+    margin-left: 0em;
+  }
+  footer .footer .footerright .row {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer .footerright .copy {
+    margin-top: 2em;
+  }
+  footer .footer .footerright .copy a:last-of-type {
+    margin-right: 1em;
+    margin-left: 0em;
+  }
+  footer .footer .divider {
+    display: none;
+  }
+  footer img.divider {
+    max-width: 500px;
+  }
+}
+/*# sourceMappingURL=500px.css.map */

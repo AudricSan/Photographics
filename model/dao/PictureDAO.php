@@ -124,8 +124,8 @@ class PictureDAO extends Env
         } else {
             $isUploadSuccess = true;
 
-            if ($imageExtension != "jpg" && $imageExtension != "png" && $imageExtension != "jpeg" && $imageExtension != "gif") {
-                $imageError = "Les fichiers autorises sont: .jpg, .jpeg, .png, .gif";
+            if ($imageExtension != "jpg" && $imageExtension != "png" && $imageExtension != "jpeg") {
+                $imageError = "Les fichiers autorises sont: .jpg, .jpeg, .png";
                 $isUploadSuccess = false;
             }
 

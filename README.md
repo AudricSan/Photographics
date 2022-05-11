@@ -144,6 +144,7 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
 - [ ] Display per tag in admin section.
 
   ## Known Bug
+    - [ ] 
 
 See the [open issues](https://github.com/AudricSan/Photographics/issues) for a full list of proposed features (and known issues).
 

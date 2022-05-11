@@ -11,10 +11,10 @@ $photographerName = $_SESSION['basicinfo']['Photographer Name'];
 include_once('../model/class/Tag.php');
 include_once('../model/dao/TagDAO.php');
 
-include_once("../model/class/PictureTag.php");
-include_once("../model/dao/PictureTagDAO.php");
+include_once("../model/class/Picture.php");
+include_once("../model/dao/PictureDAO.php");
 
-$pictureTagDAO = new PictureTagDAO; 
+$pictureDAO = new PictureDAO; 
 $tagDAO = new TagDAO;
 $tag = $tagDAO->fetchAll();
 
@@ -42,11 +42,10 @@ echo "
                         <h3> Photographics </h3>
                         <ul>
                             <li> <a href='/'>Gallery</a> </li>";
-                            foreach ($tag as $tag) {
-                                $pictureTag = $pictureTagDAO->fetch($tag->_id);
-                                $cpt = count($pictureTag);
-                
-                                if ($cpt > 5) {
+                            $tags = $pictureDAO->fetchTags();
+                            foreach($tags as $key => $value){
+                                if($value['COUNT(picture_tag)'] > 5){
+                                    $tag = $tagDAO->fetch($value['picture_tag']);
                                     echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
                                 }
                             };

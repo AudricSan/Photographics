@@ -52,6 +52,30 @@ class PictureDAO extends Env
         }
     }
 
+    public function fetchTags(){
+        try {
+            $statement = $this->connection->prepare("SELECT picture_tag, COUNT(picture_tag) FROM picture GROUP BY picture_tag");
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return ($result);
+        } catch (PDOException $e)  {
+            var_dump($e);
+        }
+    }
+    
+    public function fetchByTag($id){
+        try {
+            $statement = $this->connection->prepare("SELECT picture_id FROM `picture` WHERE picture_tag = ?");
+            $statement->execute([$id]);
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return ($result);
+        } catch (PDOException $e)  {
+            var_dump($e);
+        }
+    }
+
     public function create($result)
     {
         if (!$result) {

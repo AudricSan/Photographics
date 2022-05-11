@@ -56,6 +56,7 @@
 
       echo "</div></div>";
     }
+    
   } else {
     $picture = $pictureDAO->fetchAll();
     foreach ($picture as $picture) {

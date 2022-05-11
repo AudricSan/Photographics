@@ -130,8 +130,6 @@ echo "
 ";
 
 //ANCHOR Nav html
-$tag = $tagDAO->fetchAll();
-
 echo "
     <header>
     <nav>
@@ -140,15 +138,16 @@ echo "
         </figure>
 
         <ul>
-            <li class='nava'> <a href='/'>Gallery</a> </li>";
-foreach ($tag as $tag) {
-    $pictureTag = $pictureTagDAO->fetch($tag->_id);
-    $cpt = count($pictureTag);
+            <li class='nava'> <a href='/'>Gallery</a> </li>";    
 
-    if ($cpt > 5) {
-        echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
+    $tags = $pictureDAO->fetchTags();
+    foreach($tags as $key => $value){
+        if($value['COUNT(picture_tag)'] > 5){
+            $tag = $tagDAO->fetch($value['picture_tag']);
+            echo "<li role='presentation'><a href='$tag->_id'>$tag->_name</a></li>";
+        }
+
     }
-};
 
 echo "
         <li class='nava'> <a href='/about'>About</a> </li>

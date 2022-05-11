@@ -139,11 +139,11 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
 ## Roadmap
 - [ ] Mutliple Tag by Picture
 - [ ] hyrarchy of the administrator role
+- [ ] send several pictures at the same time.
+- [ ] Drop down menu for the different tags from the gallery on public side.
+- [ ] Display per tag in admin section.
 
   ## Known Bug
-  - [x] Fix Faild upload images Error -> upload in db is true
-  - [x] Fix tags atribute => stop use table PicturesTags
-  - [x] Fix email administrator
 
 See the [open issues](https://github.com/AudricSan/Photographics/issues) for a full list of proposed features (and known issues).
 

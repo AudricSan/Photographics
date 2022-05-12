@@ -234,7 +234,7 @@ section .gallery .media.see {
 }
 
 section .gallery .media.see img {
-  max-width: 100%;
+  max-width: 98%;
   max-height: 100%;
 }
 

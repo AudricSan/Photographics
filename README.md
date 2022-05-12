@@ -141,7 +141,10 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
 - [ ] hyrarchy of the administrator role
 - [ ] send several pictures at the same time.
 - [ ] Drop down menu for the different tags from the gallery on public side.
-- [ ] Display per tag in admin section.
+- [ ] Display per tag in Picture Dashboard.
+- [ ] Modify the metas of the site.
+- [ ] Change the 'colors' of the site.
+- [ ] Connect to an API (Instagram, Tumbler).
 
   ## Known Bug
     - [ ] 

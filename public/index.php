@@ -257,7 +257,7 @@ Route::add('/admin/api', function () {
 Route::add('/admin/doc', function () {
   head();
   adnav();
-  include_once('../view/commingsoon.php');
+  include_once('../view/admin/doc.php');
 });
 
 Route::add('/email/send', function () {

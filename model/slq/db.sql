@@ -2,14 +2,6 @@
 -- Globals
 -- ---
 
--- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
--- SET FOREIGN_KEY_CHECKS=0;
-
--- ---
--- Table 'admin'
--- 
--- ---
-
 DROP TABLE IF EXISTS `admin`;
 		
 CREATE TABLE `admin` (
@@ -23,7 +15,6 @@ CREATE TABLE `admin` (
 
 -- ---
 -- Table 'role'
--- 
 -- ---
 
 DROP TABLE IF EXISTS `role`;
@@ -36,7 +27,6 @@ CREATE TABLE `role` (
 
 -- ---
 -- Table 'picture'
--- 
 -- ---
 
 DROP TABLE IF EXISTS `picture`;
@@ -53,7 +43,6 @@ CREATE TABLE `picture` (
 
 -- ---
 -- Table 'tag'
--- 
 -- ---
 
 DROP TABLE IF EXISTS `tag`;
@@ -61,13 +50,11 @@ DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag` (
   `tag_id` INTEGER NOT NULL AUTO_INCREMENT,
   `tag_name` VARCHAR(25) NULL DEFAULT NULL,
-  `tag_description` VARCHAR(25) NULL DEFAULT NULL,
   PRIMARY KEY (`tag_id`)
 );
 
 -- ---
 -- Table 'pt'
--- 
 -- ---
 
 DROP TABLE IF EXISTS `pt`;
@@ -81,7 +68,6 @@ CREATE TABLE `pt` (
 
 -- ---
 -- Table 'basicinfo'
--- 
 -- ---
 
 DROP TABLE IF EXISTS `basicinfo`;
@@ -98,33 +84,6 @@ CREATE TABLE `basicinfo` (
 -- ---
 
 ALTER TABLE `admin` ADD FOREIGN KEY (admin_role) REFERENCES `role` (`role_id`);
+ALTER TABLE `picture` ADD FOREIGN KEY (picture_tag) REFERENCES `tag` (`tag_id`);
 ALTER TABLE `pt` ADD FOREIGN KEY (pt_picture) REFERENCES `picture` (`picture_id`);
 ALTER TABLE `pt` ADD FOREIGN KEY (pt_tag) REFERENCES `tag` (`tag_id`);
-
--- ---
--- Table Properties
--- ---
-
--- ALTER TABLE `admin` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `role` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `picture` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `tag` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `pt` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `basicinfo` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ---
--- Test Data
--- ---
-
--- INSERT INTO `admin` (`admin_id`,`admin_name`,`admin_mail`,`admin_password`,`admin_role`) VALUES
--- ('','','','','');
--- INSERT INTO `role` (`role_id`,`role_name`) VALUES
--- ('','');
--- INSERT INTO `picture` (`picture_id`,`picture_name`,`picture_description`,`picture_link`,`picture_tag`,`picture_sharable`) VALUES
--- ('','','','','','');
--- INSERT INTO `tag` (`tag_id`,`tag_name`,`tag_description`) VALUES
--- ('','','');
--- INSERT INTO `pt` (`pt_id`,`pt_picture`,`pt_tag`) VALUES
--- ('','','');
--- INSERT INTO `basicinfo` (`bi_id`,`bi_name`,`bi_content`) VALUES
--- ('','','');

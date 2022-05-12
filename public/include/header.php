@@ -44,6 +44,9 @@ $_SESSION['imgroot'] = $imglink;
 
 if (!isset($_COOKIE['rootimg'])) {
     setcookie('rootimg', $imglink);
+
+}if (!isset($_COOKIE['root'])) {
+    setcookie('root', $rootHost);
 }
 
 //TITLE//

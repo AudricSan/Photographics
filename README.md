@@ -145,9 +145,10 @@ _For more info, please refer to the [Documentation](https://github.com/AudricSan
 - [ ] Modify the metas of the site.
 - [ ] Change the 'colors' of the site.
 - [ ] Connect to an API (Instagram, Tumbler).
+- [ ] Lazy loading image.
 
   ## Known Bug
-    - [ ] 
+    - [ ] Redirect to tabs from Admin side.
 
 See the [open issues](https://github.com/AudricSan/Photographics/issues) for a full list of proposed features (and known issues).
 

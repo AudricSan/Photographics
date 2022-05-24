@@ -23,7 +23,7 @@ echo "
             adobeDCView.previewFile({
             content:{ location:
                 { url: '$root/docs/Documentation.pdf'}},
-            metaData:{fileName: 'Bodea Brochure.pdf'}
+            metaData:{fileName: 'Documentation Photographics.pdf'}
             },
             {
             embedMode: 'SIZED_CONTAINER'

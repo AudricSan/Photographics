@@ -1,32 +1,40 @@
 <?php
-namespace photographics;
-class Route {
 
-  private static $routes = Array();
+namespace photographics;
+
+class Route
+{
+
+  private static $routes = array();
   private static $pathNotFound = null;
   private static $methodNotAllowed = null;
 
-  public static function add($expression, $function, $method = 'get'){
-    array_push(self::$routes, Array(
+  public static function add($expression, $function, $method = 'get')
+  {
+    array_push(self::$routes, array(
       'expression' => $expression,
       'function' => $function,
       'method' => $method
     ));
   }
 
-  public static function getAll(){
+  public static function getAll()
+  {
     return self::$routes;
   }
 
-  public static function pathNotFound($function) {
+  public static function pathNotFound($function)
+  {
     self::$pathNotFound = $function;
   }
 
-  public static function methodNotAllowed($function) {
+  public static function methodNotAllowed($function)
+  {
     self::$methodNotAllowed = $function;
   }
 
-  public static function run($basepath = '', $case_matters = false, $trailing_slash_matters = false, $multimatch = false) {
+  public static function run($basepath = '', $case_matters = false, $trailing_slash_matters = false, $multimatch = false)
+  {
 
     // The basepath never needs a trailing slash
     // Because the trailing slash will be added using the route expressions
@@ -40,20 +48,20 @@ class Route {
     // If there is a path available
     if (isset($parsed_url['path'])) {
       // If the trailing slash matters
-  	  if ($trailing_slash_matters) {
-  		  $path = $parsed_url['path'];
-  	  } else {
+      if ($trailing_slash_matters) {
+        $path = $parsed_url['path'];
+      } else {
         // If the path is not equal to the base path (including a trailing slash)
-        if($basepath.'/'!=$parsed_url['path']) {
+        if ($basepath . '/' != $parsed_url['path']) {
           // Cut the trailing slash away because it does not matters
           $path = rtrim($parsed_url['path'], '/');
         } else {
           $path = $parsed_url['path'];
         }
-  	  }
+      }
     }
 
-  	$path = urldecode($path);
+    $path = urldecode($path);
 
     // Get current request method
     $method = $_SERVER['REQUEST_METHOD'];
@@ -68,22 +76,22 @@ class Route {
 
       // Add basepath to matching string
       if ($basepath != '' && $basepath != '/') {
-        $route['expression'] = '('.$basepath.')'.$route['expression'];
+        $route['expression'] = '(' . $basepath . ')' . $route['expression'];
       }
 
       // Add 'find string start' automatically
-      $route['expression'] = '^'.$route['expression'];
+      $route['expression'] = '^' . $route['expression'];
 
       // Add 'find string end' automatically
-      $route['expression'] = $route['expression'].'$';
+      $route['expression'] = $route['expression'] . '$';
 
       // Check path match
-      if (preg_match('#'.$route['expression'].'#'.($case_matters ? '' : 'i').'u', $path, $matches)) {
+      if (preg_match('#' . $route['expression'] . '#' . ($case_matters ? '' : 'i') . 'u', $path, $matches)) {
         $path_match_found = true;
 
         // Cast allowed method to array if it's not one already, then run through all methods
         foreach ((array)$route['method'] as $allowedMethod) {
-            // Check method match
+          // Check method match
           if (strtolower($method) == strtolower($allowedMethod)) {
             array_shift($matches); // Always remove first element. This contains the whole string
 
@@ -91,7 +99,7 @@ class Route {
               array_shift($matches); // Remove basepath
             }
 
-            if($return_value = call_user_func_array($route['function'], $matches)) {
+            if ($return_value = call_user_func_array($route['function'], $matches)) {
               echo $return_value;
             }
 
@@ -104,10 +112,9 @@ class Route {
       }
 
       // Break the loop if the first found route is a match
-      if($route_match_found&&!$multimatch) {
+      if ($route_match_found && !$multimatch) {
         break;
       }
-
     }
 
     // No matching route was found
@@ -115,15 +122,13 @@ class Route {
       // But a matching path exists
       if ($path_match_found) {
         if (self::$methodNotAllowed) {
-          call_user_func_array(self::$methodNotAllowed, Array($path,$method));
+          call_user_func_array(self::$methodNotAllowed, array($path, $method));
         }
       } else {
         if (self::$pathNotFound) {
-          call_user_func_array(self::$pathNotFound, Array($path));
+          call_user_func_array(self::$pathNotFound, array($path));
         }
       }
-
     }
   }
-
 }

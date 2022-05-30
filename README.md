@@ -170,7 +170,7 @@ Distributed under the  AGPL-3.0 License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
-[@AudricSan](https://twitter.com/AudricSan)<br>
+[Twitter -> @AudricSan](https://twitter.com/AudricSan)<br>
 [Email](mailto:audricrosier@gmail.com)
 
 Project Link: [Photographics](https://github.com/AudricSan/Photographics)
